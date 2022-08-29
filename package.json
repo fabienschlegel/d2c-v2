@@ -1,15 +1,29 @@
 {
   "name": "d2cv2",
   "version": "0.1.0",
+  "description": "Another blog from a developer",
+  "license": "MIT",
   "private": true,
+  "author": {
+    "name": "Fabien Schlegel",
+    "email": "fabien.schlegel.fr@gmail.com"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:scss": "stylelint **/*.scss --max-warnings 0",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.2.9",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "framer-motion": "^6",
+    "lint-staged": "^13.0.3",
     "next": "12.2.5",
+    "prettier": "^2.7.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -19,6 +33,15 @@
     "@types/react-dom": "18.0.6",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
+    "husky": "^8.0.1",
+    "sass": "^1.54.5",
+    "stylelint": "^14.11.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-order": "^5.0.0",
     "typescript": "4.8.2"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,css,scss}": "prettier --write"
   }
 }

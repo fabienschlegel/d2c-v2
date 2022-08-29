@@ -1,0 +1,19 @@
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+}
+
+.title {
+  margin: 0;
+  font-size: 4rem;
+  line-height: 1.15;
+}
