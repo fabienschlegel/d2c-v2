@@ -1,0 +1,41 @@
+.container {
+  all: revert;
+
+  * {
+    all: revert;
+  }
+
+  code {
+    margin: 0 2px;
+    padding: 1px 6px;
+    border-radius: 5px;
+
+    background: #eaeaea;
+
+    font-weight: normal;
+    font-size: 0.9rem;
+    font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+    font-feature-settings: normal;
+  }
+
+  pre {
+    overflow: auto;
+
+    padding: 20px;
+    border-radius: 8px;
+
+    background: #1a1a1d;
+
+    font-size: 0.9rem;
+
+    code {
+      margin: 0;
+      padding: 0;
+
+      background: none !important;
+
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+  }
+}

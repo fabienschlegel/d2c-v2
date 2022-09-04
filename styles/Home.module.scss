@@ -1,5 +1,8 @@
 .container {
-  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
 }
 
 .main {
@@ -8,12 +11,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  min-height: 100vh;
 }
 
 .title {
   margin: 0;
-  font-size: 4rem;
+  font-size: 4em;
   line-height: 1.15;
 }
