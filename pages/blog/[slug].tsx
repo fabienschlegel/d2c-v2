@@ -1,17 +1,17 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 
-import { Layout, Post } from "../../components";
+import { Layout, Post } from "components";
 
 import {
   getAllPostsByDate,
   getNextPost,
   getPostBySlug,
   getPreviousPost,
-} from "../../core/postsApi";
-import markdownToHtml from "../../core/markdownToHtml";
+} from "core/postsApi";
+import markdownToHtml from "core/markdownToHtml";
 
-import { IPost } from "../../core/types";
+import { IPost } from "core/types";
 
 type Props = {
   post: IPost;
@@ -34,6 +34,7 @@ export default function PostPage({ post, previous, next }: Props) {
           date={post.date}
           coverImageSrc={post.coverImage}
           avatarSrc={post.author.avatar}
+          tags={post.tags}
         />
         <Post.Content content={post.content} />
         <Post.Navigation
@@ -58,8 +59,8 @@ export async function getStaticProps({ params }: Params) {
     "slug",
     "author",
     "content",
-    "ogImage",
     "coverImage",
+    "tags",
   ]);
   const content = await markdownToHtml(post.content || "");
 

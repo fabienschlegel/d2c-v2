@@ -4,7 +4,7 @@ import { Stack, useColorModeValue } from "@chakra-ui/react";
 
 import MobileNavItem from "../mobile-nav-item/MobileNavItem";
 
-import { NAV_ITEMS } from "../../../core/constants";
+import { NAV_ITEMS } from "core/constants";
 
 const MobileNav: FunctionComponent = () => {
   return (

@@ -13,13 +13,9 @@ import {
 
 import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 
-import SocialButton from "../social-button/SocialButton";
+import { SocialButton } from "..";
 
-import {
-  GITHUB_PROFILE_URL,
-  LINKEDIN_URL,
-  TWITTER_URL,
-} from "../../core/constants";
+import { GITHUB_PROFILE_URL, LINKEDIN_URL, TWITTER_URL } from "core/constants";
 
 const Footer: FunctionComponent = () => {
   return (
@@ -41,6 +37,7 @@ const Footer: FunctionComponent = () => {
             src="/assets/media/D2C-fond-transparent.png"
             alt="Logo dévoreur 2 code"
             width="100px"
+            cursor="pointer"
           />
         </NextLink>
         <Text>© 2022 Fabien Schlegel</Text>

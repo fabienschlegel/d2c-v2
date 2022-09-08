@@ -12,7 +12,7 @@ import {
 
 import DesktopSubNav from "../desktop-sub-nav/DesktopSubNav";
 
-import { NAV_ITEMS } from "../../../core/constants";
+import { NAV_ITEMS } from "core/constants";
 
 const DesktopNav: FunctionComponent = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");

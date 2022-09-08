@@ -1,7 +1,6 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import { POSTS_PER_PAGE } from "./constants";
 
 const postsDirectory = join(process.cwd(), "posts");
 
@@ -46,6 +45,23 @@ export function getAllPostsByDate(fields: string[] = []) {
   return getAllPosts(fields).sort((post1, post2) =>
     post1.date > post2.date ? -1 : 1
   );
+}
+
+export function getPostsByTag(tag: string, fields: string[] = []) {
+  return getAllPostsByDate(fields).filter((post) => post.tags.includes(tag));
+}
+
+export function getAllTags(): Array<string> {
+  const allPosts = getAllPosts(["slug", "tags"]);
+
+  const flattenTags = allPosts.map((post) => post?.tags).flat();
+
+  const allTags = flattenTags.filter(
+    (item, pos) => flattenTags.indexOf(item) == pos
+  );
+  console.log({ allTags });
+
+  return allTags;
 }
 
 export function getNextPost(slug: string) {

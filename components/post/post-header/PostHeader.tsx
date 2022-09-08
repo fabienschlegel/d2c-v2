@@ -1,10 +1,12 @@
 import { FunctionComponent } from "react";
 
-import { Avatar, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import NextLink from "next/link";
 
-import { uppercaseFirst } from "../../../core/textHelpers";
+import { Avatar, Flex, Heading, Text } from "@chakra-ui/react";
 
-import { CoverImage } from "../..";
+import { uppercaseFirst } from "core/textHelpers";
+
+import { CoverImage } from "components";
 
 import styles from "./PostHeader.module.scss";
 
@@ -14,6 +16,7 @@ interface PostHeaderProps {
   date: string;
   coverImageSrc?: string;
   avatarSrc?: string;
+  tags?: Array<string>;
 }
 
 export type PostHeaderType = FunctionComponent<PostHeaderProps>;
@@ -24,6 +27,7 @@ const PostHeader: PostHeaderType = ({
   date,
   coverImageSrc,
   avatarSrc,
+  tags,
 }) => {
   return (
     <Flex direction="column">
@@ -43,6 +47,21 @@ const PostHeader: PostHeaderType = ({
         </Flex>
         <Text className={styles.date}>{date}</Text>
       </Flex>
+      {tags && (
+        <Flex marginBottom="1em">
+          {tags.map((tag) => (
+            <NextLink key={tag} href={`/tag/${tag}`} passHref>
+              <Text
+                marginRight="1em"
+                as="a"
+                fontSize="sm"
+                color="darkBlue"
+                fontWeight="bold"
+              >{`#${tag}`}</Text>
+            </NextLink>
+          ))}
+        </Flex>
+      )}
       {coverImageSrc && (
         <CoverImage coverImageSrc={coverImageSrc} title={title} />
       )}

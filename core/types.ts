@@ -23,8 +23,8 @@ export interface IPost {
   author: IAuthor;
   excerpt: string;
   content: string;
-  coverImage: string;
-  tags: Array<string>;
+  coverImage?: string;
+  tags?: Array<string>;
 }
 
 export type PostAnchor = Pick<IPost, "title" | "slug">;

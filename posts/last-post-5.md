@@ -5,7 +5,7 @@ author:
   name: "Fabien Schlegel"
   avatar: "/assets/blog/authors/fabien_schlegel.png"
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-tags: ["test", "ipsum"]
+tags: ["test", "ipsum", "last"]
 ---
 
 ## Lorem ipsum

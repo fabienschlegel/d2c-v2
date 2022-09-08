@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import { getAllPostsByDate } from "core/postsApi";
+import { getAllTags, getPostsByTag } from "core/postsApi";
 
 import { usePostsListNavigation } from "hooks";
 
@@ -8,15 +8,16 @@ import { Layout, PostsList } from "components";
 
 import { PostSummary } from "core/types";
 
-interface BlogPageProps {
+interface TagPageProps {
   posts: Array<PostSummary>;
+  tag: string;
 }
 
-const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
+const TagPage: NextPage<TagPageProps> = ({ posts, tag }) => {
   const { paginatedPosts, previous, next, previousPage, nextPage } =
     usePostsListNavigation(posts);
   return (
-    <Layout title="List of blog posts">
+    <Layout title={`${tag} blog posts`}>
       <PostsList>
         {paginatedPosts.map((post) => (
           <PostsList.Item
@@ -41,10 +42,16 @@ const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
   );
 };
 
-export default BlogPage;
+export default TagPage;
 
-export async function getStaticProps() {
-  const posts = getAllPostsByDate([
+type Params = {
+  params: {
+    tag: string;
+  };
+};
+
+export async function getStaticProps({ params }: Params) {
+  const posts = getPostsByTag(params.tag, [
     "title",
     "date",
     "slug",
@@ -58,5 +65,16 @@ export async function getStaticProps() {
     props: {
       posts,
     },
+  };
+}
+
+export async function getStaticPaths() {
+  const tags = getAllTags();
+
+  return {
+    paths: tags.map((tag) => {
+      return { params: { tag } };
+    }),
+    fallback: false,
   };
 }

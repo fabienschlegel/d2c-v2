@@ -1,12 +1,12 @@
 import { FunctionComponent, ReactElement } from "react";
 
-import Link from "next/link";
+import NextLink from "next/link";
 
 import clsx from "clsx";
 
 import { Button, Text } from "@chakra-ui/react";
 
-import { uppercaseFirst } from "../../core/textHelpers";
+import { uppercaseFirst } from "core/textHelpers";
 
 import styles from "./ButtonLink.module.scss";
 
@@ -26,7 +26,7 @@ const ButtonLink: FunctionComponent<ButtonLinkProps> = ({
   rightIcon,
 }) => {
   return (
-    <Link href={href} passHref>
+    <NextLink href={href} passHref>
       <Button
         leftIcon={leftIcon}
         rightIcon={rightIcon}
@@ -40,7 +40,7 @@ const ButtonLink: FunctionComponent<ButtonLinkProps> = ({
           {uppercaseFirst(label)}
         </Text>
       </Button>
-    </Link>
+    </NextLink>
   );
 };
 

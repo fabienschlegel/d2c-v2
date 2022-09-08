@@ -9,10 +9,6 @@ import PostsListNavigation, {
   PostListNavigationType,
 } from "./posts-list-navigation/PostsListNavigation";
 
-import usePostsListNavigation from "../../hooks/use-posts-list-navigation/usePostsListNavigation";
-
-import { PostSummary } from "../../core/types";
-
 interface IPostsListComposition {
   Item: PostsListItemType;
   Navigation: PostListNavigationType;

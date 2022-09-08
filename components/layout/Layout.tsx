@@ -2,11 +2,11 @@ import { FunctionComponent, ReactNode } from "react";
 
 import Head from "next/head";
 
-import { uppercaseFirst } from "../../core/textHelpers";
+import { uppercaseFirst } from "core/textHelpers";
 
 import { Footer, Navbar } from "..";
 
-import { FAVICON_URL } from "../../core/constants";
+import { FAVICON_URL } from "core/constants";
 
 import styles from "./Layout.module.scss";
 

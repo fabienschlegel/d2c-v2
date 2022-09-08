@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import { POSTS_PER_PAGE } from "../../core/constants";
+import { POSTS_PER_PAGE } from "core/constants";
 
-import { PostSummary } from "../../core/types";
+import { PostSummary } from "core/types";
 
 interface UsePostsListNavigation {
   paginatedPosts: PostSummary[];

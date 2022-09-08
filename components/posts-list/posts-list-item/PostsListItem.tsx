@@ -1,12 +1,14 @@
 import { FunctionComponent } from "react";
 
+import NextLink from "next/link";
+
 import { FaChevronRight } from "react-icons/fa";
 
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 
-import { uppercaseFirst } from "../../../core/textHelpers";
+import { uppercaseFirst } from "core/textHelpers";
 
-import { ButtonLink, CoverImage } from "../..";
+import { ButtonLink, CoverImage } from "components";
 
 interface PostsListItemProps {
   title: string;
@@ -14,6 +16,7 @@ interface PostsListItemProps {
   authorName: string;
   excerpt: string;
   slug: string;
+  tags?: Array<string>;
   coverImage?: string;
 }
 
@@ -25,6 +28,7 @@ const PostsListItem: PostsListItemType = ({
   authorName,
   excerpt,
   slug,
+  tags,
   coverImage,
 }) => {
   return (
@@ -33,8 +37,27 @@ const PostsListItem: PostsListItemType = ({
       borderBottom="1px solid #dcdcdc"
       marginBottom="1em"
     >
-      <Heading marginBottom=".5em">{uppercaseFirst(title)}</Heading>
+      <NextLink href={slug} passHref>
+        <Heading marginBottom=".5em" cursor="pointer">
+          {uppercaseFirst(title)}
+        </Heading>
+      </NextLink>
       <Text marginBottom="1em">{`${date} - Written by ${authorName}`}</Text>
+      {tags && (
+        <Flex marginBottom="1em">
+          {tags.map((tag) => (
+            <NextLink key={tag} href={`/tag/${tag}`} passHref>
+              <Text
+                marginRight="1em"
+                as="a"
+                fontSize="sm"
+                color="darkBlue"
+                fontWeight="bold"
+              >{`#${tag}`}</Text>
+            </NextLink>
+          ))}
+        </Flex>
+      )}
       {coverImage && <CoverImage coverImageSrc={coverImage} title={title} />}
       <Text marginBottom="1.25em">{excerpt}</Text>
       <Box marginBottom="1.5em">

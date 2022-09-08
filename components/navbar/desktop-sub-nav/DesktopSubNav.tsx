@@ -12,7 +12,7 @@ import {
 
 import { FaChevronRight } from "react-icons/fa";
 
-import { SubNavItem } from "../../../core/types";
+import { SubNavItem } from "core/types";
 
 const DesktopSubNav: FunctionComponent<SubNavItem> = ({
   label,

@@ -5,7 +5,6 @@ import NextLink from "next/link";
 import {
   Box,
   Flex,
-  Text,
   IconButton,
   Collapse,
   Image,
@@ -53,6 +52,7 @@ const Navbar: FunctionComponent = () => {
               alt="Logo dévoreur 2 code"
               align={useBreakpointValue({ base: "center", md: "left" })}
               width="100px"
+              cursor="pointer"
             />
           </NextLink>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
