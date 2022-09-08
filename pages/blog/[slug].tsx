@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import Head from "next/head";
 import ErrorPage from "next/error";
 
 import { Layout, Post } from "../../components";
@@ -12,24 +11,12 @@ import {
 } from "../../core/postsApi";
 import markdownToHtml from "../../core/markdownToHtml";
 
-import { FAVICON_URL } from "../../core/constants";
-
-export type PostType = {
-  title: string;
-  date: string;
-  slug: string;
-  fileName: string;
-  path: string;
-  author: { name: string; avatar: string };
-  excerpt: string;
-  content: string;
-  coverImage: string;
-};
+import { IPost } from "../../core/types";
 
 type Props = {
-  post: PostType;
-  previous: Pick<PostType, "slug" | "title"> | null;
-  next: Pick<PostType, "slug" | "title"> | null;
+  post: IPost;
+  previous: Pick<IPost, "slug" | "title"> | null;
+  next: Pick<IPost, "slug" | "title"> | null;
 };
 
 export default function PostPage({ post, previous, next }: Props) {
@@ -39,31 +26,22 @@ export default function PostPage({ post, previous, next }: Props) {
   }
 
   return (
-    <>
-      <Head>
-        <title>{`Dévoreur 2 Code - ${post.title}`}</title>
-        <meta name="description" content={post.excerpt} />
-        <link rel="icon" href={FAVICON_URL} />
-      </Head>
-      <Layout>
-        <Post>
-          <Post.Header
-            title={post.title}
-            authorName={post.author.name}
-            date={post.date}
-            coverImageSrc={post.coverImage}
-            avatarSrc={post.author.avatar}
-          />
-          <Post.Content content={post.content} />
-          <Post.Navigation
-            previous={
-              previous && { title: previous.title, href: previous.slug }
-            }
-            next={next && { title: next.title, href: next.slug }}
-          />
-        </Post>
-      </Layout>
-    </>
+    <Layout title={post.title} metaDescription={post.excerpt}>
+      <Post>
+        <Post.Header
+          title={post.title}
+          authorName={post.author.name}
+          date={post.date}
+          coverImageSrc={post.coverImage}
+          avatarSrc={post.author.avatar}
+        />
+        <Post.Content content={post.content} />
+        <Post.Navigation
+          previous={previous && { title: previous.title, href: previous.slug }}
+          next={next && { title: next.title, href: next.slug }}
+        />
+      </Post>
+    </Layout>
   );
 }
 

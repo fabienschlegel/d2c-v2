@@ -1,0 +1,44 @@
+import { FunctionComponent, ReactNode } from "react";
+
+import { Box, Flex } from "@chakra-ui/react";
+
+import PostsListItem, {
+  PostsListItemType,
+} from "./posts-list-item/PostsListItem";
+import PostsListNavigation, {
+  PostListNavigationType,
+} from "./posts-list-navigation/PostsListNavigation";
+
+import usePostsListNavigation from "../../hooks/use-posts-list-navigation/usePostsListNavigation";
+
+import { PostSummary } from "../../core/types";
+
+interface IPostsListComposition {
+  Item: PostsListItemType;
+  Navigation: PostListNavigationType;
+}
+
+interface PostsListProps {
+  children: ReactNode;
+}
+
+type PostsListType = FunctionComponent<PostsListProps> & IPostsListComposition;
+
+const PostsList: PostsListType = ({ children }) => {
+  return (
+    <Box
+      as="main"
+      width="100%"
+      maxWidth={{ md: "660px", lg: "800px" }}
+      padding={5}
+      margin="0 auto 20px"
+    >
+      <Flex flexDirection="column">{children}</Flex>
+    </Box>
+  );
+};
+
+PostsList.Item = PostsListItem;
+PostsList.Navigation = PostsListNavigation;
+
+export default PostsList;

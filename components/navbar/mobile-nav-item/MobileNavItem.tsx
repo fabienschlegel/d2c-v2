@@ -13,9 +13,9 @@ import {
 
 import { FaChevronDown } from "react-icons/fa";
 
-import { NavItem } from "../../../core/types";
+import { INavItem } from "../../../core/types";
 
-const MobileNavItem: FunctionComponent<NavItem> = ({
+const MobileNavItem: FunctionComponent<INavItem> = ({
   label,
   children,
   href,

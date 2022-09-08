@@ -4,6 +4,8 @@ import { Avatar, Flex, Heading, Image, Text } from "@chakra-ui/react";
 
 import { uppercaseFirst } from "../../../core/textHelpers";
 
+import { CoverImage } from "../..";
+
 import styles from "./PostHeader.module.scss";
 
 interface PostHeaderProps {
@@ -42,11 +44,7 @@ const PostHeader: PostHeaderType = ({
         <Text className={styles.date}>{date}</Text>
       </Flex>
       {coverImageSrc && (
-        <Image
-          src={coverImageSrc}
-          alt={`Cover image for ${title}`}
-          className={styles["cover-image"]}
-        />
+        <CoverImage coverImageSrc={coverImageSrc} title={title} />
       )}
     </Flex>
   );

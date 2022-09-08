@@ -1,16 +1,13 @@
 import { FunctionComponent } from "react";
 
-import Link from "next/link";
-
 import clsx from "clsx";
 
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-import { uppercaseFirst } from "../../../core/textHelpers";
-
 import styles from "./PostNavigation.module.scss";
+import ButtonLink from "../../button-link/ButtonLink";
 
 interface PostNavigationProps {
   previous: {
@@ -32,36 +29,20 @@ const PostNavigation: PostNavigationType = ({ previous, next }) => {
       className={styles.container}
     >
       {previous && (
-        <Link href={previous.href} passHref>
-          <Button
-            leftIcon={<FaChevronLeft />}
-            as="a"
-            colorScheme="gray"
-            variant="solid"
-            size={["xs", "md"]}
-            className={clsx(styles["nav-button"], next && styles.left)}
-          >
-            <Text fontSize={["xs", "md"]} className={styles["text-button"]}>
-              {uppercaseFirst(previous.title)}
-            </Text>
-          </Button>
-        </Link>
+        <ButtonLink
+          href={previous.href}
+          label={previous.title}
+          leftIcon={<FaChevronLeft />}
+          className={clsx(next && styles.left)}
+        />
       )}
       {next && (
-        <Link href={next.href} passHref>
-          <Button
-            rightIcon={<FaChevronRight />}
-            as="a"
-            colorScheme="gray"
-            variant="solid"
-            size={["xs", "md"]}
-            className={clsx(styles["nav-button"], previous && styles.right)}
-          >
-            <Text fontSize={["xs", "md"]} className={styles["text-button"]}>
-              {uppercaseFirst(next.title)}
-            </Text>
-          </Button>
-        </Link>
+        <ButtonLink
+          href={next.href}
+          label={next.title}
+          rightIcon={<FaChevronRight />}
+          className={clsx(previous && styles.right)}
+        />
       )}
     </Flex>
   );
