@@ -51,7 +51,7 @@ const PostsListItem: PostsListItemType = ({
                 marginRight="1em"
                 as="a"
                 fontSize="sm"
-                color="darkBlue"
+                color="brand.darkBlue"
                 fontWeight="bold"
               >{`#${tag}`}</Text>
             </NextLink>

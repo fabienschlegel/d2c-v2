@@ -1,15 +1,40 @@
 import type { NextPage } from "next";
 
-import { Layout } from "components";
+import { getAllPostsByDate } from "core/postsApi";
 
-import styles from "styles/Home.module.scss";
+import { Hero, HomeLastPosts, Layout } from "components";
 
-const Home: NextPage = () => {
+import { PostSummary } from "core/types";
+
+interface HomeProps {
+  lastPosts: Array<PostSummary>;
+}
+
+const Home: NextPage<HomeProps> = ({ lastPosts }) => {
   return (
     <Layout>
-      <h1 className={styles.title}>Under Construction</h1>
+      <Hero />
+      <HomeLastPosts lastPosts={lastPosts} />
     </Layout>
   );
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  const lastPosts = getAllPostsByDate([
+    "title",
+    "date",
+    "slug",
+    "author",
+    "excerpt",
+    "coverImage",
+    "tags",
+  ]).slice(0, 3);
+
+  return {
+    props: {
+      lastPosts,
+    },
+  };
+}

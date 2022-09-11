@@ -22,7 +22,6 @@ type PostProps = FunctionComponent<IPostProps> & IPostComposition;
 const Post: PostProps = ({ children }) => {
   return (
     <Box
-      as="main"
       width="100%"
       maxWidth={{ md: "660px", lg: "800px" }}
       padding={5}

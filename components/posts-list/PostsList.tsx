@@ -23,7 +23,6 @@ type PostsListType = FunctionComponent<PostsListProps> & IPostsListComposition;
 const PostsList: PostsListType = ({ children }) => {
   return (
     <Box
-      as="main"
       width="100%"
       maxWidth={{ md: "660px", lg: "800px" }}
       padding={5}
