@@ -1,5 +1,13 @@
 import { INavItem } from "./types";
 
+export const SITE_NAME = "Dévoreur 2 Code";
+
+export const SITE_DESCRIPTION = "Another blog from a developer";
+
+export const SITE_URL = "https://www.devoreur2code.com";
+
+export const SITE_IMAGE = "/assets/media/D2C-fond-transparent.png";
+
 export const FAVICON_URL = "/assets/media/favicon-32x32.png";
 
 export const TWITTER_URL = "https://twitter.com/fabienschlegel";

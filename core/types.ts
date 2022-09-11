@@ -24,6 +24,7 @@ export interface IPost {
   excerpt: string;
   content: string;
   coverImage?: string;
+  ogImage?: string;
   tags?: Array<string>;
 }
 

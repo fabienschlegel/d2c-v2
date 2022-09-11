@@ -26,7 +26,11 @@ export default function PostPage({ post, previous, next }: Props) {
   }
 
   return (
-    <Layout title={post.title} metaDescription={post.excerpt}>
+    <Layout
+      title={post.title}
+      metaDescription={post.excerpt}
+      siteImage={post.ogImage || post.coverImage}
+    >
       <Post>
         <Post.Header
           title={post.title}
@@ -60,6 +64,7 @@ export async function getStaticProps({ params }: Params) {
     "author",
     "content",
     "coverImage",
+    "ogImage",
     "tags",
   ]);
   const content = await markdownToHtml(post.content || "");

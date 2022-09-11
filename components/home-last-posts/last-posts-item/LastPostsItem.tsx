@@ -49,7 +49,7 @@ const LastPostItem: FunctionComponent<LastPostItemProps> = ({
       <Box borderRadius="lg" overflow="hidden">
         <Image
           transform="scale(1.0)"
-          src={coverImageSrc}
+          src={coverImageSrc || "/assets/media/D2C-fond-transparent.png"}
           alt="some text"
           objectFit="contain"
           transition="0.3s ease-in-out"

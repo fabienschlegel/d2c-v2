@@ -2,7 +2,6 @@
 title: "Lorem Ipsum le titre"
 date: "2022-02-22"
 path: "/lorem-ipsum"
-coverImage: "/assets/blog/cover-images/S02E01_banner.jpg"
 author: 
   name: "Fabien Schlegel"
   avatar: "/assets/blog/authors/fabien_schlegel.png"
