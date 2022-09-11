@@ -13,6 +13,10 @@ export const NAV_ITEMS: Array<INavItem> = [
     label: "Blog",
     href: "/blog",
   },
+  {
+    label: "About",
+    href: "/about",
+  },
 ];
 
 export const POSTS_PER_PAGE = 5;
