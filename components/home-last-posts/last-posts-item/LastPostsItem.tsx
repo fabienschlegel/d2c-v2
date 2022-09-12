@@ -88,7 +88,7 @@ const LastPostItem: FunctionComponent<LastPostItemProps> = ({
       </HStack>
       <Box marginTop="1em">
         <ButtonLink
-          href={slug}
+          href={`/blog/${slug}`}
           label="Read the post"
           rightIcon={<FaChevronRight />}
         />

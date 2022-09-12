@@ -65,7 +65,7 @@ export function getAllTags(): Array<string> {
 }
 
 export function getNextPost(slug: string) {
-  const allPosts = getAllPostsByDate(["title", "slug"]);
+  const allPosts = getAllPostsByDate(["title", "slug", "date"]);
 
   const index = allPosts.map((post) => post.slug).indexOf(slug);
 
@@ -75,7 +75,7 @@ export function getNextPost(slug: string) {
 }
 
 export function getPreviousPost(slug: string) {
-  const allPosts = getAllPostsByDate(["title", "slug"]);
+  const allPosts = getAllPostsByDate(["title", "slug", "date"]);
 
   const index = allPosts.map((post) => post.slug).indexOf(slug);
 
