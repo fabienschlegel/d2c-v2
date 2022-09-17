@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.2] - 2022-09-16
+
+### Added
+
+- Add a sitemap generator
+
+### Fixed
+
+- Fix layout bug on last posts section
+
+### Updated
+
+- Update favicon logo
+
 ## [0.1.1] - 2022-09-14
 
 ### Added

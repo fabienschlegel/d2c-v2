@@ -8,7 +8,7 @@ export const SITE_URL = "https://www.devoreur2code.com";
 
 export const SITE_IMAGE = "/assets/media/D2C-fond-blanc.png";
 
-export const FAVICON_URL = "/assets/media/favicon-32x32.png";
+export const FAVICON_URL = "/assets/media/Logo-D2C-fond-blc.png";
 
 export const TWITTER_URL = "https://twitter.com/fabienschlegel";
 

@@ -789,6 +789,11 @@
   resolved "https://registry.yarnpkg.com/@chakra-ui/visually-hidden/-/visually-hidden-2.0.9.tgz#b43a3dd0bc1108954ad0eeb50d0261887ab5e31c"
   integrity sha512-PkNxrRGp9H3bdqEaoo8XGt/AL9UuGRTom0/9XJa+G/Dj8Cy1sDuamOWk3pN/ZQs46RokfK9Uh5LqPY5dwSDweg==
 
+"@corex/deepmerge@^4.0.29":
+  version "4.0.29"
+  resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-4.0.29.tgz#af9debf07d7f6b0d2a9d04a266abf2c1418ed2f6"
+  integrity sha512-q/yVUnqckA8Do+EvAfpy7RLdumnBy9ZsducMUtZTvpdbJC7azEf1hGtnYYxm0QfphYxjwggv6XtH64prvS1W+A==
+
 "@csstools/selector-specificity@^2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.0.2.tgz#1bfafe4b7ed0f3e4105837e056e0a89b108ebe36"
@@ -3801,6 +3806,14 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
+
+next-sitemap@^3.1.22:
+  version "3.1.22"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-3.1.22.tgz#732b2a75b3c07f0cde4862eca86052d6ff6ee2f7"
+  integrity sha512-aykbwYTNJ2GKSuxYpXgKK7m/a1Qao03ekUlsNLHvO8XuTTVZDAOe2hGcJtr2vQfXnLeZuSpNUs2IP6hCr4xVZA==
+  dependencies:
+    "@corex/deepmerge" "^4.0.29"
+    minimist "^1.2.6"
 
 next@12.2.5:
   version "12.2.5"

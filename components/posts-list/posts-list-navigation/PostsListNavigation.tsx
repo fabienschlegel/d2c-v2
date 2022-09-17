@@ -1,12 +1,8 @@
 import { FunctionComponent } from "react";
 
-import clsx from "clsx";
-
 import { Button, Flex, Text } from "@chakra-ui/react";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
-import styles from "./PostsListNavigation.module.scss";
 
 interface PostsListNavigationProps {
   previous: boolean;
@@ -25,20 +21,22 @@ const PostsListNavigation: PostListNavigationType = ({
   nextPage,
 }) => {
   return (
-    <Flex
-      justifyContent={previous && next ? "space-between" : "center"}
-      className={styles.container}
-    >
+    <Flex justifyContent={previous && next ? "space-between" : "center"}>
       {previous && (
         <Button
           leftIcon={<FaChevronLeft />}
           colorScheme="gray"
           variant="solid"
           size={["xs", "md"]}
-          className={clsx(styles["nav-button"], next && styles.left)}
+          maxWidth="270px"
           onClick={previousPage}
         >
-          <Text fontSize={["xs", "md"]} className={styles["text-button"]}>
+          <Text
+            fontSize={["xs", "md"]}
+            overflow="hidden"
+            text-Overflow="ellipsis"
+            whiteSpace="nowrap"
+          >
             Newer Posts
           </Text>
         </Button>
@@ -49,10 +47,15 @@ const PostsListNavigation: PostListNavigationType = ({
           colorScheme="gray"
           variant="solid"
           size={["xs", "md"]}
-          className={clsx(styles["nav-button"], previous && styles.right)}
+          maxWidth="270px"
           onClick={nextPage}
         >
-          <Text fontSize={["xs", "md"]} className={styles["text-button"]}>
+          <Text
+            fontSize={["xs", "md"]}
+            overflow="hidden"
+            text-Overflow="ellipsis"
+            whiteSpace="nowrap"
+          >
             Older posts
           </Text>
         </Button>
