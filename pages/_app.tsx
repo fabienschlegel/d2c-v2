@@ -13,8 +13,6 @@ import mainTheme from "core/mainTheme";
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": false}] */
 import "prismjs/themes/prism-tomorrow.css";
 
-import "styles/main.scss";
-
 const isProduction = process.env.NODE_ENV === "production";
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {

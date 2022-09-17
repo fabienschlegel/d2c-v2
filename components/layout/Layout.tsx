@@ -28,6 +28,10 @@ const Layout: FunctionComponent<LayoutProps> = ({
   siteImage,
   metaDescription,
 }) => {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "";
+  const twitterImageContentUrl = siteImage ? siteImage : SITE_IMAGE;
+  const twitterImageContent = `${siteUrl}${twitterImageContentUrl}`;
+
   return (
     <div className={styles.container}>
       <Head>
@@ -48,7 +52,7 @@ const Layout: FunctionComponent<LayoutProps> = ({
         <meta itemProp="description" content={SITE_DESCRIPTION} />
         <meta itemProp="image" content={siteImage ? siteImage : SITE_IMAGE} />
 
-        {/* Facebook Properties */}
+        {/* Open Graph Properties */}
         <meta property="og:url" content="https://www.devoreur2code.com" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={SITE_NAME} />
@@ -59,13 +63,11 @@ const Layout: FunctionComponent<LayoutProps> = ({
         />
 
         {/* Twitter Properties */}
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@devoreur2code" />
         <meta name="twitter:title" content={SITE_NAME} />
         <meta name="twitter:description" content={SITE_DESCRIPTION} />
-        <meta
-          name="twitter:image"
-          content={siteImage ? siteImage : SITE_IMAGE}
-        />
+        <meta name="twitter:image" content={twitterImageContent} />
 
         <link rel="icon" href={FAVICON_URL} />
       </Head>
