@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.3] - 2022-09-19
+
+### Added
+
+- Add post _From Gatsby to NextJS - journey of a blog_
+
+### Fixed
+
+- Links color in posts
+- Alt props for avatar
+
 ## [0.1.2] - 2022-09-16
 
 ### Added

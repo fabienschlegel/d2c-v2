@@ -5,7 +5,6 @@ import NextLink from "next/link";
 import { FaChevronRight } from "react-icons/fa";
 
 import {
-  Avatar,
   Box,
   Flex,
   GridItem,
@@ -53,7 +52,7 @@ const LastPostItem: FunctionComponent<LastPostItemProps> = ({
           <Image
             transform="scale(1.0)"
             src={coverImageSrc || "/assets/media/D2C-fond-transparent.png"}
-            alt="some text"
+            alt="Cover image of the post"
             objectFit="contain"
             transition="0.3s ease-in-out"
             _hover={{
@@ -84,7 +83,14 @@ const LastPostItem: FunctionComponent<LastPostItemProps> = ({
         </NextLink>
         <Text marginTop="0.5rem">{excerpt}</Text>
         <HStack marginTop="1rem" spacing="2" display="flex" alignItems="center">
-          <Avatar size="md" src={authorAvatar} />
+          <Image
+            borderRadius="full"
+            boxSize="50px"
+            border="1px solid"
+            borderColor="brand.darkBlue"
+            src={authorAvatar}
+            alt={authorName}
+          />
           <Text fontWeight="medium">{authorName}</Text>
           <Text>—</Text>
           <Text>{date}</Text>

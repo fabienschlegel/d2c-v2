@@ -2,13 +2,11 @@ import { FunctionComponent } from "react";
 
 import NextLink from "next/link";
 
-import { Avatar, Flex, Heading, Text } from "@chakra-ui/react";
+import { Image, Flex, Heading, Text } from "@chakra-ui/react";
 
 import { uppercaseFirst } from "core/textHelpers";
 
 import { CoverImage } from "components";
-
-import styles from "./PostHeader.module.scss";
 
 interface PostHeaderProps {
   title: string;
@@ -41,18 +39,26 @@ const PostHeader: PostHeaderType = ({
       >
         <Flex alignItems="center">
           {avatarSrc && (
-            <Avatar size="md" src={avatarSrc} className={styles.avatar} />
+            <Image
+              borderRadius="full"
+              boxSize="50px"
+              border="1px solid"
+              borderColor="brand.darkBlue"
+              marginRight="1rem"
+              src={avatarSrc}
+              alt={authorName}
+            />
           )}
           <Text size="md">{authorName}</Text>
         </Flex>
-        <Text className={styles.date}>{date}</Text>
+        <Text marginRight="2rem">{date}</Text>
       </Flex>
       {tags && (
-        <Flex marginBottom="1em">
+        <Flex marginBottom="1rem">
           {tags.map((tag) => (
             <NextLink key={tag} href={`/tag/${tag}`} passHref>
               <Text
-                marginRight="1em"
+                marginRight="1rem"
                 as="a"
                 fontSize="sm"
                 color="brand.darkBlue"
