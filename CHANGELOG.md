@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.4] - 2022-09-21
+
+### Added
+
+- Add language in html tag
+
+### Fixed
+
+- Fix the title of tag pages
+- Fix CSS props in component
+
 ## [0.1.3] - 2022-09-19
 
 ### Added

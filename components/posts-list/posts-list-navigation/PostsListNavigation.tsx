@@ -34,7 +34,7 @@ const PostsListNavigation: PostListNavigationType = ({
           <Text
             fontSize={["xs", "md"]}
             overflow="hidden"
-            text-Overflow="ellipsis"
+            textOverflow="ellipsis"
             whiteSpace="nowrap"
           >
             Newer Posts
@@ -53,7 +53,7 @@ const PostsListNavigation: PostListNavigationType = ({
           <Text
             fontSize={["xs", "md"]}
             overflow="hidden"
-            text-Overflow="ellipsis"
+            textOverflow="ellipsis"
             whiteSpace="nowrap"
           >
             Older posts

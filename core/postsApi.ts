@@ -59,8 +59,6 @@ export function getAllTags(): Array<string> {
   const allTags = flattenTags.filter(
     (item, pos) => flattenTags.indexOf(item) == pos
   );
-  console.log({ allTags });
-
   return allTags;
 }
 
