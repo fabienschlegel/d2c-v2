@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.5] - 2022-09-27
+
+### Added
+
+- Add post _Create a blog with NextJS_
+
+### Fixed
+
+- Fix excerpt in page description
+
+### Updated
+
+- Update Social Medias title and description
+
 ## [0.1.4] - 2022-09-21
 
 ### Added
