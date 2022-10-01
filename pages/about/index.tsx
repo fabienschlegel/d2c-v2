@@ -2,11 +2,18 @@ import type { NextPage } from "next";
 
 import { Box, Heading, Text } from "@chakra-ui/react";
 
-import { Layout } from "components";
+import { Layout } from "features/Layout";
+
+import { SITE_DESCRIPTION } from "core/constants";
+
+const pageName = "About Me";
 
 const About: NextPage = () => {
   return (
-    <Layout>
+    <Layout
+      title={pageName}
+      metaDescription={`${pageName} - ${SITE_DESCRIPTION}`}
+    >
       <Box
         width="100%"
         maxWidth={{ md: "660px", lg: "800px" }}

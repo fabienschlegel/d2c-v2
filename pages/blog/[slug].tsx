@@ -1,22 +1,26 @@
 import { useRouter } from "next/router";
+
 import ErrorPage from "next/error";
 
-import { Layout, Post } from "components";
+import { Layout } from "features/Layout";
+
+import { POST_ALL_FIELDS, Post } from "features/Posts";
 
 import {
   getAllPostsByDate,
   getNextPost,
   getPostBySlug,
   getPreviousPost,
-} from "core/postsApi";
-import markdownToHtml from "core/markdownToHtml";
+} from "features/Posts/api";
 
-import { IPost } from "core/types";
+import markdownToHtml from "core/utilities/markdownToHtml";
+
+import type { IPost, PostAnchor } from "features/Posts/types";
 
 type Props = {
   post: IPost;
-  previous: Pick<IPost, "slug" | "title"> | null;
-  next: Pick<IPost, "slug" | "title"> | null;
+  previous: PostAnchor | null;
+  next: PostAnchor | null;
 };
 
 export default function PostPage({ post, previous, next }: Props) {
@@ -29,7 +33,7 @@ export default function PostPage({ post, previous, next }: Props) {
     <Layout
       title={post.title}
       metaDescription={post.excerpt}
-      siteImage={post.ogImage || post.coverImage}
+      siteImage={post.coverImage}
     >
       <Post>
         <Post.Header
@@ -57,17 +61,8 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "content",
-    "coverImage",
-    "ogImage",
-    "tags",
-    "excerpt",
-  ]);
+  const post = getPostBySlug(params.slug, POST_ALL_FIELDS);
+
   const content = await markdownToHtml(post.content || "");
 
   const previous = getPreviousPost(params.slug);

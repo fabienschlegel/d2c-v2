@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.2.0] - 2022-10-01
+
+### Added
+
+- Add redirections for existing tags with uppercase
+- Add methods to fo force tags to lowercase
+
+### Fixed
+
+- Fix missing images
+- Fix duplicate pages title
+
+### Updated
+
+- Review Google Analytics feature
+- Review Posts feature
+- Review HomePage feature
+- Review Layout Feature
+- Standardization of tags with lowercase
+
 ## [0.1.5] - 2022-09-27
 
 ### Added

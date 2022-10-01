@@ -1,12 +1,16 @@
 import type { NextPage } from "next";
 
-import { getAllTags, getPostsByTag } from "core/postsApi";
+import {
+  PostsList,
+  POST_HEADER_FIELDS,
+  usePostsListNavigation,
+} from "features/Posts";
 
-import { usePostsListNavigation } from "hooks";
+import { getAllTags, getPostsByTag } from "features/Posts/api";
 
-import { Layout, PostsList } from "components";
+import { Layout } from "features/Layout";
 
-import { PostSummary } from "core/types";
+import { PostSummary } from "features/Posts/types";
 
 interface TagPageProps {
   posts: Array<PostSummary>;
@@ -51,15 +55,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const posts = getPostsByTag(params.tag, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "excerpt",
-    "coverImage",
-    "tags",
-  ]);
+  const posts = getPostsByTag(params.tag, POST_HEADER_FIELDS);
 
   return {
     props: {

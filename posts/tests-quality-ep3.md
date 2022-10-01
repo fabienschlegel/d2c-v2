@@ -34,13 +34,13 @@ Code Climate indique une maintenabiblité global pour le projet dans l'onglet co
 
 #### Le turnover versus maintenabilité
 
-![turnover versus maintenabilité](../images/tests_ep3_churn_vs_maintenability.png)
+![turnover versus maintenabilité](/assets/blog/content-images/tests_ep3_churn_vs_maintenability.png)
 
 L'idée est simple, plus un fichier est modifié souvent, plus il est difficile de le maintenir, ce graph permet de suivre cette info.
 
 #### La dette technique
 
-![graphique dette technique](../images/tests_ep3_technical_debt.png)
+![graphique dette technique](/assets/blog/content-images/tests_ep3_technical_debt.png)
 
 Ici on va trouver un graphique qui va indiquer le pourcentage de dette technique ainsi que le temps nécessaire pour refactoriser le code.
 

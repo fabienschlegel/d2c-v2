@@ -1,12 +1,16 @@
 import type { NextPage } from "next";
 
-import { getAllPostsByDate } from "core/postsApi";
+import {
+  POST_HEADER_FIELDS,
+  PostsList,
+  usePostsListNavigation,
+} from "features/Posts";
 
-import { usePostsListNavigation } from "hooks";
+import { getAllPostsByDate } from "features/Posts/api";
 
-import { Layout, PostsList } from "components";
+import { Layout } from "features/Layout";
 
-import { PostSummary } from "core/types";
+import type { PostSummary } from "features/Posts/types";
 
 interface BlogPageProps {
   posts: Array<PostSummary>;
@@ -44,15 +48,7 @@ const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
 export default BlogPage;
 
 export async function getStaticProps() {
-  const posts = getAllPostsByDate([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "excerpt",
-    "coverImage",
-    "tags",
-  ]);
+  const posts = getAllPostsByDate(POST_HEADER_FIELDS);
 
   return {
     props: {

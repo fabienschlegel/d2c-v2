@@ -9,6 +9,7 @@ const nextConfig = {
   },
   redirects: async () => {
     return [
+      // * Blog version 1 paths redirections
       {
         source: "/five-tips-about-react-hooks",
         destination: "/blog/five-tips-about-react-hooks",
@@ -117,6 +118,22 @@ const nextConfig = {
       {
         source: "/why-i-create-my-first-npm-package",
         destination: "/blog/why-i-create-my-first-npm-package",
+        permanent: true,
+      },
+      // * Bad tags redirections
+      {
+        source: "/tag/Typescript",
+        destination: "/tag/typescript",
+        permanent: true,
+      },
+      {
+        source: "/tag/React",
+        destination: "/tag/react",
+        permanent: true,
+      },
+      {
+        source: "/tag/Python",
+        destination: "/tag/python",
         permanent: true,
       },
     ];

@@ -4,7 +4,9 @@ import type { AppProps } from "next/app";
 
 import { useRouter } from "next/router";
 
-import * as gtag from "core/gtag";
+import { isProduction } from "core";
+
+import { GoogleAnalyticsScripts, gtagPageview } from "features/Metrics";
 
 import { ChakraProvider } from "@chakra-ui/react";
 
@@ -13,25 +15,26 @@ import mainTheme from "core/mainTheme";
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": false}] */
 import "prismjs/themes/prism-tomorrow.css";
 
-const isProduction = process.env.NODE_ENV === "production";
-
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   const router = useRouter();
 
   useEffect(() => {
     const handleRouteChange = (url: URL) => {
-      /* invoke analytics function only for production */
-      if (isProduction) gtag.pageview(url);
+      if (isProduction) gtagPageview(url);
     };
     router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+
   return (
-    <ChakraProvider theme={mainTheme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <>
+      {isProduction && <GoogleAnalyticsScripts />}
+      <ChakraProvider theme={mainTheme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </>
   );
 };
 

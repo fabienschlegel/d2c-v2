@@ -151,7 +151,7 @@ _before_\__script_, c'est l'étape avant. Ici on met à jour notre container, on
 
 _script_ c'est le coeur de notre étape, on lance coverage, qui va exécuter nos tests et générer un rapport. Une fonctionnalité de GitlabCI va parser le résultat avec une expression régulière pour nous donner le pourcentage de couverture dans le merge request.
 
-![coverage](../images/tests_ep4_coverage.png)
+![coverage](/assets/blog/content-images/tests_ep4_coverage.png)
 
 Si un test foire, le job passe en erreur et fait échouer le pipeline entier.
 
@@ -161,7 +161,7 @@ _allowfailure_ à true permet, dans le cas où le job échoue, de ne pas planter
 
 Le résultat de code quality est envoyé vers un fichier json et on va retrouver le résultat dans notre merge request.
 
-![capture merge request](../images/tests_ep4_merge_request.png)
+![capture merge request](/assets/blog/content-images/tests_ep4_merge_request.png)
 
 Dernière étape de notre automatisation, le déploiement.
 
