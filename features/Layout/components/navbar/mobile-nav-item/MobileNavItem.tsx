@@ -13,7 +13,7 @@ import {
 
 import { FaChevronDown } from "react-icons/fa";
 
-import { INavItem } from "core/types";
+import { INavItem } from "../../../types";
 
 const MobileNavItem: FunctionComponent<INavItem> = ({
   label,
