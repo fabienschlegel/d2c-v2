@@ -4,7 +4,7 @@ date: "2021-05-14"
 author: 
   name: "Fabien Schlegel"
   avatar: "/assets/blog/authors/fabien_schlegel.png"
-excerpt: "Today, when you use React and functional components, you need hooks. Work with hooks is easier than class components, I've encountered some issues during development and today, I want to share my solutions with you."
+excerpt: "Today, when you use React and functional components, you need hooks. I've encountered some issues during development and today, I want to share my tips about React hooks with you."
 tags: ["javascript","typescript","React", "hooks"]
 ---
 

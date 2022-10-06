@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 
 import ErrorPage from "next/error";
 
-import { Layout } from "features/Layout";
+import { PrimaryLayout } from "features/Layout";
 
 import { POST_ALL_FIELDS, Post } from "features/Posts";
 
@@ -14,6 +14,8 @@ import {
 } from "features/Posts/api";
 
 import markdownToHtml from "core/utilities/markdownToHtml";
+
+import { SITE_IMAGE } from "core/constants";
 
 import type { IPost, PostAnchor } from "features/Posts/types";
 
@@ -30,10 +32,10 @@ export default function PostPage({ post, previous, next }: Props) {
   }
 
   return (
-    <Layout
-      title={post.title}
-      metaDescription={post.excerpt}
-      siteImage={post.coverImage}
+    <PrimaryLayout
+      pageTitle={post.title}
+      pageMetaDescription={post.excerpt}
+      pageImagePath={post.coverImage || SITE_IMAGE}
     >
       <Post>
         <Post.Header
@@ -50,7 +52,7 @@ export default function PostPage({ post, previous, next }: Props) {
           next={next && { title: next.title, href: next.slug }}
         />
       </Post>
-    </Layout>
+    </PrimaryLayout>
   );
 }
 

@@ -4,7 +4,7 @@ date: "2019-09-15"
 author: 
   name: "Fabien Schlegel"
   avatar: "/assets/blog/authors/fabien_schlegel.png"
-excerpt: ""
+excerpt: "Quand on est dans l'écriture de code et qu'on arrive à une solution fonctionnelle, on passe à la suite. En procédant de cette manière, on va produire de la dette technique."
 tags: ["tests", "qualité de code"]
 ---
 

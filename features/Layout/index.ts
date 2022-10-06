@@ -1,3 +1,3 @@
-import { Layout } from "./components";
+import { PrimaryLayout } from "./components";
 
-export { Layout };
+export { PrimaryLayout };

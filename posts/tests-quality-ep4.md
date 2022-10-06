@@ -4,7 +4,7 @@ date: "2019-09-22"
 author: 
   name: "Fabien Schlegel"
   avatar: "/assets/blog/authors/fabien_schlegel.png"
-excerpt: ""
+excerpt: "Automatiser tout ça c'est dans nos cordes"
 tags: ["tests", "qualité de code"]
 ---
 

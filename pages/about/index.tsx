@@ -2,17 +2,18 @@ import type { NextPage } from "next";
 
 import { Box, Heading, Text } from "@chakra-ui/react";
 
-import { Layout } from "features/Layout";
+import { PrimaryLayout } from "features/Layout";
 
-import { SITE_DESCRIPTION } from "core/constants";
+import { SITE_DESCRIPTION, SITE_IMAGE } from "core/constants";
 
 const pageName = "About Me";
 
 const About: NextPage = () => {
   return (
-    <Layout
-      title={pageName}
-      metaDescription={`${pageName} - ${SITE_DESCRIPTION}`}
+    <PrimaryLayout
+      pageTitle={pageName}
+      pageMetaDescription={`${pageName} - ${SITE_DESCRIPTION}`}
+      pageImagePath={SITE_IMAGE}
     >
       <Box
         width="100%"
@@ -33,7 +34,7 @@ const About: NextPage = () => {
           If you like my content, you can share it or follow me on Twitter.
         </Text>
       </Box>
-    </Layout>
+    </PrimaryLayout>
   );
 };
 

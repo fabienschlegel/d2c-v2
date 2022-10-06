@@ -4,11 +4,13 @@ import { POST_HEADER_FIELDS } from "features/Posts";
 
 import { getAllPostsByDate } from "features/Posts/api";
 
-import { Layout } from "features/Layout";
+import { PrimaryLayout } from "features/Layout";
 
 import { Hero, HomeLastPosts } from "features/HomePage";
 
 import { PostSummary } from "features/Posts/types";
+
+import { SITE_DESCRIPTION, SITE_IMAGE, SITE_NAME } from "core/constants";
 
 interface HomeProps {
   lastPosts: Array<PostSummary>;
@@ -16,10 +18,14 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ lastPosts }) => {
   return (
-    <Layout>
+    <PrimaryLayout
+      pageTitle={SITE_NAME}
+      pageMetaDescription={SITE_DESCRIPTION}
+      pageImagePath={SITE_IMAGE}
+    >
       <Hero />
       <HomeLastPosts lastPosts={lastPosts} />
-    </Layout>
+    </PrimaryLayout>
   );
 };
 

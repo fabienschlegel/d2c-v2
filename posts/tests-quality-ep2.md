@@ -4,7 +4,7 @@ date: "2019-09-08"
 author: 
   name: "Fabien Schlegel"
   avatar: "/assets/blog/authors/fabien_schlegel.png"
-excerpt: ""
+excerpt: "Utiliser les linter comme ESLint pour surveiller notre code"
 tags: ["tests", "qualité de code"]
 ---
 

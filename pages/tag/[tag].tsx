@@ -8,7 +8,9 @@ import {
 
 import { getAllTags, getPostsByTag } from "features/Posts/api";
 
-import { Layout } from "features/Layout";
+import { PrimaryLayout } from "features/Layout";
+
+import { SITE_NAME, SITE_IMAGE } from "core/constants";
 
 import { PostSummary } from "features/Posts/types";
 
@@ -21,7 +23,11 @@ const TagPage: NextPage<TagPageProps> = ({ posts, tag }) => {
   const { paginatedPosts, previous, next, previousPage, nextPage } =
     usePostsListNavigation(posts);
   return (
-    <Layout title={`${tag} blog posts`}>
+    <PrimaryLayout
+      pageTitle={`${tag} blog posts`}
+      pageMetaDescription={`Posts with the tag ${tag} from the blog ${SITE_NAME}`}
+      pageImagePath={SITE_IMAGE}
+    >
       <PostsList>
         {paginatedPosts.map((post) => (
           <PostsList.Item
@@ -42,7 +48,7 @@ const TagPage: NextPage<TagPageProps> = ({ posts, tag }) => {
           nextPage={nextPage}
         />
       </PostsList>
-    </Layout>
+    </PrimaryLayout>
   );
 };
 

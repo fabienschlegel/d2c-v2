@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.1] - 2022-10-06
+
+### Fixed
+
+- Remove duplicate meta description
+
+### Updated
+
+- Review Layout
+
 ## [0.2.0] - 2022-10-01
 
 ### Added
