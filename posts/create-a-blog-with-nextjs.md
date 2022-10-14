@@ -7,6 +7,8 @@ author:
   avatar: "/assets/blog/authors/fabien_schlegel.png"
 excerpt: "How to create a blog with NextJS and Typescript. A guide from my own experience."
 tags: ["react", "typescript", "blog", "nextjs"]
+related:
+  ["from-gatsby-to-nextjs-journey-of-a-blog", "publish-my-own-blog-start-of-content-creator"]
 ---
 
 This year I decided to migrate my blog from Gatsby to NextJS. To be able to add features more easily.

@@ -18,7 +18,11 @@ const HomeLastPosts: FunctionComponent<HomeLastPostsProps> = ({
       width="100%"
       minHeight="80vh"
       padding={{ base: "3rem 0.5rem", md: "3rem 0.5rem", lg: "3rem" }}
-      backgroundColor="gray.50"
+      backgroundColor={{ base: "gray.50", lg: undefined }}
+      bgGradient={{
+        base: undefined,
+        lg: "linear(to-b, brand.darkBlue 25%, white 25%)",
+      }}
     >
       <Grid
         templateColumns={{

@@ -6,6 +6,7 @@ author:
   avatar: "/assets/blog/authors/fabien_schlegel.png"
 excerpt: "Testing avoids regressions and makes your app safer and easier to debug."
 tags: ["React", "Typescript"]
+related: ["how-to-test-react-hooks"]
 ---
 For your app, you need tests.
 

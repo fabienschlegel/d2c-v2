@@ -1,11 +1,12 @@
 ---
 title: "How to test React Hooks"
 date: "2021-05-20"
-author: 
+author:
   name: "Fabien Schlegel"
   avatar: "/assets/blog/authors/fabien_schlegel.png"
 excerpt: "When you use hooks, you can write them in their own file. And you could test them."
 tags: ["javascript", "typescript", "React", "hooks"]
+related: ["five-tips-about-react-hooks", "testing-your-react-app-with-mocks"]
 ---
 
 When you use hooks, you can write them in their own file. And you could test them.
@@ -199,7 +200,7 @@ describe("Test useRequestWithComment hook", () => {
           request: RequestWithCommentType.Dispute,
           updatedStatus: Status.Rejected,
         },
-      },
+      }
     );
 
   it("useRequestWithComment request is success", async () => {
@@ -254,7 +255,7 @@ describe("Test useRequestWithComment hook", () => {
 });
 ```
 
-The *jest.fn()* method is used to test execution of a method.
+The _jest.fn()_ method is used to test execution of a method.
 
 In before and after, we get the Axios instance, in this case, it's from requestService. We give it to Moxios. Reset all mocks is just to avoid side effects in tests.
 

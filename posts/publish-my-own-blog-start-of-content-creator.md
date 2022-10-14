@@ -6,6 +6,8 @@ author:
   avatar: "/assets/blog/authors/fabien_schlegel.png"
 excerpt: "As a developer, I learn a lot of things. Some of it comes from my colleagues, books or articles I read. The idea of sharing what I know drove me to begin a blog about my journey."
 tags: ["gatsby", "story", "blog"]
+related:
+  ["create-a-blog-with-nextjs", "from-gatsby-to-nextjs-journey-of-a-blog"]
 ---
 
 As a developer, I learn a lot of things. Some of it comes from my colleagues, books or articles I read.

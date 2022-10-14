@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.3] - 2022-10-14
+
+## Added
+
+- Add related articles bloc to the page of posts
+
+## [0.2.2] - 2022-11-10
+
+### Fixed
+
+- Fix images width in posts
+
 ## [0.2.1] - 2022-10-06
 
 ### Fixed

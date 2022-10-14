@@ -28,10 +28,11 @@ const LastPostItem: FunctionComponent<LastPostItemProps> = ({
   return (
     <GridItem
       padding="1rem"
-      boxShadow="0px 2px 2px rgba(40, 53, 147, 0.02), 0px 5px 5px rgba(40, 53, 147, 0.03), 0px 24px 38px rgba(40, 53, 147, 0.08);"
+      boxShadow="rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;"
       borderRadius="6px;"
       width="100%"
       marginBottom={{ base: "2rem", md: 0 }}
+      backgroundColor="white"
     >
       <LargeSummaryCard
         title={title}

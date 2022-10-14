@@ -6,6 +6,7 @@ author:
   avatar: "/assets/blog/authors/fabien_schlegel.png"
 excerpt: "Conditional rendering is a basic feature of the front end apps. It's used to display elements or not depending on the state of the app."
 tags: ["React", "Typescript"]
+related: ["begin-react-with-typescript"]
 ---
 
 This blog post relies on React and Typescript, a superset of JavaScript. If you’re a beginner, you can check [this post](/begin-react-with-typescript) to get the prerequisites.

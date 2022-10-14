@@ -1,11 +1,12 @@
 ---
 title: "Setup JWT for a React Django app in minutes"
 date: "2021-06-25"
-author: 
+author:
   name: "Fabien Schlegel"
   avatar: "/assets/blog/authors/fabien_schlegel.png"
 excerpt: "How to setup JWT in a project with a React frontend and a Django backend in minutes."
 tags: ["React", "django", "jwt"]
+related: ["introduction-to-jwt", "five-reasons-to-use-django"]
 ---
 
 In my previous post, I explained what the JWT are.
@@ -108,7 +109,7 @@ requestService.interceptors.request.use(
   },
   (error) => {
     Promise.reject(error);
-  },
+  }
 );
 
 requestService.interceptors.response.use(
@@ -141,7 +142,7 @@ requestService.interceptors.response.use(
       });
     }
     return Promise.reject(error);
-  },
+  }
 );
 
 export default requestService;
@@ -164,7 +165,7 @@ We manage tokens with local storage and the service can set, get, check validity
 Take care of one thing : with a refresh token, a malicious person can pretend to be your user. Store a long term token in the local storage is a bad idea.
 
 ```javascript
-import jwt from 'jsonwebtoken';
+import jwt from "jsonwebtoken";
 
 const TokenService = (function tokenService() {
   let service;
@@ -178,16 +179,16 @@ const TokenService = (function tokenService() {
 
   const setToken = (tokenObj) => {
     if (tokenObj.access) {
-      localStorage.setItem('accessToken', tokenObj.access);
+      localStorage.setItem("accessToken", tokenObj.access);
     }
     if (tokenObj.refresh) {
-      localStorage.setItem('refreshToken', tokenObj.refresh);
+      localStorage.setItem("refreshToken", tokenObj.refresh);
     }
   };
 
-  const getAccessToken = () => localStorage.getItem('accessToken');
+  const getAccessToken = () => localStorage.getItem("accessToken");
 
-  const getRefreshToken = () => localStorage.getItem('refreshToken');
+  const getRefreshToken = () => localStorage.getItem("refreshToken");
 
   const getTokenValidity = (tokenObj) => {
     const decodedToken = jwt.decode(tokenObj, { complete: true });
@@ -217,8 +218,8 @@ const TokenService = (function tokenService() {
   };
 
   const clearToken = () => {
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
   };
 
   return {
@@ -230,10 +231,9 @@ const TokenService = (function tokenService() {
     getRefreshTokenValidity,
     clearToken,
   };
-}());
+})();
 
 export default TokenService;
-
 ```
 
 ## Conclusion

@@ -12,6 +12,7 @@ export interface IPost {
   content: string;
   coverImage?: string;
   tags?: Array<string>;
+  related?: Array<PostSummary>;
 }
 
 export type PostAnchor = Pick<IPost, "title" | "slug">;

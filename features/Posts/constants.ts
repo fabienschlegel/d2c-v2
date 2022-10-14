@@ -8,6 +8,7 @@ export const POST_HEADER_FIELDS = [
   "excerpt",
   "coverImage",
   "tags",
+  "related",
 ];
 
 export const POST_ALL_FIELDS = [...POST_HEADER_FIELDS, "content"];

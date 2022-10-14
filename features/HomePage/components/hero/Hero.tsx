@@ -16,7 +16,7 @@ const Hero: FunctionComponent = () => {
       align="center"
       justify={"space-evenly"}
       backgroundColor="brand.darkBlue"
-      minHeight="80vh"
+      minHeight={{ base: "80vh", lg: "70vh" }}
       direction={{ base: "column-reverse", lg: "row" }}
     >
       <Box>

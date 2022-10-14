@@ -7,6 +7,7 @@ author:
   avatar: "/assets/blog/authors/fabien_schlegel.png"
 excerpt: "These technologies are good choices to build strong and reliable web applications. It's never been easier to develop a great user experience."
 tags: ["React", "Typescript"]
+related: ["five-tips-about-react-hooks","working-with-rest-apis-in-react"]
 ---
 
 These technologies are good choices to build strong and reliable web applications.

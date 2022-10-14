@@ -16,9 +16,9 @@ interface LargeSummaryCardProps {
   title: string;
   excerpt: string;
   slug: string;
-  authorName: string;
-  authorAvatar: string;
-  date: string;
+  authorName?: string;
+  authorAvatar?: string;
+  date?: string;
   tags?: Array<string>;
   coverImageSrc?: string;
 }
@@ -54,19 +54,21 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
         </Heading>
       </NextLink>
       <Text marginTop="0.5rem">{excerpt}</Text>
-      <HStack marginTop="1rem" spacing="2" display="flex" alignItems="center">
-        <Image
-          borderRadius="full"
-          boxSize="50px"
-          border="1px solid"
-          borderColor="brand.darkBlue"
-          src={authorAvatar}
-          alt={authorName}
-        />
-        <Text fontWeight="medium">{authorName}</Text>
-        <Text>—</Text>
-        <Text>{date}</Text>
-      </HStack>
+      {authorAvatar && authorName && date && (
+        <HStack marginTop="1rem" spacing="2" display="flex" alignItems="center">
+          <Image
+            borderRadius="full"
+            boxSize="50px"
+            border="1px solid"
+            borderColor="brand.darkBlue"
+            src={authorAvatar}
+            alt={authorName}
+          />
+          <Text fontWeight="medium">{authorName}</Text>
+          <Text>—</Text>
+          <Text>{date}</Text>
+        </HStack>
+      )}
       <Box marginTop="1rem">
         <ButtonLink
           href={`/blog/${slug}`}
