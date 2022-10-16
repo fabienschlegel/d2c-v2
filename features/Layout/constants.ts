@@ -6,6 +6,10 @@ export const NAV_ITEMS: Array<INavItem> = [
     href: "/blog",
   },
   {
+    label: "Resources",
+    href: "/resources",
+  },
+  {
     label: "About",
     href: "/about",
   },
