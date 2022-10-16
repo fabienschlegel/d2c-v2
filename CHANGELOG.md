@@ -1,8 +1,14 @@
 # Changelog
 
+## [0.2.4] - 2022-10-16
+
+### Added
+
+- Add Sentry to manage errors
+
 ## [0.2.3] - 2022-10-14
 
-## Added
+### Added
 
 - Add related articles bloc to the page of posts
 

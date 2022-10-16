@@ -1,6 +1,6 @@
 {
   "name": "d2cv2",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Another blog from a developer",
   "license": "MIT",
   "private": true,
@@ -21,6 +21,7 @@
     "@chakra-ui/react": "^2.2.9",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@sentry/nextjs": "^7.15.0",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "clsx": "^1.2.1",

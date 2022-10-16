@@ -1,11 +1,16 @@
 /** @type {import('next').NextConfig} */
 
+const { withSentryConfig } = require("@sentry/nextjs");
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
+  },
+  sentry: {
+    hideSourceMaps: true,
   },
   redirects: async () => {
     return [
@@ -140,4 +145,8 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+const sentryWebpackPluginOptions = {
+  silent: true,
+};
+
+module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
