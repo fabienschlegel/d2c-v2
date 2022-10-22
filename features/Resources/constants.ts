@@ -1,0 +1,5 @@
+export const RESOURCES_DATABASE_ID = '2c77dafe709e43c8904746a462c15241';
+
+export const CATEGORIES_DATABASE_ID = 'cff82503aec241cbba032b63dc1d8f4b';
+
+export const TAGS_DATABASE_ID = '9e60b78d626d453b8265ae08d2e5d220';
