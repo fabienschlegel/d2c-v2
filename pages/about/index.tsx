@@ -27,8 +27,8 @@ const About: NextPage = () => {
           with Javascript, Typescript and Python.
         </Text>
         <Text marginTop="1em">
-          First of all, thank you for reading my blog. I create it to share my
-          knowledges with everyone.
+          First of all, thank you for reading my blog. I created it to share my
+          knowledge with everyone.
         </Text>
         <Text marginTop="1em">
           If you like my content, you can share it or follow me on Twitter.
