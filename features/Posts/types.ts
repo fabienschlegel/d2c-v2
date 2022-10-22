@@ -15,6 +15,6 @@ export interface IPost {
   related?: Array<PostSummary>;
 }
 
-export type PostAnchor = Pick<IPost, "title" | "slug">;
+export type PostAnchor = Pick<IPost, 'title' | 'slug'>;
 
-export type PostSummary = Omit<IPost, "content">;
+export type PostSummary = Omit<IPost, 'content'>;

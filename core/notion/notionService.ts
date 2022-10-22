@@ -4,7 +4,7 @@ import {
   TitleProperty,
   RichTextProperty,
   ExternalFilesProperty,
-} from "./types";
+} from './types';
 
 export function getUniqueRelationProperties(
   relationProperty: RelationProperty,

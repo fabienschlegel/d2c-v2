@@ -1,8 +1,8 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
-import Script from "next/script";
+import Script from 'next/script';
 
-import { GA_TRACKING_ID } from "features/Metrics";
+import { GA_TRACKING_ID } from 'features/Metrics';
 
 const GoogleAnalyticsScripts: FunctionComponent = () => {
   return (

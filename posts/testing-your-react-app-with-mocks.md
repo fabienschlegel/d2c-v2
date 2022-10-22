@@ -1,13 +1,14 @@
 ---
-title: "Testing your React app with mocks"
-date: "2022-08-19"
-author: 
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
-excerpt: "Testing avoids regressions and makes your app safer and easier to debug."
-tags: ["React", "Typescript"]
-related: ["how-to-test-react-hooks"]
+title: 'Testing your React app with mocks'
+date: '2022-08-19'
+author:
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
+excerpt: 'Testing avoids regressions and makes your app safer and easier to debug.'
+tags: ['React', 'Typescript']
+related: ['how-to-test-react-hooks']
 ---
+
 For your app, you need tests.
 
 Testing avoids regressions and makes your app safer and easier to debug. Writing tests isn’t easy for a lot of reasons. Few of them are the features of the browser or the external APIs. They’re not available during the execution of our tests.
@@ -137,7 +138,7 @@ describe('Test useIsUnique hook', () => {
     expect(isLoading).toBeFalsy();
     expect(isUnique).toBeTruthy();
   });
-})
+});
 ```
 
 Now some explanations about this test.

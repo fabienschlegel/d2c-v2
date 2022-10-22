@@ -1,14 +1,14 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import { Flex } from "@chakra-ui/react";
+import { Flex } from '@chakra-ui/react';
 
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-import { ButtonLink } from "../..";
+import { ButtonLink } from '../..';
 
-import styles from "./PostNavigation.module.scss";
+import styles from './PostNavigation.module.scss';
 
 interface PostNavigationProps {
   previous: {
@@ -26,7 +26,7 @@ export type PostNavigationType = FunctionComponent<PostNavigationProps>;
 const PostNavigation: PostNavigationType = ({ previous, next }) => {
   return (
     <Flex
-      justifyContent={previous && next ? "space-between" : "center"}
+      justifyContent={previous && next ? 'space-between' : 'center'}
       className={styles.container}
     >
       {previous && (

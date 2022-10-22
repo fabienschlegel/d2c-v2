@@ -1,10 +1,10 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
-import { Image, Flex, Heading, Text, HStack } from "@chakra-ui/react";
+import { Image, Flex, Heading, Text, HStack } from '@chakra-ui/react';
 
-import { uppercaseFirst } from "core";
+import { uppercaseFirst } from 'core';
 
-import { CoverImage, PostTag } from "../..";
+import { CoverImage, PostTag } from '../..';
 
 interface PostHeaderProps {
   title: string;
@@ -30,11 +30,7 @@ const PostHeader: PostHeaderType = ({
       <Heading as="h1" size="2xl" marginBottom={4}>
         {uppercaseFirst(title)}
       </Heading>
-      <Flex
-        alignItems="center"
-        justifyContent="space-between"
-        marginBottom="20px"
-      >
+      <Flex alignItems="center" justifyContent="space-between" marginBottom="20px">
         <Flex alignItems="center">
           {avatarSrc && (
             <Image
@@ -58,9 +54,7 @@ const PostHeader: PostHeaderType = ({
           ))}
         </HStack>
       )}
-      {coverImageSrc && (
-        <CoverImage coverImageSrc={coverImageSrc} title={title} />
-      )}
+      {coverImageSrc && <CoverImage coverImageSrc={coverImageSrc} title={title} />}
     </Flex>
   );
 };

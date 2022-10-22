@@ -1,16 +1,16 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
 
-import { POST_HEADER_FIELDS } from "features/Posts";
+import { POST_HEADER_FIELDS } from 'features/Posts';
 
-import { getAllPostsByDate } from "features/Posts/api";
+import { getAllPostsByDate } from 'features/Posts/api';
 
-import { PrimaryLayout } from "features/Layout";
+import { PrimaryLayout } from 'features/Layout';
 
-import { Hero, HomeLastPosts } from "features/HomePage";
+import { Hero, HomeLastPosts } from 'features/HomePage';
 
-import { PostSummary } from "features/Posts/types";
+import { PostSummary } from 'features/Posts/types';
 
-import { SITE_DESCRIPTION, SITE_IMAGE, SITE_NAME } from "core/constants";
+import { SITE_DESCRIPTION, SITE_IMAGE, SITE_NAME } from 'core/constants';
 
 interface HomeProps {
   lastPosts: Array<PostSummary>;

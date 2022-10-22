@@ -1,19 +1,19 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
-import type { AppProps } from "next/app";
+import type { AppProps } from 'next/app';
 
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
-import { isProduction } from "core";
+import { isProduction } from 'core';
 
-import { GoogleAnalyticsScripts, gtagPageview } from "features/Metrics";
+import { GoogleAnalyticsScripts, gtagPageview } from 'features/Metrics';
 
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider } from '@chakra-ui/react';
 
-import mainTheme from "core/mainTheme";
+import mainTheme from 'core/mainTheme';
 
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": false}] */
-import "prismjs/themes/prism-tomorrow.css";
+import 'prismjs/themes/prism-tomorrow.css';
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   const router = useRouter();
@@ -22,9 +22,9 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
     const handleRouteChange = (url: URL) => {
       if (isProduction) gtagPageview(url);
     };
-    router.events.on("routeChangeComplete", handleRouteChange);
+    router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
+      router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [router.events]);
 

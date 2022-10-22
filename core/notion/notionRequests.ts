@@ -1,20 +1,18 @@
-import { Client } from "@notionhq/client";
+import { Client } from '@notionhq/client';
 
 import {
   PageObjectResponse,
   PartialPageObjectResponse,
   QueryDatabaseParameters,
-} from "@notionhq/client/build/src/api-endpoints";
+} from '@notionhq/client/build/src/api-endpoints';
 
-export type NotionQueryResults = Array<
-  PageObjectResponse | PartialPageObjectResponse
->;
+export type NotionQueryResults = Array<PageObjectResponse | PartialPageObjectResponse>;
 
 export interface NotionQueryParameters {
   databaseId: string;
   partialResults?: NotionQueryResults;
-  sorts?: QueryDatabaseParameters["sorts"];
-  filters?: QueryDatabaseParameters["filter"];
+  sorts?: QueryDatabaseParameters['sorts'];
+  filters?: QueryDatabaseParameters['filter'];
   nextCursor?: string;
 }
 
@@ -38,8 +36,7 @@ export async function getAllResultsFromNotion({
   const results = [...partialResults, ...responseResults];
 
   const responseHasMore = response.has_more;
-  const responseNextCursor: string | undefined =
-    response.next_cursor || undefined;
+  const responseNextCursor: string | undefined = response.next_cursor || undefined;
 
   if (responseHasMore)
     return getAllResultsFromNotion({

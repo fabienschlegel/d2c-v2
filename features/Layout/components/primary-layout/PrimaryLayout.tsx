@@ -1,9 +1,9 @@
-import { useMetaProperties } from "features/Layout/hooks";
-import { FunctionComponent, ReactNode } from "react";
+import { useMetaProperties } from 'features/Layout/hooks';
+import { FunctionComponent, ReactNode } from 'react';
 
-import { Footer, Layout, Navbar } from "..";
+import { Footer, Layout, Navbar } from '..';
 
-import { FAVICON_URL } from "core/constants";
+import { FAVICON_URL } from 'core/constants';
 
 interface PrimaryLayoutProps {
   children: ReactNode;

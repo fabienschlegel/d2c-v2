@@ -1,3 +1,3 @@
-import { Hero, HomeLastPosts } from "./components";
+import { Hero, HomeLastPosts } from './components';
 
 export { Hero, HomeLastPosts };

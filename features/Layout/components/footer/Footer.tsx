@@ -1,36 +1,29 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
-import NextLink from "next/link";
+import NextLink from 'next/link';
 
-import {
-  Box,
-  Container,
-  Stack,
-  Text,
-  useColorModeValue,
-  Image,
-} from "@chakra-ui/react";
+import { Box, Container, Stack, Text, useColorModeValue, Image } from '@chakra-ui/react';
 
-import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 
-import { SocialButton } from "..";
+import { SocialButton } from '..';
 
-import { GITHUB_PROFILE_URL, LINKEDIN_URL, TWITTER_URL } from "core/constants";
+import { GITHUB_PROFILE_URL, LINKEDIN_URL, TWITTER_URL } from 'core/constants';
 
 const Footer: FunctionComponent = () => {
   return (
     <Box
-      bg={useColorModeValue("gray.200", "gray.900")}
-      color={useColorModeValue("gray.700", "gray.200")}
+      bg={useColorModeValue('gray.200', 'gray.900')}
+      color={useColorModeValue('gray.700', 'gray.200')}
     >
       <Container
         as={Stack}
-        maxW={"6xl"}
+        maxW={'6xl'}
         py={4}
-        direction={{ base: "column", md: "row" }}
+        direction={{ base: 'column', md: 'row' }}
         spacing={4}
-        justify={{ base: "center", md: "space-between" }}
-        align={{ base: "center", md: "center" }}
+        justify={{ base: 'center', md: 'space-between' }}
+        align={{ base: 'center', md: 'center' }}
       >
         <NextLink href="/" passHref>
           <Image
@@ -41,7 +34,7 @@ const Footer: FunctionComponent = () => {
           />
         </NextLink>
         <Text>© 2022 Fabien Schlegel</Text>
-        <Stack direction={"row"} spacing={6}>
+        <Stack direction={'row'} spacing={6}>
           <SocialButton label="Twitter" href={TWITTER_URL}>
             <FaTwitter />
           </SocialButton>

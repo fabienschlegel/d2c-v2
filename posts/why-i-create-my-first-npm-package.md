@@ -1,11 +1,11 @@
 ---
-title: "Why I create my first NPM package"
-date: "2021-07-04"
-author: 
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
-excerpt: "A useful practice when you work with a specific stack, is to create generic stuff for this stack."
-tags: ["npm", "typescript", "React"]
+title: 'Why I create my first NPM package'
+date: '2021-07-04'
+author:
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
+excerpt: 'A useful practice when you work with a specific stack, is to create generic stuff for this stack.'
+tags: ['npm', 'typescript', 'React']
 ---
 
 A useful practice when you work with a specific stack, is to create generic stuff for this stack. This is the fundamental principle of a framework, library, package, etc.

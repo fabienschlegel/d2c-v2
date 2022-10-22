@@ -1,12 +1,12 @@
 ---
-title: "How to test React Hooks"
-date: "2021-05-20"
+title: 'How to test React Hooks'
+date: '2021-05-20'
 author:
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
-excerpt: "When you use hooks, you can write them in their own file. And you could test them."
-tags: ["javascript", "typescript", "React", "hooks"]
-related: ["five-tips-about-react-hooks", "testing-your-react-app-with-mocks"]
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
+excerpt: 'When you use hooks, you can write them in their own file. And you could test them.'
+tags: ['javascript', 'typescript', 'React', 'hooks']
+related: ['five-tips-about-react-hooks', 'testing-your-react-app-with-mocks']
 ---
 
 When you use hooks, you can write them in their own file. And you could test them.
@@ -50,7 +50,7 @@ First example, a custom hook from the React documentation : usePrevious.
 This hook store the previous value, like prevProps or prevState in class components.
 
 ```typescript
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 function usePrevious(value: any) {
   const ref = useRef();
@@ -72,24 +72,24 @@ May be a subject for another post 😉.
 And now the test file.
 
 ```typescript
-import { renderHook } from "@testing-library/react-hooks";
-import usePrevious from "./usePrevious";
+import { renderHook } from '@testing-library/react-hooks';
+import usePrevious from './usePrevious';
 
-import "../../setupTests";
+import '../../setupTests';
 
-describe("Test usePrevious hook", () => {
+describe('Test usePrevious hook', () => {
   const setUp = () =>
     renderHook(({ state }) => usePrevious(state), {
       initialProps: { state: 0 },
     });
 
-  it("should return undefined on initial render", () => {
+  it('should return undefined on initial render', () => {
     const { result } = setUp();
 
     expect(result.current).toBeUndefined();
   });
 
-  it("should always return previous state after each update", () => {
+  it('should always return previous state after each update', () => {
     const { result, rerender } = setUp();
 
     rerender({ state: 2 });
@@ -168,7 +168,7 @@ export default useRequestWithComment;
 This is the test file
 
 ```typescript
-describe("Test useRequestWithComment hook", () => {
+describe('Test useRequestWithComment hook', () => {
   const dispatch = jest.fn();
 
   beforeEach(() => {
@@ -183,9 +183,7 @@ describe("Test useRequestWithComment hook", () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const wrapper = ({ children }: any) => (
     <I18nextProvider i18n={i18n}>
-      <Context.Provider value={{ state: initialState, dispatch }}>
-        {children}
-      </Context.Provider>
+      <Context.Provider value={{ state: initialState, dispatch }}>{children}</Context.Provider>
     </I18nextProvider>
   );
 
@@ -203,7 +201,7 @@ describe("Test useRequestWithComment hook", () => {
       }
     );
 
-  it("useRequestWithComment request is success", async () => {
+  it('useRequestWithComment request is success', async () => {
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
 
@@ -228,7 +226,7 @@ describe("Test useRequestWithComment hook", () => {
     expect(result.current[0]).toBeFalsy();
   });
 
-  it("useRequestWithComment request is failed", async () => {
+  it('useRequestWithComment request is failed', async () => {
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
 

@@ -1,14 +1,14 @@
 ---
-title: "Tests et qualité de code - A quoi ça sert ?"
-date: "2019-08-26"
-author: 
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
+title: 'Tests et qualité de code - A quoi ça sert ?'
+date: '2019-08-26'
+author:
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
 excerpt: "Les tests ça sert à rien ! Visiteur d'ici et d'ailleurs, tu entendras souvent ces mots dans la bouche de faiseurs de code..."
-tags: ["tests", "qualité de code"]
+tags: ['tests', 'qualité de code']
 ---
 
- __Les tests ça sert à rien !__
+**Les tests ça sert à rien !**
 
 Visiteur d'ici et d'ailleurs, tu entendras souvent ces mots dans la bouche de faiseurs de code...
 
@@ -46,9 +46,9 @@ La deuxième c'est mettre des commentaires. Ils permettent de comprendre ce que 
 
 Voici des liens avec des guides de règles d'écriture de code. Ils regroupent des bonnes pratiques à suivre pour Javascript et Python.
 
-* [AirBnB javascript styleguide](https://github.com/airbnb/javascript)
+- [AirBnB javascript styleguide](https://github.com/airbnb/javascript)
 
-* [PEP8 Python](https://www.python.org/dev/peps/pep-0008/)
+- [PEP8 Python](https://www.python.org/dev/peps/pep-0008/)
 
 Si tu veux que je rajoute celui de ton langage préféré, envoie un message, ça sera avec plaisir...
 
@@ -58,12 +58,12 @@ Une introduction sur le sujet avec un peu de lecture pour les courageux. J'espè
 
 Les articles suivants rentreront plus dans les détails avec des exemples Javascript et Python.
 
-------------------------------
+---
 
 Ce post sera le premier d'une série sur les tests et la qualité de code.
 
-* [Partie 0 - A quoi ça sert ? (Boum tu viens de le lire, bravo !)](/tests-quality-ep0)
-* [Partie 1 - Les tests, comment ça marche ?](/tests-quality-ep1)
-* [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/tests-quality-ep2)
-* [Partie 3 - Allez hop, on pose les mains et on refactorise](/tests-quality-ep3)
-* [Partie 4 - Automatiser tout ça c'est dans nos cordes](/tests-quality-ep4)
+- [Partie 0 - A quoi ça sert ? (Boum tu viens de le lire, bravo !)](/tests-quality-ep0)
+- [Partie 1 - Les tests, comment ça marche ?](/tests-quality-ep1)
+- [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/tests-quality-ep2)
+- [Partie 3 - Allez hop, on pose les mains et on refactorise](/tests-quality-ep3)
+- [Partie 4 - Automatiser tout ça c'est dans nos cordes](/tests-quality-ep4)

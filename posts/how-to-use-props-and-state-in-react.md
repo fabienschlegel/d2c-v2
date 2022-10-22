@@ -1,11 +1,11 @@
 ---
-title: "How to use props and state in React"
-date: "2022-03-03"
-author: 
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
-excerpt: "Props and states are two kinds of variables used in React components."
-tags: ["React", "Typescript"]
+title: 'How to use props and state in React'
+date: '2022-03-03'
+author:
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
+excerpt: 'Props and states are two kinds of variables used in React components.'
+tags: ['React', 'Typescript']
 ---
 
 This blog post relies on React and Typescript, a superset of JavaScript. If you’re a beginner, you can check [this post](https://www.devoreur2code.com/begin-react-with-typescript) to get the prerequisites.
@@ -28,17 +28,17 @@ The term Props is the shortcut for properties.
 
 They are immutable, this means that they can’t change. The functional component receives them as parameters. The change of props triggers a render update of the component.
 
-You can see here, our component *ItemsList* get props, a list of strings.
+You can see here, our component _ItemsList_ get props, a list of strings.
 
 ```tsx
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState } from 'react';
 
 interface ItemsListProps {
   list: Array<string>;
 }
 
 const ItemsList: FunctionComponent<ItemsListProps> = ({ list }) => {
-  console.log("ItemsList rerender");
+  console.log('ItemsList rerender');
 
   return (
     <ul>
@@ -50,10 +50,10 @@ const ItemsList: FunctionComponent<ItemsListProps> = ({ list }) => {
 };
 
 function App() {
-  const [list, setList] = useState(["item1", "item2", "item3"]);
+  const [list, setList] = useState(['item1', 'item2', 'item3']);
 
   const handleClick = () => {
-    setList([...list, "item4"]);
+    setList([...list, 'item4']);
   };
 
   return (
@@ -73,7 +73,7 @@ If you click on the button, you add an item to the list and update the props. Th
 
 States are mutable, they can change over time.
 
-They receive a default value when the component mounts. A component manage its states internally.  A state passed to a child component becomes props for the child.
+They receive a default value when the component mounts. A component manage its states internally. A state passed to a child component becomes props for the child.
 
 If you have a look at the example above, our list in the component App is a state. The method setList can mutate this state.
 

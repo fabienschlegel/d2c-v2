@@ -1,10 +1,10 @@
-import { FunctionComponent, ReactElement } from "react";
+import { FunctionComponent, ReactElement } from 'react';
 
-import NextLink from "next/link";
+import NextLink from 'next/link';
 
-import { uppercaseFirst } from "core";
+import { uppercaseFirst } from 'core';
 
-import { Button, Text } from "@chakra-ui/react";
+import { Button, Text } from '@chakra-ui/react';
 
 interface ButtonLinkProps {
   href: string;
@@ -29,16 +29,11 @@ const ButtonLink: FunctionComponent<ButtonLinkProps> = ({
         as="a"
         colorScheme="gray"
         variant="solid"
-        size={["xs", "md"]}
+        size={['xs', 'md']}
         className={className}
         maxWidth="270px"
       >
-        <Text
-          fontSize={["xs", "md"]}
-          overflow="hidden"
-          textOverflow="ellipsis"
-          whiteSpace="nowrap"
-        >
+        <Text fontSize={['xs', 'md']} overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap">
           {uppercaseFirst(label)}
         </Text>
       </Button>

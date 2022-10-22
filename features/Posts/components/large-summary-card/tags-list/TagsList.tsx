@@ -1,8 +1,8 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
-import { HStack } from "@chakra-ui/react";
+import { HStack } from '@chakra-ui/react';
 
-import { PostTag } from "../..";
+import { PostTag } from '../..';
 
 interface TagsListProps {
   tags: string[];

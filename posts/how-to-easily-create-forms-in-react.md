@@ -1,11 +1,11 @@
 ---
-title: "How to easily create forms in React"
-date: "2021-07-24"
-author: 
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
+title: 'How to easily create forms in React'
+date: '2021-07-24'
+author:
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
 excerpt: "As a developer, forms are a great part of our work. It's a way for users to interact with software."
-tags: ["React", "Typescript"]
+tags: ['React', 'Typescript']
 ---
 
 As a developer, forms are a great part of our work. It's a way for users to interact with software.
@@ -33,11 +33,11 @@ For the other components, I create [a repository on Github](https://github.com/H
 First of all, we need a generic HTML input.
 
 ```typescript
-import React from "react";
+import React from 'react';
 
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import { Colors, Sizes } from "../../types";
+import { Colors, Sizes } from '../../types';
 
 interface InputProps {
   inputSize?: Sizes;
@@ -64,15 +64,15 @@ const Input: React.FC<InputType> = ({
 }) => (
   <input
     className={clsx(
-      "input",
+      'input',
       inputSize,
       borderColor,
-      isRounded ? "is-rounded" : undefined,
-      isHovered ? "is-hovered" : undefined,
-      isFocused ? "is-focused" : undefined,
-      isLoading ? "is-loading" : undefined,
-      isStatic ? "is-static" : undefined,
-      className,
+      isRounded ? 'is-rounded' : undefined,
+      isHovered ? 'is-hovered' : undefined,
+      isFocused ? 'is-focused' : undefined,
+      isLoading ? 'is-loading' : undefined,
+      isStatic ? 'is-static' : undefined,
+      className
     )}
     {...others}
   />
@@ -94,15 +94,15 @@ Very useful, isn't it?
 Now we have our generic HTML input. We can go to the next step.
 
 ```typescript
-import React from "react";
+import React from 'react';
 
-import Field from "../field/Field";
-import Control, { IconsProps } from "../control/Control";
-import Input, { InputType } from "../input/Input";
-import Label, { LabelType } from "../label/Label";
-import Help, { HelpProps } from "../help/Help";
+import Field from '../field/Field';
+import Control, { IconsProps } from '../control/Control';
+import Input, { InputType } from '../input/Input';
+import Label, { LabelType } from '../label/Label';
+import Help, { HelpProps } from '../help/Help';
 
-import { Colors, Sizes } from "../../types";
+import { Colors, Sizes } from '../../types';
 
 export interface InputFieldProps {
   name: string;
@@ -152,17 +152,17 @@ It's time to create a specialized field with this generic input field.
 First, we create a login form component. It keeps the state hooks and the submit method.
 
 ```typescript
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { Box, Title } from "@the-sleeping-dog/react-components";
+import { Box, Title } from '@the-sleeping-dog/react-components';
 
-import UsernameField from "components/username-field/UsernameField";
-import SubmitButton from "components/submit-button/SubmitButton";
-import PasswordField from "components/password-field/PasswordField";
+import UsernameField from 'components/username-field/UsernameField';
+import SubmitButton from 'components/submit-button/SubmitButton';
+import PasswordField from 'components/password-field/PasswordField';
 
 const LoginForm: React.FC = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -177,14 +177,8 @@ const LoginForm: React.FC = () => {
         <Title size="is-3" useParagraph>
           Login Form
         </Title>
-        <UsernameField
-          username={username}
-          handleChange={(e) => setUsername(e.target.value)}
-        />
-        <PasswordField
-          password={password}
-          handleChange={(e) => setPassword(e.target.value)}
-        />
+        <UsernameField username={username} handleChange={(e) => setUsername(e.target.value)} />
+        <PasswordField password={password} handleChange={(e) => setPassword(e.target.value)} />
         <SubmitButton />
       </form>
     </Box>
@@ -203,9 +197,9 @@ It takes a state and the setter as properties.
 We defined our generic input field with a name, a label and our inputProps from the parent.
 
 ```typescript
-import React, { ChangeEventHandler } from "react";
+import React, { ChangeEventHandler } from 'react';
 
-import { InputField } from "@the-sleeping-dog/react-components";
+import { InputField } from '@the-sleeping-dog/react-components';
 
 export interface UsernameFieldProps {
   username: string;
@@ -234,12 +228,12 @@ Do you see the difference?
 Yes, we have a clickable icon to show or hide the password. And the icon change to help the user.
 
 ```typescript
-import React, { ChangeEventHandler, useState } from "react";
+import React, { ChangeEventHandler, useState } from 'react';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
-import { InputField } from "@the-sleeping-dog/react-components";
+import { InputField } from '@the-sleeping-dog/react-components';
 
 export interface PasswordFieldProps {
   password: string;
@@ -260,7 +254,7 @@ const PasswordField: React.FC<PasswordFieldProps> = ({ password, handleChange })
     handleRightIconClick: toggleHidePassword,
   };
 
-  const fiedType = hidePassword ? "password" : "text";
+  const fiedType = hidePassword ? 'password' : 'text';
 
   return (
     <InputField

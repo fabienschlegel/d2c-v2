@@ -1,11 +1,11 @@
 ---
-title: "Tests et qualité de code - Allez hop, on pose les mains et on refactorise"
-date: "2019-09-15"
-author: 
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
+title: 'Tests et qualité de code - Allez hop, on pose les mains et on refactorise'
+date: '2019-09-15'
+author:
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
 excerpt: "Quand on est dans l'écriture de code et qu'on arrive à une solution fonctionnelle, on passe à la suite. En procédant de cette manière, on va produire de la dette technique."
-tags: ["tests", "qualité de code"]
+tags: ['tests', 'qualité de code']
 ---
 
 ### C'est le début de la fin
@@ -57,17 +57,34 @@ Typiquement, l'imbrication de code avec plusieurs couches contenant des boucles,
 Idem pour tout ce qui casse le déroulement d'une fonction. Les mêmes que pour l'imbrication et on ajoute les switch/case, les combinaisons d'opérateurs logiques, etc.
 
 ```javascript
-if (date !== '' && endDate !== '' && (date !== prevProps.date || time !== prevProps.time || endDate !== prevProps.endDate || endTime !== prevProps.endTime)) {
+if (
+  date !== '' &&
+  endDate !== '' &&
+  (date !== prevProps.date ||
+    time !== prevProps.time ||
+    endDate !== prevProps.endDate ||
+    endTime !== prevProps.endTime)
+) {
   if (moment(`${date} ${time}`).isBefore(moment(`${endDate} ${endTime}`))) {
     this.toggleButton(true);
-    onTA('danger', 'La date de fin du vote ne peut pas être supérieure à la date de l\'événement');
-    setTimeout(() => { offTA(); }, 5000);
+    onTA('danger', "La date de fin du vote ne peut pas être supérieure à la date de l'événement");
+    setTimeout(() => {
+      offTA();
+    }, 5000);
   } else if (moment(date).isBefore(moment(), 'day')) {
     onTA('warning', "Ca c'était avant, un peu tard pour programmer événement ;-) !");
-    setTimeout(() => { offTA(); }, 5000);
-  } else if (endDate !== '' && endTime !== '' && (moment(`${endDate} ${endTime}`).isBefore(moment()))) {
+    setTimeout(() => {
+      offTA();
+    }, 5000);
+  } else if (
+    endDate !== '' &&
+    endTime !== '' &&
+    moment(`${endDate} ${endTime}`).isBefore(moment())
+  ) {
     onTA('warning', 'Ca va être compliqué de voter, la fin du vote est passée !');
-    setTimeout(() => { offTA(); }, 5000);
+    setTimeout(() => {
+      offTA();
+    }, 5000);
   } else if (disabledButton === true) {
     this.toggleButton(false);
   }
@@ -111,8 +128,8 @@ plugins:
     debug: true
     config:
       languages:
-      - python
-      - javascript
+        - python
+        - javascript
   fixme:
     enabled: true
   radon:
@@ -125,10 +142,9 @@ plugins:
     enabled: true
 
 exclude_patterns:
-  - "htmlcov/"
-  - "*/migrations/"
-  - "*/tests/"
-
+  - 'htmlcov/'
+  - '*/migrations/'
+  - '*/tests/'
 ```
 
 Je t'économise l'explication du truc mais si ça t'intéresse rendez-vous sur la [documentation](https://docs.codeclimate.com/docs/advanced-configuration).
@@ -147,10 +163,10 @@ docker run   --interactive --tty --rm   --env CODECLIMATE_CODE="$PWD"
 
 Et voila, c'est tout pour aujourd'hui. On se retrouve la semaine prochaine pour la suite et fin de notre série.
 
---------------------------------
+---
 
-* [Partie 0 - A quoi ça sert ?](/tests-quality-ep0)
-* [Partie 1 - Les tests, comment ça marche ?](/tests-quality-ep1)
-* [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/tests-quality-ep2)
-* [Partie 3 - Allez hop, on pose les mains et on refactorise](/tests-quality-ep3)
-* [Partie 4 - Automatiser tout ça c'est dans nos cordes](/tests-quality-ep4)
+- [Partie 0 - A quoi ça sert ?](/tests-quality-ep0)
+- [Partie 1 - Les tests, comment ça marche ?](/tests-quality-ep1)
+- [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/tests-quality-ep2)
+- [Partie 3 - Allez hop, on pose les mains et on refactorise](/tests-quality-ep3)
+- [Partie 4 - Automatiser tout ça c'est dans nos cordes](/tests-quality-ep4)
