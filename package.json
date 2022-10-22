@@ -16,7 +16,7 @@
     "lint": "next lint",
     "lint:scss": "stylelint **/*.scss --max-warnings 0",
     "prepare": "husky install",
-    "prettify": "prettier --write"
+    "prettify": "prettier --write */**"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.2.9",

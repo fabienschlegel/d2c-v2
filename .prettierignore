@@ -26,3 +26,12 @@ bench/nested-deps/pages/**/*
 bench/nested-deps/components/**/*
 pnpm-lock.yaml
 **/convex/_generated/**
+.env*
+yarn.lock
+.gitignore
+sentry.properties
+public/**
+.vscode/**
+.husky/**
+.prettierignore
+.sentryclirc
