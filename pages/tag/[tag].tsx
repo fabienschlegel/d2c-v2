@@ -31,6 +31,7 @@ const TagPage: NextPage<TagPageProps> = ({ posts, tag }) => {
             date={post.date}
             authorName={post.author.name}
             excerpt={post.excerpt}
+            readingTime={post.readingTime}
             slug={`/blog/${post.slug}`}
             coverImage={post.coverImage}
             tags={post.tags}
