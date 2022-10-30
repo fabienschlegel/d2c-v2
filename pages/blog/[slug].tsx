@@ -1,23 +1,18 @@
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
-import ErrorPage from "next/error";
+import ErrorPage from 'next/error';
 
-import { PrimaryLayout } from "features/Layout";
+import { PrimaryLayout } from 'features/Layout';
 
-import { POST_ALL_FIELDS, Post, POST_HEADER_FIELDS } from "features/Posts";
+import { POST_ALL_FIELDS, Post, POST_HEADER_FIELDS } from 'features/Posts';
 
-import {
-  getAllPostsByDate,
-  getNextPost,
-  getPostBySlug,
-  getPreviousPost,
-} from "features/Posts/api";
+import { getAllPostsByDate, getNextPost, getPostBySlug, getPreviousPost } from 'features/Posts/api';
 
-import markdownToHtml from "core/utilities/markdownToHtml";
+import markdownToHtml from 'core/utilities/markdownToHtml';
 
-import { SITE_IMAGE } from "core/constants";
+import { SITE_IMAGE } from 'core/constants';
 
-import type { IPost, PostAnchor, PostSummary } from "features/Posts/types";
+import type { IPost, PostAnchor, PostSummary } from 'features/Posts/types';
 
 type Props = {
   post: IPost;
@@ -43,6 +38,7 @@ export default function PostPage({ post, previous, next, related }: Props) {
           title={post.title}
           authorName={post.author.name}
           date={post.date}
+          readingTime={post.readingTime}
           coverImageSrc={post.coverImage}
           avatarSrc={post.author.avatar}
           tags={post.tags}
@@ -52,9 +48,7 @@ export default function PostPage({ post, previous, next, related }: Props) {
           <Post.RelatedArticles relatedArticles={related} />
         ) : (
           <Post.Navigation
-            previous={
-              previous && { title: previous.title, href: previous.slug }
-            }
+            previous={previous && { title: previous.title, href: previous.slug }}
             next={next && { title: next.title, href: next.slug }}
           />
         )}
@@ -72,16 +66,14 @@ type Params = {
 export async function getStaticProps({ params }: Params) {
   const post = getPostBySlug(params.slug, POST_ALL_FIELDS);
 
-  const content = await markdownToHtml((post.content as string) || "");
+  const content = await markdownToHtml((post.content as string) || '');
 
   const previous = getPreviousPost(params.slug);
   const next = getNextPost(params.slug);
 
   const relatedSlugs = (post.related as Array<string>) || [];
 
-  const related = relatedSlugs
-    .slice(0, 2)
-    .map((rs) => getPostBySlug(rs, POST_HEADER_FIELDS));
+  const related = relatedSlugs.slice(0, 2).map((rs) => getPostBySlug(rs, POST_HEADER_FIELDS));
 
   return {
     props: {
@@ -97,7 +89,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPostsByDate(["slug"]);
+  const posts = getAllPostsByDate(['slug']);
 
   return {
     paths: posts.map((post) => {

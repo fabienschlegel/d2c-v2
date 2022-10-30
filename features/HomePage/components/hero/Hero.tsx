@@ -1,28 +1,28 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
-import { Box, Flex, Heading, Image } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image } from '@chakra-ui/react';
 
-import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 
-import HeroSocialButton from "./hero-social-button/HeroSocialButton";
+import HeroSocialButton from './hero-social-button/HeroSocialButton';
 
-import { GITHUB_PROFILE_URL, LINKEDIN_URL, TWITTER_URL } from "core/constants";
+import { GITHUB_PROFILE_URL, LINKEDIN_URL, TWITTER_URL } from 'core/constants';
 
 const Hero: FunctionComponent = () => {
   return (
     <Flex
       width="100%"
-      padding={{ base: "0.5em", lg: "6em" }}
+      padding={{ base: '0.5em', lg: '6em' }}
       align="center"
-      justify={"space-evenly"}
+      justify={'space-evenly'}
       backgroundColor="brand.darkBlue"
-      minHeight={{ base: "80vh", lg: "70vh" }}
-      direction={{ base: "column-reverse", lg: "row" }}
+      minHeight={{ base: '80vh', lg: '70vh' }}
+      direction={{ base: 'column-reverse', lg: 'row' }}
     >
       <Box>
         <Image
           filter="drop-shadow(10px 10px 4px rgba(0,0,0,0.3));"
-          boxSize={{ base: "250px", md: "400px", lg: "400px" }}
+          boxSize={{ base: '250px', md: '400px', lg: '400px' }}
           src="/assets/media/macbook.png"
           alt="Computer with coffee mug"
         />
@@ -32,7 +32,7 @@ const Hero: FunctionComponent = () => {
           <Heading as="h3" size="lg" color="white">
             My name is
           </Heading>
-          <Heading size={{ base: "2xl", lg: "3xl" }} color="brand.green">
+          <Heading size={{ base: '2xl', lg: '3xl' }} color="brand.green">
             Fabien Schlegel
           </Heading>
           <Heading as="h3" size="lg" color="white" textAlign="right">

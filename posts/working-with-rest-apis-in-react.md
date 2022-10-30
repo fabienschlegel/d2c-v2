@@ -1,11 +1,11 @@
 ---
-title: "Working with REST APIs in React"
-date: "2022-03-15"
-author: 
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
-excerpt: "An API (application programming interface) is an interface that allows one service to be connected to another."
-tags: ["React", "Typescript"]
+title: 'Working with REST APIs in React'
+date: '2022-03-15'
+author:
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
+excerpt: 'An API (application programming interface) is an interface that allows one service to be connected to another.'
+tags: ['React', 'Typescript']
 ---
 
 API is the backroom of front end applications.
@@ -86,7 +86,7 @@ Behind each of these operations, there is an HTTP method. And it’s the only th
 
 Now, we can dive into the code. I created a repository with a React front end and a REST API. you can clone it [here](https://github.com/fabienschlegel/s02e04-rest-api-react).
 
-I used these libraries with  React to mock a REST API :
+I used these libraries with React to mock a REST API :
 
 - json-server : [https://github.com/typicode/json-server](https://github.com/typicode/json-server)
 - Falso: [https://ngneat.github.io/falso/](https://ngneat.github.io/falso/)
@@ -101,22 +101,22 @@ When we get the answer of the REST API, we log it to the console.
 
 ```typescript
 const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
+  const form = event.target as HTMLFormElement;
+  const formData = new FormData(form);
 
-    const id = (): string => Math.random().toString(36).substr(2);
-    const realName = formData.get("realName") as string;
-    const alterEgo = formData.get("alterEgo") as string;
-    const company = formData.get("company") as string;
+  const id = (): string => Math.random().toString(36).substr(2);
+  const realName = formData.get('realName') as string;
+  const alterEgo = formData.get('alterEgo') as string;
+  const company = formData.get('company') as string;
 
-    axios
-      .post("http://localhost:3001/heroes", { id, realName, alterEgo, company })
-      .then((payload) => {
-        console.log(payload);
-      });
-  };
+  axios
+    .post('http://localhost:3001/heroes', { id, realName, alterEgo, company })
+    .then((payload) => {
+      console.log(payload);
+    });
+};
 ```
 
 ### Read resources
@@ -127,13 +127,13 @@ Here we have no parameters. When we get the answer, we set the data to a state. 
 
 ```typescript
 const handleGetItems = useCallback(
-    () =>
-      axios.get("http://localhost:3001/heroes").then((payload) => {
-        const { data } = payload;
-        setHeroes(data);
-      }),
-    []
-  );
+  () =>
+    axios.get('http://localhost:3001/heroes').then((payload) => {
+      const { data } = payload;
+      setHeroes(data);
+    }),
+  []
+);
 ```
 
 We can update our function to pass query parameters like a page number for paginating.
@@ -160,22 +160,22 @@ When the request is successful, we erase our form and reload data to see the upd
 
 ```typescript
 const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const id = hero?.id;
-    const { realName, alterEgo, company } = hero as Hero;
-    axios
-      .put(`http://localhost:3001/heroes/${id}`, {
-        realName,
-        alterEgo,
-        company,
-      })
-      .then((payload) => {
-        handleReload();
-        handleSet(null);
-        console.log(payload);
-      });
-  };
+  const id = hero?.id;
+  const { realName, alterEgo, company } = hero as Hero;
+  axios
+    .put(`http://localhost:3001/heroes/${id}`, {
+      realName,
+      alterEgo,
+      company,
+    })
+    .then((payload) => {
+      handleReload();
+      handleSet(null);
+      console.log(payload);
+    });
+};
 ```
 
 ### Delete Resource
@@ -184,18 +184,18 @@ To delete a resource, it’s easy. We add the item id to the URL and let’s go.
 
 ```typescript
 const handleDelete = () => {
-    axios.delete(`http://localhost:3001/heroes/${item.id}`).then((payload) => {
-      if (payload.status === 200) {
-        handleReload();
-      }
-    });
-  };
+  axios.delete(`http://localhost:3001/heroes/${item.id}`).then((payload) => {
+    if (payload.status === 200) {
+      handleReload();
+    }
+  });
+};
 ```
 
 ## Conclusion
 
 These functions explain how to deal with a REST API. You can clone the repository and update functions to for example add notifications.
 
-This post is in a series on the basics of React with Typescript.  Check back or follow me on social media to find out what's next.
+This post is in a series on the basics of React with Typescript. Check back or follow me on social media to find out what's next.
 
 See you later!

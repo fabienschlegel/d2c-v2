@@ -1,11 +1,11 @@
 ---
-title: "Five tips about React hooks"
-date: "2021-05-14"
-author: 
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
+title: 'Five tips about React hooks'
+date: '2021-05-14'
+author:
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
 excerpt: "Today, when you use React and functional components, you need hooks. I've encountered some issues during development and today, I want to share my tips about React hooks with you."
-tags: ["javascript","typescript","React", "hooks"]
+tags: ['javascript', 'typescript', 'React', 'hooks']
 ---
 
 Today, when you use React and functional components, you need hooks.
@@ -47,7 +47,7 @@ export default ReloadButton;
 
 If you have only one state and one effect, you can keep all the things in the component. But if you have more, It's better to create a custom hook.
 
-Your custom hook must  begin with use and respect [React hook's rules](https://reactjs.org/docs/hooks-rules.html).
+Your custom hook must begin with use and respect [React hook's rules](https://reactjs.org/docs/hooks-rules.html).
 
 Keep in mind : you can use custom hooks in custom hook.
 
@@ -58,23 +58,19 @@ On your form component, you have the options hook only. Another variables and fu
 Yes ! A custom hook can display variables of another hook.
 
 ```typescript
-const useOptions = (): [
-  SelectedOption[] | undefined,
-  boolean
-] => {
+const useOptions = (): [SelectedOption[] | undefined, boolean] => {
   const [options, setOptions] = useState<SelectedOption[] | undefined>();
   const [data, isLoading, setLoading] = useData();
 
   useEffect(() => {
-    setLoading(true)
-    }, []);
+    setLoading(true);
+  }, []);
 
   useEffect(() => {
     if (data && !isLoading) {
-      const optionsResult = data
-        .map((e) => {
-          return { label: e.name, value: e.id };
-        })
+      const optionsResult = data.map((e) => {
+        return { label: e.name, value: e.id };
+      });
       setOptions(optionsResult);
       setLoading(false);
     }
@@ -83,7 +79,7 @@ const useOptions = (): [
   return [options, isLoading];
 };
 
-export default useOptions;  
+export default useOptions;
 ```
 
 ## 3. Use destructuring to display variables of a custom hook
@@ -93,13 +89,13 @@ If you have a big custom hook with many variables to expose, like a complicated 
 When you want to update a value of the object, use the previous state, merge it with the new values and return it inside the updater function.
 
 ```typescript
-const [value, setValue] = useState({name:'tomato', type:'fruit', price:1.72})
+const [value, setValue] = useState({ name: 'tomato', type: 'fruit', price: 1.72 });
 
-setValue((prevState) => ({ ...prevState, price: 1.99 }))
+setValue((prevState) => ({ ...prevState, price: 1.99 }));
 
 // in your form component
 
-const {name, type, price} = value;
+const { name, type, price } = value;
 ```
 
 ## 4. Prefer simple useEffect
@@ -110,7 +106,7 @@ When you can, split it in smaller ones will make one thing.
 
 ## 5. Combine the context and the reducer hooks
 
-If you need to share variables between components and  you doesn't want to use Redux, you can combine this two hooks.
+If you need to share variables between components and you doesn't want to use Redux, you can combine this two hooks.
 
 You initialize a reducer hook with an initial state and a reducer function. You give the state and dispatch function as value for a context provider, the job is done. Every children of the context provider can access to the state and dispatch actions.
 
@@ -119,11 +115,7 @@ You initialize a reducer hook with an initial state and a reducer function. You 
 const ContextWrapper: React.FC<ContextWrapperProps> = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  return (
-    <Context.Provider value={{ state, dispatch }}>
-        {children}
-    </Context.Provider>
-  );
+  return <Context.Provider value={{ state, dispatch }}>{children}</Context.Provider>;
 };
 
 export default ContextWrapper;

@@ -10,11 +10,12 @@ export interface IPost {
   author: IAuthor;
   excerpt: string;
   content: string;
+  readingTime: string;
   coverImage?: string;
   tags?: Array<string>;
   related?: Array<PostSummary>;
 }
 
-export type PostAnchor = Pick<IPost, "title" | "slug">;
+export type PostAnchor = Pick<IPost, 'title' | 'slug'>;
 
-export type PostSummary = Omit<IPost, "content">;
+export type PostSummary = Omit<IPost, 'content'>;

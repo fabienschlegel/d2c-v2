@@ -1,18 +1,14 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
 
-import {
-  PostsList,
-  POST_HEADER_FIELDS,
-  usePostsListNavigation,
-} from "features/Posts";
+import { PostsList, POST_HEADER_FIELDS, usePostsListNavigation } from 'features/Posts';
 
-import { getAllTags, getPostsByTag } from "features/Posts/api";
+import { getAllTags, getPostsByTag } from 'features/Posts/api';
 
-import { PrimaryLayout } from "features/Layout";
+import { PrimaryLayout } from 'features/Layout';
 
-import { SITE_NAME, SITE_IMAGE } from "core/constants";
+import { SITE_NAME, SITE_IMAGE } from 'core/constants';
 
-import { PostSummary } from "features/Posts/types";
+import { PostSummary } from 'features/Posts/types';
 
 interface TagPageProps {
   posts: Array<PostSummary>;
@@ -20,8 +16,7 @@ interface TagPageProps {
 }
 
 const TagPage: NextPage<TagPageProps> = ({ posts, tag }) => {
-  const { paginatedPosts, previous, next, previousPage, nextPage } =
-    usePostsListNavigation(posts);
+  const { paginatedPosts, previous, next, previousPage, nextPage } = usePostsListNavigation(posts);
   return (
     <PrimaryLayout
       pageTitle={`${tag} blog posts`}

@@ -1,8 +1,8 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { Button, Flex, Text } from '@chakra-ui/react';
 
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 interface PostsListNavigationProps {
   previous: boolean;
@@ -11,8 +11,7 @@ interface PostsListNavigationProps {
   nextPage: () => void;
 }
 
-export type PostListNavigationType =
-  FunctionComponent<PostsListNavigationProps>;
+export type PostListNavigationType = FunctionComponent<PostsListNavigationProps>;
 
 const PostsListNavigation: PostListNavigationType = ({
   previous,
@@ -21,18 +20,18 @@ const PostsListNavigation: PostListNavigationType = ({
   nextPage,
 }) => {
   return (
-    <Flex justifyContent={previous && next ? "space-between" : "center"}>
+    <Flex justifyContent={previous && next ? 'space-between' : 'center'}>
       {previous && (
         <Button
           leftIcon={<FaChevronLeft />}
           colorScheme="gray"
           variant="solid"
-          size={["xs", "md"]}
+          size={['xs', 'md']}
           maxWidth="270px"
           onClick={previousPage}
         >
           <Text
-            fontSize={["xs", "md"]}
+            fontSize={['xs', 'md']}
             overflow="hidden"
             textOverflow="ellipsis"
             whiteSpace="nowrap"
@@ -46,12 +45,12 @@ const PostsListNavigation: PostListNavigationType = ({
           rightIcon={<FaChevronRight />}
           colorScheme="gray"
           variant="solid"
-          size={["xs", "md"]}
+          size={['xs', 'md']}
           maxWidth="270px"
           onClick={nextPage}
         >
           <Text
-            fontSize={["xs", "md"]}
+            fontSize={['xs', 'md']}
             overflow="hidden"
             textOverflow="ellipsis"
             whiteSpace="nowrap"

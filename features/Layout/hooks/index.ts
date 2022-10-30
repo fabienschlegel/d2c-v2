@@ -1,3 +1,3 @@
-import useMetaProperties from "./use-meta-properties/useMetaProperties";
+import useMetaProperties from './use-meta-properties/useMetaProperties';
 
 export { useMetaProperties };

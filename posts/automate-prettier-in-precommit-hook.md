@@ -1,14 +1,14 @@
 ---
-title: "Automate Prettier in a pre-commit hook"
-date: "2021-06-04"
-author: 
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
-excerpt: "Prettier is a wonderful tool. It  works in many editors and supports many languages. But opinionated is his best feature and the first reason to use it."
-tags: ["prettier","git"]
+title: 'Automate Prettier in a pre-commit hook'
+date: '2021-06-04'
+author:
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
+excerpt: 'Prettier is a wonderful tool. It  works in many editors and supports many languages. But opinionated is his best feature and the first reason to use it.'
+tags: ['prettier', 'git']
 ---
 
-[Prettier](https://prettier.io/) is a wonderful tool. It  works in many editors and supports many languages.
+[Prettier](https://prettier.io/) is a wonderful tool. It works in many editors and supports many languages.
 
 But opinionated code formatter is his best feature and the first reason to use it.
 
@@ -60,7 +60,7 @@ And a post commit to update index.
 git update-index -g
 ```
 
-Create a `.githooks` folder at the root of your project and put a `pre-commit` and  `post-commit` files inside with the content above.
+Create a `.githooks` folder at the root of your project and put a `pre-commit` and `post-commit` files inside with the content above.
 
 The last commands to type is to tell git the folder of hooks and make them executable. Execute them in your terminal.
 

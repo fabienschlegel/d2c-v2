@@ -1,17 +1,16 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
-import { Divider, Flex, Grid, GridItem, Heading } from "@chakra-ui/react";
+import { Divider, Flex, Grid, GridItem, Heading } from '@chakra-ui/react';
 
-import { LargeSummaryCard } from "features/Posts/components";
+import { LargeSummaryCard } from 'features/Posts/components';
 
-import { PostSummary } from "features/Posts/types";
+import { PostSummary } from 'features/Posts/types';
 
 interface PostRelatedArticlesProps {
   relatedArticles: PostSummary[];
 }
 
-export type PostRelatedArticlesType =
-  FunctionComponent<PostRelatedArticlesProps>;
+export type PostRelatedArticlesType = FunctionComponent<PostRelatedArticlesProps>;
 
 const PostRelatedArticles: PostRelatedArticlesType = ({ relatedArticles }) => {
   return (
@@ -19,15 +18,11 @@ const PostRelatedArticles: PostRelatedArticlesType = ({ relatedArticles }) => {
       <Heading as="h2" size="lg">
         Related Articles
       </Heading>
-      <Divider
-        borderBottomWidth="2px"
-        marginTop="0.5rem"
-        borderColor={"brand.darkBlue"}
-      />
+      <Divider borderBottomWidth="2px" marginTop="0.5rem" borderColor={'brand.darkBlue'} />
       <Grid
         templateColumns={{
-          base: "repeat(1, 1fr)",
-          md: "repeat(2, 1fr)",
+          base: 'repeat(1, 1fr)',
+          md: 'repeat(2, 1fr)',
         }}
         gap={6}
         marginTop="0.75rem"
@@ -46,6 +41,7 @@ const PostRelatedArticles: PostRelatedArticlesType = ({ relatedArticles }) => {
               excerpt={related.excerpt}
               slug={related.slug}
               coverImageSrc={related.coverImage}
+              readingTime={related.readingTime}
             />
           </GridItem>
         ))}

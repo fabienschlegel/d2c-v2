@@ -1,12 +1,12 @@
 ---
-title: "Setup JWT for a React Django app in minutes"
-date: "2021-06-25"
+title: 'Setup JWT for a React Django app in minutes'
+date: '2021-06-25'
 author:
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
-excerpt: "How to setup JWT in a project with a React frontend and a Django backend in minutes."
-tags: ["React", "django", "jwt"]
-related: ["introduction-to-jwt", "five-reasons-to-use-django"]
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
+excerpt: 'How to setup JWT in a project with a React frontend and a Django backend in minutes.'
+tags: ['React', 'django', 'jwt']
+related: ['introduction-to-jwt', 'five-reasons-to-use-django']
 ---
 
 In my previous post, I explained what the JWT are.
@@ -86,13 +86,13 @@ We need 2 services with React to manage our JWT.
 I use Axios but it works with fetch too.
 
 ```javascript
-import axios from "axios";
+import axios from 'axios';
 
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux';
 
-import { TokenService } from "..";
+import { TokenService } from '..';
 
-import { deleteUserData } from "../../../Accounts/actions";
+import { deleteUserData } from '../../../Accounts/actions';
 
 const requestService = axios.create({
   baseURL: process.env.REACT_APP_API_ENTRYPOINT,
@@ -125,8 +125,8 @@ requestService.interceptors.response.use(
     if (error.response.status === 401 && !originalRequest.retry) {
       originalRequest.retry = true;
       return requestService({
-        url: "/api/v1/accounts/token/refresh/",
-        method: "post",
+        url: '/api/v1/accounts/token/refresh/',
+        method: 'post',
         data: {
           refresh: TokenService.getRefreshToken(),
         },
@@ -165,7 +165,7 @@ We manage tokens with local storage and the service can set, get, check validity
 Take care of one thing : with a refresh token, a malicious person can pretend to be your user. Store a long term token in the local storage is a bad idea.
 
 ```javascript
-import jwt from "jsonwebtoken";
+import jwt from 'jsonwebtoken';
 
 const TokenService = (function tokenService() {
   let service;
@@ -179,16 +179,16 @@ const TokenService = (function tokenService() {
 
   const setToken = (tokenObj) => {
     if (tokenObj.access) {
-      localStorage.setItem("accessToken", tokenObj.access);
+      localStorage.setItem('accessToken', tokenObj.access);
     }
     if (tokenObj.refresh) {
-      localStorage.setItem("refreshToken", tokenObj.refresh);
+      localStorage.setItem('refreshToken', tokenObj.refresh);
     }
   };
 
-  const getAccessToken = () => localStorage.getItem("accessToken");
+  const getAccessToken = () => localStorage.getItem('accessToken');
 
-  const getRefreshToken = () => localStorage.getItem("refreshToken");
+  const getRefreshToken = () => localStorage.getItem('refreshToken');
 
   const getTokenValidity = (tokenObj) => {
     const decodedToken = jwt.decode(tokenObj, { complete: true });
@@ -218,8 +218,8 @@ const TokenService = (function tokenService() {
   };
 
   const clearToken = () => {
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("refreshToken");
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
   };
 
   return {

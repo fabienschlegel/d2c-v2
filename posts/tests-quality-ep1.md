@@ -1,11 +1,11 @@
 ---
-title: "Tests et qualité de code - Les tests, comment ça marche ?"
-date: "2019-09-01"
-author: 
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
+title: 'Tests et qualité de code - Les tests, comment ça marche ?'
+date: '2019-09-01'
+author:
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
 excerpt: "Aujourd'hui, on part à la découverte du merveilleux monde des tests..."
-tags: ["tests", "qualité de code"]
+tags: ['tests', 'qualité de code']
 ---
 
 ### Les tests, comment ça marche ?
@@ -64,7 +64,7 @@ Ran 1 test in 0.000s
 OK
 ```
 
-Là où je ne suis pas fan du TDD, c'est quand on sort du monde des bisounours. Sur un vrai projet, on va se retrouver à faire plus de tests que de code. Et quand on attaque de la réécriture, faut se cogner le test __et__ le code, voire plusieurs tests si on refactorise, découpe à la hache, etc.
+Là où je ne suis pas fan du TDD, c'est quand on sort du monde des bisounours. Sur un vrai projet, on va se retrouver à faire plus de tests que de code. Et quand on attaque de la réécriture, faut se cogner le test **et** le code, voire plusieurs tests si on refactorise, découpe à la hache, etc.
 
 En effet, il est préférable de ne tester d'une seule situation par test. Si notre fonction contient différentes conditions, il faudra peut être plusieurs tests, ce qui rendra le développement plus complexe au final.
 
@@ -106,7 +106,7 @@ describe('Test addOperande Action', () => {
 
 Si jamais on modifie l'action en ajoutant un argument et que l'on exécute le test, celui-ci échouera.
 
-Avec React et le principe des composants, il est plutot simple de faire des tests unitaires. Ici j'ai choisi de les grouper par type avec un répertoire \__tests__ qui regroupe, bah les tests.
+Avec React et le principe des composants, il est plutot simple de faire des tests unitaires. Ici j'ai choisi de les grouper par type avec un répertoire \_\_tests\_\_ qui regroupe, bah les tests.
 
 Quand j'utilise la méthode [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/), je mets chaque composant dans un répertoire et je colle les tests associés à ce composant avec.
 
@@ -168,8 +168,8 @@ Sur cet exemple avec Django, petit décryptage...
 
 - setUp permet de configurer Chrome, ici on vire le mode bac à sable, on choisit la taille de la fenêtre et le navigateur s'exécutera sans écran (pratique dans un environnement Docker).
 - tearDown éteint la lumière à la fin du test.
-- \_get\_full\_url c'est pour récupérer l'url appelée à partir de son namespace.
-- test\_signin\_succeed, le vif du sujet, c'est notre test :
+- \_get_full_url c'est pour récupérer l'url appelée à partir de son namespace.
+- test_signin_succeed, le vif du sujet, c'est notre test :
   - On indique à Sélénium le formulaire à renseigner avec les infos associés
   - Il le soumets, attends un peu que la page charge
   - Il vérifie qu'un id existe dans la page. Si il est présent, l'utilisateur voit le lien vers son profil et tout est ok.
@@ -224,7 +224,7 @@ Alors les tests c'est pas magique non plus, si personne ne les exécute, on pour
 
 Par contre si les tests sont automatisés à chaque merge request ou mieux à chaque commit, on pourra surveiller l'évolution du code. Les merge requests seront plus simple à contrôler pour l'équipe.
 
-------------------------------
+---
 
 - [Partie 0 - A quoi ça sert ?](/tests-quality-ep0)
 - [Partie 1 - Les tests, comment ça marche ?](/tests-quality-ep1)

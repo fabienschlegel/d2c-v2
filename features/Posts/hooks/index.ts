@@ -1,3 +1,3 @@
-import usePostsListNavigation from "./use-posts-list-navigation/usePostsListNavigation";
+import usePostsListNavigation from './use-posts-list-navigation/usePostsListNavigation';
 
 export { usePostsListNavigation };

@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { POSTS_PER_PAGE } from "features/Posts/constants";
+import { POSTS_PER_PAGE } from 'features/Posts/constants';
 
-import { PostSummary } from "features/Posts/types";
+import { PostSummary } from 'features/Posts/types';
 
 interface UsePostsListNavigation {
   paginatedPosts: PostSummary[];
@@ -12,9 +12,7 @@ interface UsePostsListNavigation {
   nextPage: () => void;
 }
 
-const usePostsListNavigation = (
-  posts: PostSummary[]
-): UsePostsListNavigation => {
+const usePostsListNavigation = (posts: PostSummary[]): UsePostsListNavigation => {
   const [paginatedPosts, setPaginatedPosts] = useState<PostSummary[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [lastPage, setLastPage] = useState(1);
@@ -26,10 +24,7 @@ const usePostsListNavigation = (
       setPaginatedPosts(posts.slice(0, POSTS_PER_PAGE));
     } else {
       setPaginatedPosts(
-        posts.slice(
-          POSTS_PER_PAGE * (currentPage - 1),
-          POSTS_PER_PAGE * currentPage
-        )
+        posts.slice(POSTS_PER_PAGE * (currentPage - 1), POSTS_PER_PAGE * currentPage)
       );
     }
   }, [currentPage, posts]);

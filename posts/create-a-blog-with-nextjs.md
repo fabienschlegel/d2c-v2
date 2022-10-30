@@ -1,14 +1,13 @@
 ---
-title: "Create a blog with NextJS"
-date: "2022-09-27"
-coverImage: "/assets/blog/cover-images/create-a-blog-with-nextjs.png"
+title: 'Create a blog with NextJS'
+date: '2022-09-27'
+coverImage: '/assets/blog/cover-images/create-a-blog-with-nextjs.png'
 author:
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
-excerpt: "How to create a blog with NextJS and Typescript. A guide from my own experience."
-tags: ["react", "typescript", "blog", "nextjs"]
-related:
-  ["from-gatsby-to-nextjs-journey-of-a-blog", "publish-my-own-blog-start-of-content-creator"]
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
+excerpt: 'How to create a blog with NextJS and Typescript. A guide from my own experience.'
+tags: ['react', 'typescript', 'blog', 'nextjs']
+related: ['from-gatsby-to-nextjs-journey-of-a-blog', 'publish-my-own-blog-start-of-content-creator']
 ---
 
 This year I decided to migrate my blog from Gatsby to NextJS. To be able to add features more easily.
@@ -86,17 +85,17 @@ To use ChakraUI, you must add a component called `ChakraProvider`. This componen
 I create a custom theme file to extend colours and add fonts.
 
 ```typescript
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme } from '@chakra-ui/react';
 
 const mainTheme = extendTheme({
   colors: {
     brand: {
-      darkBlue: "#1f4f6f",
-      blue: "#22577a",
-      greenBlue: "#38a3a5",
-      greener: "#57cc99",
-      green: "#80ED99",
-      lightGreen: "#c7f9cc",
+      darkBlue: '#1f4f6f',
+      blue: '#22577a',
+      greenBlue: '#38a3a5',
+      greener: '#57cc99',
+      green: '#80ED99',
+      lightGreen: '#c7f9cc',
     },
   },
   fonts: {
@@ -117,7 +116,7 @@ I use the special file `_document.tsx`. The build updates the render of the `htm
 I add here all the scripts recommended by the Google fonts website. And it works.
 
 ```tsx
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
@@ -189,16 +188,16 @@ I use it to get the last part of the URL named `slug`. I give it to functions wh
 ```typescript
 export async function getStaticProps({ params }: Params) {
   const post = getPostBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "content",
-    "coverImage",
-    "ogImage",
-    "tags",
+    'title',
+    'date',
+    'slug',
+    'author',
+    'content',
+    'coverImage',
+    'ogImage',
+    'tags',
   ]);
-  const content = await markdownToHtml(post.content || "");
+  const content = await markdownToHtml(post.content || '');
 
   const previous = getPreviousPost(params.slug);
 
@@ -225,7 +224,7 @@ I use it to retrieve all the posts `slug` and get all the paths of my posts duri
 
 ```typescript
 export async function getStaticPaths() {
-  const posts = getAllPostsByDate(["slug"]);
+  const posts = getAllPostsByDate(['slug']);
 
   return {
     paths: posts.map((post) => {
@@ -248,9 +247,9 @@ The `getPostBySlug` function will take as a parameter a string and an array. It 
 
 ```typescript
 export function getPostBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.md$/, "");
+  const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
   type Items = {
@@ -260,14 +259,14 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const items: Items = {};
 
   fields.forEach((field) => {
-    if (field === "slug") {
+    if (field === 'slug') {
       items[field] = realSlug;
     }
-    if (field === "content") {
+    if (field === 'content') {
       items[field] = content;
     }
 
-    if (typeof data[field] !== "undefined") {
+    if (typeof data[field] !== 'undefined') {
       items[field] = data[field];
     }
   });
@@ -282,10 +281,7 @@ The last library I use there is PrismJS. This library highlight code parts of th
 
 ```typescript
 export default async function markdownToHtml(markdown: string) {
-  const result = await remark()
-    .use(html, { sanitize: false })
-    .use(prism)
-    .process(markdown);
+  const result = await remark().use(html, { sanitize: false }).use(prism).process(markdown);
   return result.toString();
 }
 ```
@@ -298,13 +294,11 @@ This is a 2 steps feature. Remember the `getStaticPaths`, it will create all the
 
 ```typescript
 export function getAllTags(): Array<string> {
-  const allPosts = getAllPosts(["slug", "tags"]);
+  const allPosts = getAllPosts(['slug', 'tags']);
 
   const flattenTags = allPosts.map((post) => post?.tags).flat();
 
-  const allTags = flattenTags.filter(
-    (item, pos) => flattenTags.indexOf(item) == pos
-  );
+  const allTags = flattenTags.filter((item, pos) => flattenTags.indexOf(item) == pos);
   return allTags;
 }
 ```
@@ -331,10 +325,7 @@ I use Google Analytics on the first version of the site with a Gatsby plugin. Wi
 {
   isProduction && (
     <>
-      <script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-      />
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
       <script
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
@@ -366,7 +357,7 @@ After the deployment, sitemaps and robots.txt files will be available.
 ```typescript
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://devoreur2code.com",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://devoreur2code.com',
   generateRobotsTxt: true,
 };
 ```

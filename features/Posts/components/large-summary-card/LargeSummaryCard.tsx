@@ -1,21 +1,22 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
-import NextLink from "next/link";
+import NextLink from 'next/link';
 
-import { FaChevronRight } from "react-icons/fa";
+import { FaChevronRight, FaClock } from 'react-icons/fa';
 
-import { Box, Flex, Heading, HStack, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, HStack, Image, Tag, Text } from '@chakra-ui/react';
 
-import { ButtonLink } from "..";
+import { ButtonLink } from '..';
 
-import TagsList from "./tags-list/TagsList";
+import TagsList from './tags-list/TagsList';
 
-import { uppercaseFirst } from "core";
+import { uppercaseFirst } from 'core';
 
 interface LargeSummaryCardProps {
   title: string;
   excerpt: string;
   slug: string;
+  readingTime: string;
   authorName?: string;
   authorAvatar?: string;
   date?: string;
@@ -27,6 +28,7 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
   title,
   excerpt,
   slug,
+  readingTime,
   authorName,
   authorAvatar,
   date,
@@ -38,12 +40,12 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
       <Box borderRadius="lg" overflow="hidden">
         <Image
           transform="scale(1.0)"
-          src={coverImageSrc || "/assets/media/D2C-fond-transparent.png"}
+          src={coverImageSrc || '/assets/media/D2C-fond-transparent.png'}
           alt="Cover image of the post"
           objectFit="contain"
           transition="0.3s ease-in-out"
           _hover={{
-            transform: "scale(1.05)",
+            transform: 'scale(1.05)',
           }}
         />
       </Box>
@@ -69,13 +71,15 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
           <Text>{date}</Text>
         </HStack>
       )}
-      <Box marginTop="1rem">
-        <ButtonLink
-          href={`/blog/${slug}`}
-          label="Read the post"
-          rightIcon={<FaChevronRight />}
-        />
-      </Box>
+      <Flex marginTop="1rem" align="center" justify="space-between">
+        <ButtonLink href={`/blog/${slug}`} label="Read the post" rightIcon={<FaChevronRight />} />
+        <Tag backgroundColor="brand.greener" color="white">
+          <Box marginRight="0.5rem">
+            <FaClock />
+          </Box>
+          {readingTime}
+        </Tag>
+      </Flex>
     </Flex>
   );
 };

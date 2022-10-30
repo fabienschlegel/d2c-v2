@@ -1,16 +1,13 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
-import { Image } from "@chakra-ui/react";
+import { Image } from '@chakra-ui/react';
 
 interface CoverImageProps {
   coverImageSrc: string;
   title: string;
 }
 
-const CoverImage: FunctionComponent<CoverImageProps> = ({
-  coverImageSrc,
-  title,
-}) => {
+const CoverImage: FunctionComponent<CoverImageProps> = ({ coverImageSrc, title }) => {
   return (
     <Image
       src={coverImageSrc}

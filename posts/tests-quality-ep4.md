@@ -1,11 +1,11 @@
 ---
 title: "Tests et qualité de code - Automatiser tout ça c'est dans nos cordes"
-date: "2019-09-22"
-author: 
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
+date: '2019-09-22'
+author:
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
 excerpt: "Automatiser tout ça c'est dans nos cordes"
-tags: ["tests", "qualité de code"]
+tags: ['tests', 'qualité de code']
 ---
 
 Et voila, c'est déjà le dernier tour, on est près de l'arrivée.
@@ -26,18 +26,18 @@ Bordel, j'en ai la larme à l’œil, on dirait du Victor Hugo.
 
 Plus simplement, on peut découper l'idée en deux parties :
 
-* Continuous Integration : l'intégration continue c'est ce qui va nous permettre d'ajouter quotidiennement nos nouveaux développements dans notre projet. On va automatiser toute la vérification de nos changements et la fusion avec le reste du projet.
-* Continuous Deployment : le déploiement continu, lui va nous permettre de distribuer notre application vers les environnements de recette et de production.
+- Continuous Integration : l'intégration continue c'est ce qui va nous permettre d'ajouter quotidiennement nos nouveaux développements dans notre projet. On va automatiser toute la vérification de nos changements et la fusion avec le reste du projet.
+- Continuous Deployment : le déploiement continu, lui va nous permettre de distribuer notre application vers les environnements de recette et de production.
 
 ### La mise en place
 
 Il existe pas mal d'outils permettant de mettre en place ce type de solution.
 
-* Jenkins
-* TravisCI
-* CircleCi
-* Codeship
-* Gitlab CI
+- Jenkins
+- TravisCI
+- CircleCi
+- Codeship
+- Gitlab CI
 
 Comme la majorité de mes dépôts sont sur Gitlab, je vais l'utiliser comme exemple avec un projet Django déployé sur Heroku.
 
@@ -52,8 +52,8 @@ Un stage que l'on va appeler _test_, pour les tests et la qualité de code et un
 
 ```yaml
 stages:
-    - test
-    - deploy
+  - test
+  - deploy
 
 test:
   stage: test
@@ -62,33 +62,33 @@ test:
     - postgres:11.3-alpine
     - docker:dind
   variables:
-      DBUS_SESSION_BUS_ADDRESS: "/dev/null"
-      SECRET_KEY: 'fake_key'
-      DEBUG: 'False'
-      ALLOWED_HOSTS: '.localhost'
-      EMAIL_HOST: ""
-      EMAIL_PORT: ""
-      EMAIL_HOST_USER: ""
-      EMAIL_HOST_PASSWORD: ""
-      EMAIL_USE_TLS: ""
-      DEFAULT_FROM_EMAIL: ""
-      DATABASE_URL: "postgres://db_user:fakepassword@postgres:5432/sample"
-      POSTGRES_DB: sample
-      POSTGRES_USER: db_user
-      POSTGRES_PASSWORD: fakepassword
+    DBUS_SESSION_BUS_ADDRESS: '/dev/null'
+    SECRET_KEY: 'fake_key'
+    DEBUG: 'False'
+    ALLOWED_HOSTS: '.localhost'
+    EMAIL_HOST: ''
+    EMAIL_PORT: ''
+    EMAIL_HOST_USER: ''
+    EMAIL_HOST_PASSWORD: ''
+    EMAIL_USE_TLS: ''
+    DEFAULT_FROM_EMAIL: ''
+    DATABASE_URL: 'postgres://db_user:fakepassword@postgres:5432/sample'
+    POSTGRES_DB: sample
+    POSTGRES_USER: db_user
+    POSTGRES_PASSWORD: fakepassword
 
   cache:
-      paths:
-          - ~/.cache/pip/
+    paths:
+      - ~/.cache/pip/
 
   before_script:
-      - apt-get update -qy
-      - apt-get install -y libpq-dev python-dev python-pip
-      - python -V
-      - pip install -r requirements/ci.txt
-      - mkdir static
-      - python manage.py collectstatic
-      - gunicorn -D core.wsgi 
+    - apt-get update -qy
+    - apt-get install -y libpq-dev python-dev python-pip
+    - python -V
+    - pip install -r requirements/ci.txt
+    - mkdir static
+    - python manage.py collectstatic
+    - gunicorn -D core.wsgi
 
   script:
     - coverage run --source="." manage.py test -v 3
@@ -105,10 +105,10 @@ codequality:
   script:
     - export SP_VERSION=$(echo "$CI_SERVER_VERSION" | sed 's/^\([0-9]*\)\.\([0-9]*\).*/\1-\2-stable/')
     - docker run
-        --env SOURCE_CODE="$PWD"
-        --volume "$PWD":/code
-        --volume /var/run/docker.sock:/var/run/docker.sock
-        "registry.gitlab.com/gitlab-org/security-products/codequality:$SP_VERSION" /code
+      --env SOURCE_CODE="$PWD"
+      --volume "$PWD":/code
+      --volume /var/run/docker.sock:/var/run/docker.sock
+      "registry.gitlab.com/gitlab-org/security-products/codequality:$SP_VERSION" /code
   artifacts:
     reports:
       codequality: gl-code-quality-report.json
@@ -136,12 +136,12 @@ production_deploy:
 
 On attaque la partie lourde du truc. Pour faire nos tests avec Django, on va utiliser Docker. Certains tests nécessitent en effet de lancer un vrai serveur web Django, d'utiliser Chrome et Sélénium cf [la partie 1 de la série](/tests-quality-ep1).
 
-C'est tout l’intérêt du  Docker Hub, quelqu'un a développé le container dont on a pile poil besoin. On met le nom du container principal dans _image_.
+C'est tout l’intérêt du Docker Hub, quelqu'un a développé le container dont on a pile poil besoin. On met le nom du container principal dans _image_.
 
 Dans _services_, on va ajouter les containers secondaires dont on a besoin :
 
-* postgres:11.3-alpine, c'est pour la partie base de données
-* docker:dind c'est pas du poulet, c'est docker-in-docker, qui permet de démarrer des containers dans un container, vu que le runner de Gitlab en est un.
+- postgres:11.3-alpine, c'est pour la partie base de données
+- docker:dind c'est pas du poulet, c'est docker-in-docker, qui permet de démarrer des containers dans un container, vu que le runner de Gitlab en est un.
 
 _variables_ nous permet d'inclure les variables d'environnement nécessaires au projet. Si certaines variables sont secrètes, genre clé d'API AWS ou Google Maps, on l'ajoute dans les settings de gitlabci et on le récupère avec un $NOTRE_VARIABLE.
 
@@ -167,8 +167,8 @@ Dernière étape de notre automatisation, le déploiement.
 
 Alors les deux blocs sont ressemblants, sauf :
 
-* sur le nom de notre appli heroku, une pour le staging et une pour la production.
-* sur la branche qui déclenche le job via le réglage _only_.
+- sur le nom de notre appli heroku, une pour le staging et une pour la production.
+- sur la branche qui déclenche le job via le réglage _only_.
 
 Maintenant si le pipeline foire, à chaque commit, on aura un joli mail.
 Les merge request ne se feront automatiquement que si le pipeline est ok.
@@ -183,10 +183,10 @@ J'espère t'avoir fourni de quoi te plonger dans plusieurs sujets passionnants q
 
 N'hésites pas à laisser un commentaire ou un message privé sur mon LinkedIn ou mon Twitter, ça me permettra de m'améliorer pour la suite !
 
---------------------------------
+---
 
-* [Partie 0 - A quoi ça sert ?](/tests-quality-ep0)
-* [Partie 1 - Les tests, comment ça marche ?](/tests-quality-ep1)
-* [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/tests-quality-ep2)
-* [Partie 3 - Allez hop, on pose les mains et on refactorise](/tests-quality-ep3)
-* [Partie 4 - Automatiser tout ça c'est dans nos cordes](/tests-quality-ep4)
+- [Partie 0 - A quoi ça sert ?](/tests-quality-ep0)
+- [Partie 1 - Les tests, comment ça marche ?](/tests-quality-ep1)
+- [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/tests-quality-ep2)
+- [Partie 3 - Allez hop, on pose les mains et on refactorise](/tests-quality-ep3)
+- [Partie 4 - Automatiser tout ça c'est dans nos cordes](/tests-quality-ep4)

@@ -1,6 +1,6 @@
 {
   "name": "d2cv2",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Another blog from a developer",
   "license": "MIT",
   "private": true,
@@ -15,7 +15,8 @@
     "start": "next start",
     "lint": "next lint",
     "lint:scss": "stylelint **/*.scss --max-warnings 0",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prettify": "prettier --write */**"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.2.9",
@@ -60,6 +61,6 @@
     "typescript": "4.8.2"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,css,scss}": "prettier --write"
+    "**/*.{js,jsx,ts,tsx,css,scss}": "prettier --write */**"
   }
 }

@@ -1,11 +1,11 @@
 ---
-title: "Understand and use composition in React"
-date: "2021-07-09"
-author: 
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
-excerpt: "Composition is very powerful in React but for some cases, it may be hard to use. Today I will give you examples of composition caught up in real projects."
-tags: ["javascript", "typescript", "React"]
+title: 'Understand and use composition in React'
+date: '2021-07-09'
+author:
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
+excerpt: 'Composition is very powerful in React but for some cases, it may be hard to use. Today I will give you examples of composition caught up in real projects.'
+tags: ['javascript', 'typescript', 'React']
 ---
 
 React is a cool library to make front end apps. I work with it since 3 years and I'm not bored to use it !
@@ -21,17 +21,16 @@ Take a very common component, like a button. We have a lot of them in our apps.
 Below, a generic component, a button with some props.
 
 ```typescript
-const Button: React.FC<
-  ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
-> = ({ children, size, color, isLoading, className, ...others }) => (
+const Button: React.FC<ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>> = ({
+  children,
+  size,
+  color,
+  isLoading,
+  className,
+  ...others
+}) => (
   <button
-    className={clsx(
-      "button",
-      size,
-      color,
-      isLoading ? "is-loading" : undefined,
-      className,
-    )}
+    className={clsx('button', size, color, isLoading ? 'is-loading' : undefined, className)}
     {...others}
   >
     {children}
@@ -60,9 +59,9 @@ const ExportPdfButton: React.FC<ExportPdfButtonProps> = ({
 
   return (
     <Button
-      className={clsx("has-tooltip-arrow", className)}
+      className={clsx('has-tooltip-arrow', className)}
       onClick={(e) => handleClick(e)}
-      data-tooltip={uppercaseFirst(t("downloadPdf"))}
+      data-tooltip={uppercaseFirst(t('downloadPdf'))}
     >
       {isLoading ? (
         <FontAwesomeIcon icon={faSpinner} pulse />
@@ -79,12 +78,7 @@ Now we have a specialized component. As you can see it's a component to download
 Another example of specialization with the same generic button component.
 
 ```typescript
-const ActionsButton: React.FC<ActionsButtonProps> = ({
-  title,
-  label,
-  type,
-  modalContent,
-}) => {
+const ActionsButton: React.FC<ActionsButtonProps> = ({ title, label, type, modalContent }) => {
   const { t } = useTranslation();
 
   const openModal = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -97,7 +91,7 @@ const ActionsButton: React.FC<ActionsButtonProps> = ({
   };
 
   return (
-    <Button className={clsx("action-btn large", type)} onClick={openModal}>
+    <Button className={clsx('action-btn large', type)} onClick={openModal}>
       {uppercaseFirst(t(label))}
     </Button>
   );
@@ -114,21 +108,11 @@ Look at this example of how we use this.
 
 ```typescript
 const ContextWrapper: React.FC<ContextWrapperProps> = ({ children }) => {
-  const [itemsState, dispatchitems] = useReducer(
-    itemsReducer,
-    itemsInitialState,
-  );
-  const [filtersState, dispatchFilters] = useReducer(
-    filtersReducer,
-    filtersInitialState,
-  );
+  const [itemsState, dispatchitems] = useReducer(itemsReducer, itemsInitialState);
+  const [filtersState, dispatchFilters] = useReducer(filtersReducer, filtersInitialState);
   return (
-    <ItemsContext.Provider
-      value={{ state: itemsState, dispatch: dispatchitems }}
-    >
-      <FiltersContext.Provider
-        value={{ state: filtersState, dispatch: dispatchFilters }}
-      >
+    <ItemsContext.Provider value={{ state: itemsState, dispatch: dispatchitems }}>
+      <FiltersContext.Provider value={{ state: filtersState, dispatch: dispatchFilters }}>
         {children}
       </FiltersContext.Provider>
     </ItemsContext.Provider>
@@ -172,11 +156,7 @@ But we can inject props in a component with the _cloneElement_ method. I discove
 Look above and now look the details of the Page component below.
 
 ```typescript
-const Page: React.FC<PageProps> = ({
-  filtersComponent,
-  actionsPanel,
-  dataTable,
-}) => {
+const Page: React.FC<PageProps> = ({ filtersComponent, actionsPanel, dataTable }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const { t } = useTranslation();
 
@@ -198,7 +178,7 @@ const Page: React.FC<PageProps> = ({
       </header>
       <main className="site-content">
         <SideBar
-          title={uppercaseFirst(t("filters"))}
+          title={uppercaseFirst(t('filters'))}
           isVisible={isVisible}
           toggleSideBar={toggleSideBar}
         >

@@ -1,15 +1,17 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
-import { Image, Flex, Heading, Text, HStack } from "@chakra-ui/react";
+import { Image, Flex, Heading, Text, HStack, Tag, Box } from '@chakra-ui/react';
 
-import { uppercaseFirst } from "core";
+import { uppercaseFirst } from 'core';
 
-import { CoverImage, PostTag } from "../..";
+import { CoverImage, PostTag } from '../..';
+import { FaClock } from 'react-icons/fa';
 
 interface PostHeaderProps {
   title: string;
   authorName: string;
   date: string;
+  readingTime: string;
   coverImageSrc?: string;
   avatarSrc?: string;
   tags?: Array<string>;
@@ -21,6 +23,7 @@ const PostHeader: PostHeaderType = ({
   title,
   authorName,
   date,
+  readingTime,
   coverImageSrc,
   avatarSrc,
   tags,
@@ -30,11 +33,7 @@ const PostHeader: PostHeaderType = ({
       <Heading as="h1" size="2xl" marginBottom={4}>
         {uppercaseFirst(title)}
       </Heading>
-      <Flex
-        alignItems="center"
-        justifyContent="space-between"
-        marginBottom="20px"
-      >
+      <Flex alignItems="center" justifyContent="space-between" marginBottom="20px">
         <Flex alignItems="center">
           {avatarSrc && (
             <Image
@@ -49,7 +48,15 @@ const PostHeader: PostHeaderType = ({
           )}
           <Text size="md">{authorName}</Text>
         </Flex>
-        <Text marginRight="2rem">{date}</Text>
+        <Flex alignItems="center" justifyContent="space-between">
+          <Text marginRight="2rem">{date}</Text>
+          <Tag backgroundColor="brand.greener" color="white">
+            <Box marginRight="0.5rem">
+              <FaClock />
+            </Box>
+            {readingTime}
+          </Tag>
+        </Flex>
       </Flex>
       {tags && (
         <HStack spacing={2} marginBottom="1rem">
@@ -58,9 +65,7 @@ const PostHeader: PostHeaderType = ({
           ))}
         </HStack>
       )}
-      {coverImageSrc && (
-        <CoverImage coverImageSrc={coverImageSrc} title={title} />
-      )}
+      {coverImageSrc && <CoverImage coverImageSrc={coverImageSrc} title={title} />}
     </Flex>
   );
 };

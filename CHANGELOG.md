@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.5] - 2022-10-30
+
+### Added
+
+- Add reading to posts
+
+### Fixed
+
+- Fix Prettier configuration
+
+### Updated
+
+- Disable Sentry for development environment
+
 ## [0.2.4] - 2022-10-16
 
 ### Added

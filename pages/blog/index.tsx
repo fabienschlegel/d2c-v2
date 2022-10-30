@@ -1,26 +1,21 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
 
-import {
-  POST_HEADER_FIELDS,
-  PostsList,
-  usePostsListNavigation,
-} from "features/Posts";
+import { POST_HEADER_FIELDS, PostsList, usePostsListNavigation } from 'features/Posts';
 
-import { getAllPostsByDate } from "features/Posts/api";
+import { getAllPostsByDate } from 'features/Posts/api';
 
-import { PrimaryLayout } from "features/Layout";
+import { PrimaryLayout } from 'features/Layout';
 
-import { SITE_NAME, SITE_IMAGE } from "core/constants";
+import { SITE_NAME, SITE_IMAGE } from 'core/constants';
 
-import type { PostSummary } from "features/Posts/types";
+import type { PostSummary } from 'features/Posts/types';
 
 interface BlogPageProps {
   posts: Array<PostSummary>;
 }
 
 const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
-  const { paginatedPosts, previous, next, previousPage, nextPage } =
-    usePostsListNavigation(posts);
+  const { paginatedPosts, previous, next, previousPage, nextPage } = usePostsListNavigation(posts);
   return (
     <PrimaryLayout
       pageTitle="List of blog posts"
@@ -35,6 +30,7 @@ const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
             date={post.date}
             authorName={post.author.name}
             excerpt={post.excerpt}
+            readingTime={post.readingTime}
             slug={`/blog/${post.slug}`}
             coverImage={post.coverImage}
             tags={post.tags}

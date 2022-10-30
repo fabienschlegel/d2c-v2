@@ -1,14 +1,13 @@
 ---
-title: "From Gatsby to NextJS - journey of a blog"
-date: "2022-09-20"
-coverImage: "/assets/blog/cover-images/from-gatsby-to-nextjs-journey-of-a-blog-illustration.png"
+title: 'From Gatsby to NextJS - journey of a blog'
+date: '2022-09-20'
+coverImage: '/assets/blog/cover-images/from-gatsby-to-nextjs-journey-of-a-blog-illustration.png'
 author:
-  name: "Fabien Schlegel"
-  avatar: "/assets/blog/authors/fabien_schlegel.png"
-excerpt: "Using Gatsby was a perfect example of not reinventing the wheel. Made with React, Giving free templates."
-tags: ["gatsby", "story", "blog", "nextjs"]
-related:
-  ["create-a-blog-with-nextjs", "publish-my-own-blog-start-of-content-creator"]
+  name: 'Fabien Schlegel'
+  avatar: '/assets/blog/authors/fabien_schlegel.png'
+excerpt: 'Using Gatsby was a perfect example of not reinventing the wheel. Made with React, Giving free templates.'
+tags: ['gatsby', 'story', 'blog', 'nextjs']
+related: ['create-a-blog-with-nextjs', 'publish-my-own-blog-start-of-content-creator']
 ---
 
 I have the idea to make a blog for two reasons. To help other developers and share my professional journey. To increase my value in the job market by learning new things and sharing my knowledge.

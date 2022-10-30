@@ -1,10 +1,10 @@
-import { FunctionComponent, ReactNode } from "react";
+import { FunctionComponent, ReactNode } from 'react';
 
-import Head from "next/head";
+import Head from 'next/head';
 
-import { Flex } from "@chakra-ui/react";
+import { Flex } from '@chakra-ui/react';
 
-import LayoutMain, { LayoutMainType } from "./layout-main/LayoutMain";
+import LayoutMain, { LayoutMainType } from './layout-main/LayoutMain';
 
 interface LayoutComposition {
   Head: ({ children }: { children: ReactNode }) => JSX.Element;

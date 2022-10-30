@@ -1,4 +1,4 @@
-import { uppercaseFirst } from "core";
+import { uppercaseFirst } from 'core';
 
 interface UseMetaPropertiesProps {
   pageTitle: string;
@@ -13,7 +13,7 @@ interface UseMetaProperties {
   siteUrl: string;
 }
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 
 const useMetaProperties = ({
   pageTitle,
