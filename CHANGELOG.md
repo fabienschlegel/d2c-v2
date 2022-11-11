@@ -1,10 +1,16 @@
 # Changelog
 
+## [0.2.6] - 2022-11-11
+
+### Added
+
+- Add post _Manage your state with the useState hook in React_
+
 ## [0.2.5] - 2022-10-30
 
 ### Added
 
-- Add reading to posts
+- Add reading time to posts
 
 ### Fixed
 
