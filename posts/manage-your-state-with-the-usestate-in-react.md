@@ -67,14 +67,22 @@ function App() {
     setCount((prevCounters) => ({ ...prevCounters, buzz: prevCounters.buzz + 1 }));
 
   const handleIncreaseAll = () =>
-    setCount((prevCounters) => ({fizz: prevCounters.fizz + 1, buzz: prevCounters.buzz + 1}));
+    setCount((prevCounters) => ({ fizz: prevCounters.fizz + 1, buzz: prevCounters.buzz + 1 }));
 
   return (
     <div>
-      <p>Fizz: {counters.fizz} Buzz: {counters.buzz}</p>
-      <button onClick={handleIncreaseFizz} type="button">Increase Fizz</button>
-      <button onClick={handleIncreaseBuzz} type="button">Increase Buzz</button>
-      <button onClick={handleIncreaseAll} type="button">Increase all</button>
+      <p>
+        Fizz: {counters.fizz} Buzz: {counters.buzz}
+      </p>
+      <button onClick={handleIncreaseFizz} type="button">
+        Increase Fizz
+      </button>
+      <button onClick={handleIncreaseBuzz} type="button">
+        Increase Buzz
+      </button>
+      <button onClick={handleIncreaseAll} type="button">
+        Increase all
+      </button>
     </div>
   );
 }

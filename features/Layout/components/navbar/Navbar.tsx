@@ -13,10 +13,11 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaRss, FaTimes } from 'react-icons/fa';
 
 import DesktopNav from './desktop-nav/DesktopNav';
 import MobileNav from './mobile-nav/MobileNav';
+import { RSS_FEED_URL } from 'core/constants';
 
 const Navbar: FunctionComponent = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -45,7 +46,7 @@ const Navbar: FunctionComponent = () => {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+        <Flex flex={{ base: 1 }} align="center" justify={{ base: 'center', md: 'space-between' }}>
           <NextLink href="/" passHref>
             <Image
               src="/assets/media/D2C-fond-transparent.png"
@@ -55,8 +56,15 @@ const Navbar: FunctionComponent = () => {
               cursor="pointer"
             />
           </NextLink>
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+          <Flex display={{ base: 'none', md: 'flex' }} mr={10}>
             <DesktopNav />
+            <Flex align="center" justify="center" ml={10}>
+              <NextLink href={RSS_FEED_URL} passHref>
+                <a>
+                  <FaRss cursor="pointer" />
+                </a>
+              </NextLink>
+            </Flex>
           </Flex>
         </Flex>
       </Flex>

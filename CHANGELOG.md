@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.2.7] - 2022-11-15
+
+- Add RSS and Atom feeds
+
 ## [0.2.6] - 2022-11-11
 
 ### Added

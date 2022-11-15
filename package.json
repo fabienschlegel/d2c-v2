@@ -1,6 +1,6 @@
 {
   "name": "d2cv2",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Another blog from a developer",
   "license": "MIT",
   "private": true,
@@ -29,6 +29,7 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "feed": "^4.2.2",
     "framer-motion": "^6",
     "gray-matter": "^4.0.3",
     "lint-staged": "^13.0.3",
