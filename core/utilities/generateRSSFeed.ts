@@ -33,7 +33,7 @@ export default async function generateRssFeed() {
       title: post.title as string,
       id: `${siteUrl}/blog/${post.slug}`,
       link: `${siteUrl}/blog/${post.slug}`,
-      description: post.description as string,
+      description: post.excerpt as string,
       date: new Date(post.date as string),
     });
   });
