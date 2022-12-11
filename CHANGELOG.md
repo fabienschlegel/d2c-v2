@@ -1,10 +1,24 @@
 # Changelog
 
+## [0.2.9] - 2022-12-11
+
+### Added
+
+- Add **copy to clipboard** button in code blocks
+
+### Updated
+
+- Rename RSS Feed
+
 ## [0.2.8] - 2022-11-15
+
+### Fixed
 
 - Fix description in RSS feeds
 
 ## [0.2.7] - 2022-11-15
+
+### Added
 
 - Add RSS and Atom feeds
 

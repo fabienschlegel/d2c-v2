@@ -11,7 +11,7 @@ export default async function generateRssFeed() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 
   const feedOptions = {
-    title: 'Dévoreur 2 code | RSS Feed',
+    title: 'Dévoreur 2 code',
     description: 'Another blog from a developer',
     id: siteUrl,
     link: siteUrl,

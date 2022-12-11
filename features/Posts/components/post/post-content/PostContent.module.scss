@@ -27,6 +27,8 @@
   }
 
   pre {
+    position: relative;
+
     overflow: auto;
 
     padding: 20px;
@@ -44,6 +46,34 @@
 
       color: #ccc;
       font-size: 0.9rem;
+    }
+
+    button {
+      position: absolute;
+
+      top: 0.5rem;
+      right: 0.5rem;
+
+      padding: 0.35rem;
+
+      border-width: 0;
+      border-radius: 0.375rem;
+
+      background-color: var(--chakra-colors-brand-greener);
+
+      color: var(--chakra-colors-white);
+
+      font-weight: var(--chakra-fontWeights-medium);
+      font-family: var(--chakra-fonts-body);
+      line-height: 1.2;
+
+      cursor: pointer;
+
+      &:disabled {
+        filter: brightness(0.9);
+
+        cursor: default;
+      }
     }
   }
 }
