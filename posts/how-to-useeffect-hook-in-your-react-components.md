@@ -1,7 +1,7 @@
 ---
 title: 'How to useEffect hook in your React components'
 date: '2023-01-04'
-coverImage: '/assets/blog/cover-images/how-to-useeffect-hook-in-your-react-components-illustration.png'
+coverImage: '/assets/blog/cover-images/how-to-useeffect-hook-in-your-react-components-illustration.jpg'
 author:
   name: 'Fabien Schlegel'
   avatar: '/assets/blog/authors/fabien_schlegel.png'
