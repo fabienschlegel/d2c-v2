@@ -3,7 +3,7 @@ title: 'Automate Prettier in a pre-commit hook'
 date: '2021-06-04'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'Prettier is a wonderful tool. It  works in many editors and supports many languages. But opinionated is his best feature and the first reason to use it.'
 tags: ['prettier', 'git']
 ---

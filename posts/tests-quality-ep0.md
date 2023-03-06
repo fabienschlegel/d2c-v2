@@ -3,7 +3,7 @@ title: 'Tests et qualité de code - A quoi ça sert ?'
 date: '2019-08-26'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: "Les tests ça sert à rien ! Visiteur d'ici et d'ailleurs, tu entendras souvent ces mots dans la bouche de faiseurs de code..."
 tags: ['tests', 'qualité de code']
 ---

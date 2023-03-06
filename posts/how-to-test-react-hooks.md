@@ -3,7 +3,7 @@ title: 'How to test React Hooks'
 date: '2021-05-20'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'When you use hooks, you can write them in their own file. And you could test them.'
 tags: ['javascript', 'typescript', 'React', 'hooks']
 related: ['five-tips-about-react-hooks', 'testing-your-react-app-with-mocks']

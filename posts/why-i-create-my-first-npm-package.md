@@ -3,7 +3,7 @@ title: 'Why I create my first NPM package'
 date: '2021-07-04'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'A useful practice when you work with a specific stack, is to create generic stuff for this stack.'
 tags: ['npm', 'typescript', 'React']
 ---

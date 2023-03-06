@@ -1,10 +1,10 @@
 ---
 title: 'Begin React with Typescript'
 date: '2022-02-22'
-coverImage: '/assets/blog/cover-images/S02E01_banner.jpg'
+coverImage: '/assets/blog/cover-images/S02E01_banner.webp'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: "These technologies are good choices to build strong and reliable web applications. It's never been easier to develop a great user experience."
 tags: ['React', 'Typescript']
 related: ['five-tips-about-react-hooks', 'working-with-rest-apis-in-react']

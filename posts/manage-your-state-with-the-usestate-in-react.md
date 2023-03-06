@@ -1,10 +1,10 @@
 ---
 title: 'Manage your state with the useState hook in React'
 date: '2022-11-11'
-coverImage: '/assets/blog/cover-images/manage-your-state-with-the-usestate-in-react-illustration.png'
+coverImage: '/assets/blog/cover-images/manage-your-state-with-the-usestate-in-react-illustration.webp'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'How to useState in functional components. The first hook you can use in a React project.'
 
 tags: ['javascript', 'typescript', 'React', 'hooks']

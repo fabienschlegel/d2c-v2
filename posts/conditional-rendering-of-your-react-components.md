@@ -3,7 +3,7 @@ title: 'Conditional Rendering of your React components'
 date: '2022-03-08'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: "Conditional rendering is a basic feature of the front end apps. It's used to display elements or not depending on the state of the app."
 tags: ['React', 'Typescript']
 related: ['begin-react-with-typescript']

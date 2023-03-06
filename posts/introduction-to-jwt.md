@@ -3,7 +3,7 @@ title: 'Introduction to JWT'
 date: '2021-06-17'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'A JWT (JSON Web token) is an access token which contains all the information to communicate securely between two parties. JWTs are mainly used for identification operations and the management of user access rights.'
 tags: ['jwt']
 related: ['setup-jwt-react-django-app']

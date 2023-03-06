@@ -3,7 +3,7 @@ title: "Tests et qualité de code - Les linter, c'est statique et c'est déjà p
 date: '2019-09-08'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'Utiliser les linter comme ESLint pour surveiller notre code'
 tags: ['tests', 'qualité de code']
 ---

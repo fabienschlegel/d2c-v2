@@ -3,7 +3,7 @@ title: 'Tests et qualité de code - Les tests, comment ça marche ?'
 date: '2019-09-01'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: "Aujourd'hui, on part à la découverte du merveilleux monde des tests..."
 tags: ['tests', 'qualité de code']
 ---

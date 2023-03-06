@@ -3,7 +3,7 @@ title: "Tests et qualité de code - Automatiser tout ça c'est dans nos cordes"
 date: '2019-09-22'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: "Automatiser tout ça c'est dans nos cordes"
 tags: ['tests', 'qualité de code']
 ---

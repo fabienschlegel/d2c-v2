@@ -3,7 +3,7 @@ title: 'Setup JWT for a React Django app in minutes'
 date: '2021-06-25'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'How to setup JWT in a project with a React frontend and a Django backend in minutes.'
 tags: ['React', 'django', 'jwt']
 related: ['introduction-to-jwt', 'five-reasons-to-use-django']

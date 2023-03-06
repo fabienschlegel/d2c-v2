@@ -3,7 +3,7 @@ title: 'How to easily create forms in React'
 date: '2021-07-24'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: "As a developer, forms are a great part of our work. It's a way for users to interact with software."
 tags: ['React', 'Typescript']
 ---

@@ -3,7 +3,7 @@ title: 'Publish my own blog, the start of a content creator'
 date: '2021-07-14'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'As a developer, I learn a lot of things. Some of it comes from my colleagues, books or articles I read. The idea of sharing what I know drove me to begin a blog about my journey.'
 tags: ['gatsby', 'story', 'blog']
 related: ['create-a-blog-with-nextjs', 'from-gatsby-to-nextjs-journey-of-a-blog']

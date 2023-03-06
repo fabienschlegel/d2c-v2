@@ -3,7 +3,7 @@ title: 'Working with REST APIs in React'
 date: '2022-03-15'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'An API (application programming interface) is an interface that allows one service to be connected to another.'
 tags: ['React', 'Typescript']
 ---

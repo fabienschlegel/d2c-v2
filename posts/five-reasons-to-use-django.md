@@ -3,7 +3,7 @@ title: '5 Reasons to use Django, the Python web framework'
 date: '2021-06-11'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'Django is a Python framework for web development. You can create powerful and reliable app with it.'
 tags: ['django', 'python']
 ---

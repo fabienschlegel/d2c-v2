@@ -3,7 +3,7 @@ title: 'Become web developer at 37. How I did it.'
 date: '2021-05-26'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: "I didn't start my career as a developer. I tell you my journey to code."
 tags: ['webdev', 'experience']
 ---

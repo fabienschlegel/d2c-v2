@@ -3,7 +3,7 @@ title: 'Testing your React app with mocks'
 date: '2022-08-19'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'Testing avoids regressions and makes your app safer and easier to debug.'
 tags: ['React', 'Typescript']
 related: ['how-to-test-react-hooks']

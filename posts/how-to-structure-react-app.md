@@ -1,10 +1,10 @@
 ---
 title: 'How to structure your React app'
 date: '2023-01-25'
-coverImage: '/assets/blog/cover-images/how-to-structure-react-app-illustration.jpg'
+coverImage: '/assets/blog/cover-images/how-to-structure-react-app-illustration.webp'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'Without a proper strategy in place, working on a React project can become a daily chore and an overwhelming task.'
 
 tags: ['javascript', 'typescript', 'react']

@@ -1,10 +1,10 @@
 ---
 title: 'Create a blog with NextJS'
 date: '2022-09-27'
-coverImage: '/assets/blog/cover-images/create-a-blog-with-nextjs.png'
+coverImage: '/assets/blog/cover-images/create-a-blog-with-nextjs.webp'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'How to create a blog with NextJS and Typescript. A guide from my own experience.'
 tags: ['react', 'typescript', 'blog', 'nextjs']
 related: ['from-gatsby-to-nextjs-journey-of-a-blog', 'publish-my-own-blog-start-of-content-creator']

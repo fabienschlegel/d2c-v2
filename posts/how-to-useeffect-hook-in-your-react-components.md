@@ -1,10 +1,10 @@
 ---
 title: 'How to useEffect hook in your React components'
 date: '2023-01-04'
-coverImage: '/assets/blog/cover-images/how-to-useeffect-hook-in-your-react-components-illustration.jpg'
+coverImage: '/assets/blog/cover-images/how-to-useeffect-hook-in-your-react-components-illustration.webp'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'The useEffect hook for React helps you to create side effects in your functional components.'
 
 tags: ['javascript', 'typescript', 'React', 'hooks']

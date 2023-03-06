@@ -3,7 +3,7 @@ title: 'How to use props and state in React'
 date: '2022-03-03'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'Props and states are two kinds of variables used in React components.'
 tags: ['React', 'Typescript']
 ---

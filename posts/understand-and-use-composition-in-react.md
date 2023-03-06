@@ -3,7 +3,7 @@ title: 'Understand and use composition in React'
 date: '2021-07-09'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'Composition is very powerful in React but for some cases, it may be hard to use. Today I will give you examples of composition caught up in real projects.'
 tags: ['javascript', 'typescript', 'React']
 ---

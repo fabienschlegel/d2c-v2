@@ -1,10 +1,10 @@
 ---
 title: 'From Gatsby to NextJS - journey of a blog'
 date: '2022-09-20'
-coverImage: '/assets/blog/cover-images/from-gatsby-to-nextjs-journey-of-a-blog-illustration.png'
+coverImage: '/assets/blog/cover-images/from-gatsby-to-nextjs-journey-of-a-blog-illustration.webp'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'Using Gatsby was a perfect example of not reinventing the wheel. Made with React, Giving free templates.'
 tags: ['gatsby', 'story', 'blog', 'nextjs']
 related: ['create-a-blog-with-nextjs', 'publish-my-own-blog-start-of-content-creator']

@@ -3,7 +3,7 @@ title: 'Le Python Pew'
 date: '2019-10-14'
 author:
   name: 'Fabien Schlegel'
-  avatar: '/assets/blog/authors/fabien_schlegel.png'
+  avatar: '/assets/blog/authors/fabien-schlegel.webp'
 excerpt: 'Python - découverte de la librairie pew'
 tags: ['Python', 'module']
 ---
