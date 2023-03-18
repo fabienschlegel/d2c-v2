@@ -4,6 +4,8 @@ export const SITE_DESCRIPTION = 'Another blog from a developer';
 
 export const SITE_URL = 'https://www.devoreur2code.com';
 
+export const SITE_TWITTER_HANDLE = 'devoreur2code';
+
 export const SITE_IMAGE = '/assets/media/D2C-fond-blanc.png';
 
 export const FAVICON_URL = '/assets/media/Logo-D2C-fond-blc.png';

@@ -4,7 +4,7 @@ import ErrorPage from 'next/error';
 
 import { PrimaryLayout } from 'features/Layout';
 
-import { POST_ALL_FIELDS, Post, POST_HEADER_FIELDS } from 'features/Posts';
+import { POST_ALL_FIELDS, Post, POST_HEADER_FIELDS, SocialShare } from 'features/Posts';
 
 import { getAllPostsByDate, getNextPost, getPostBySlug, getPreviousPost } from 'features/Posts/api';
 
@@ -13,6 +13,8 @@ import markdownToHtml from 'core/utilities/markdownToHtml';
 import { SITE_IMAGE } from 'core/constants';
 
 import type { IPost, PostAnchor, PostSummary } from 'features/Posts/types';
+
+import { Hide } from '@chakra-ui/react';
 
 type Props = {
   post: IPost;
@@ -53,6 +55,9 @@ export default function PostPage({ post, previous, next, related }: Props) {
           />
         )}
       </Post>
+      <Hide below="md">
+        <SocialShare url={post.slug} title={post.title} />
+      </Hide>
     </PrimaryLayout>
   );
 }

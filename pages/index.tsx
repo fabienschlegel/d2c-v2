@@ -20,8 +20,8 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ lastPosts }) => {
   return (
     <PrimaryLayout
-      pageTitle={SITE_NAME}
-      pageMetaDescription={SITE_DESCRIPTION}
+      pageTitle={`${SITE_NAME} - A blog about web development`}
+      pageMetaDescription={`${SITE_DESCRIPTION} - Improve your development skills. Discover tips and advice from an experienced developer`}
       pageImagePath={SITE_IMAGE}
     >
       <Hero />

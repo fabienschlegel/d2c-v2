@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.10] - 2023-03-18
+
+### Added
+
+- Add share buttons on posts page
+
+### Updated
+
+- Update README
+
 ## [0.2.9] - 2022-12-11
 
 ### Added

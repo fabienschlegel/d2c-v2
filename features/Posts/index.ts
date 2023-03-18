@@ -1,6 +1,6 @@
 import { POSTS_PER_PAGE, POST_HEADER_FIELDS, POST_ALL_FIELDS } from './constants';
 
-import { LargeSummaryCard, Post, PostsList } from './components';
+import { LargeSummaryCard, Post, PostsList, SocialShare } from './components';
 
 import { usePostsListNavigation } from './hooks';
 
@@ -11,5 +11,6 @@ export {
   LargeSummaryCard,
   Post,
   PostsList,
+  SocialShare,
   usePostsListNavigation,
 };
