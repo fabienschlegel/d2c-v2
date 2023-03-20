@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.11] - 2023-03-20
+
+### Added
+
+- Add Gtag event for sharing post
+
+### Updated
+
+- Replace react-icons with font-awesome
+
 ## [0.2.10] - 2023-03-18
 
 ### Added

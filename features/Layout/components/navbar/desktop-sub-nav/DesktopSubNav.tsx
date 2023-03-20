@@ -1,38 +1,32 @@
 import { FunctionComponent } from 'react';
 
-import { Box, Flex, Text, Stack, Icon, Link, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, Text, Stack, Icon, Link } from '@chakra-ui/react';
 
-import { FaChevronRight } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 import { SubNavItem } from '../../../types';
 
 const DesktopSubNav: FunctionComponent<SubNavItem> = ({ label, href, subLabel }) => {
   return (
-    <Link
-      href={href}
-      role={'group'}
-      display={'block'}
-      p={2}
-      rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
-    >
-      <Stack direction={'row'} align={'center'}>
+    <Link href={href} role="group" display="block" p={2} rounded="md" _hover={{ bg: 'pink.50' }}>
+      <Stack direction="row" align="center">
         <Box>
-          <Text transition={'all .3s ease'} _groupHover={{ color: 'pink.400' }} fontWeight={500}>
+          <Text transition="all .3s ease" _groupHover={{ color: 'pink.400' }} fontWeight={500}>
             {label}
           </Text>
-          <Text fontSize={'sm'}>{subLabel}</Text>
+          <Text fontSize="sm">{subLabel}</Text>
         </Box>
         <Flex
-          transition={'all .3s ease'}
-          transform={'translateX(-10px)'}
+          transition="all .3s ease"
+          transform="translateX(-10px)"
           opacity={0}
           _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-          justify={'flex-end'}
-          align={'center'}
+          justify="flex-end"
+          align="center"
           flex={1}
         >
-          <Icon color={'pink.400'} w={5} h={5} as={FaChevronRight} />
+          <Icon color="pink.400" w={5} h={5} as={FontAwesomeIcon} icon={faChevronRight} />
         </Flex>
       </Stack>
     </Link>

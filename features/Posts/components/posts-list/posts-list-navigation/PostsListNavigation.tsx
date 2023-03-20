@@ -1,8 +1,9 @@
 import { FunctionComponent } from 'react';
 
-import { Button, Flex, Text } from '@chakra-ui/react';
+import { Button, Flex, Text, Icon } from '@chakra-ui/react';
 
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 interface PostsListNavigationProps {
   previous: boolean;
@@ -23,7 +24,7 @@ const PostsListNavigation: PostListNavigationType = ({
     <Flex justifyContent={previous && next ? 'space-between' : 'center'}>
       {previous && (
         <Button
-          leftIcon={<FaChevronLeft />}
+          leftIcon={<Icon as={FontAwesomeIcon} icon={faChevronLeft} />}
           colorScheme="gray"
           variant="solid"
           size={['xs', 'md']}
@@ -42,7 +43,7 @@ const PostsListNavigation: PostListNavigationType = ({
       )}
       {next && (
         <Button
-          rightIcon={<FaChevronRight />}
+          rightIcon={<Icon as={FontAwesomeIcon} icon={faChevronRight} />}
           colorScheme="gray"
           variant="solid"
           size={['xs', 'md']}

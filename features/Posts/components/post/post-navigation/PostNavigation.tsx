@@ -2,9 +2,10 @@ import { FunctionComponent } from 'react';
 
 import clsx from 'clsx';
 
-import { Flex } from '@chakra-ui/react';
+import { Flex, Icon } from '@chakra-ui/react';
 
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 import { ButtonLink } from '../..';
 
@@ -33,7 +34,7 @@ const PostNavigation: PostNavigationType = ({ previous, next }) => {
         <ButtonLink
           href={previous.href}
           label={previous.title}
-          leftIcon={<FaChevronLeft />}
+          leftIcon={<Icon as={FontAwesomeIcon} icon={faChevronLeft} />}
           className={clsx(next && styles.left)}
         />
       )}
@@ -41,7 +42,7 @@ const PostNavigation: PostNavigationType = ({ previous, next }) => {
         <ButtonLink
           href={next.href}
           label={next.title}
-          rightIcon={<FaChevronRight />}
+          rightIcon={<Icon as={FontAwesomeIcon} icon={faChevronRight} />}
           className={clsx(previous && styles.right)}
         />
       )}

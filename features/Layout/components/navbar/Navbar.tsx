@@ -8,15 +8,17 @@ import {
   IconButton,
   Collapse,
   Image,
-  useColorModeValue,
+  Icon,
   useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react';
 
-import { FaBars, FaRss, FaTimes } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faRss, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import DesktopNav from './desktop-nav/DesktopNav';
 import MobileNav from './mobile-nav/MobileNav';
+
 import { RSS_FEED_URL } from 'core/constants';
 
 const Navbar: FunctionComponent = () => {
@@ -24,32 +26,34 @@ const Navbar: FunctionComponent = () => {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue('white', 'gray.800')}
-        color={useColorModeValue('gray.600', 'white')}
-        minH={'60px'}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
+        bg="white"
+        color="gray.600"
+        minH="60px"
+        py={2}
+        px={4}
         borderBottom={1}
         borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.900')}
-        align={'center'}
+        borderColor="gray.200"
+        align="center"
       >
-        <Flex
-          flex={{ base: 1, md: 'auto' }}
-          ml={{ base: -2 }}
-          display={{ base: 'flex', md: 'none' }}
-        >
+        <Flex flex={{ base: 1, md: 'auto' }} ml={-2} display={{ base: 'flex', md: 'none' }}>
           <IconButton
             onClick={onToggle}
-            icon={isOpen ? <FaTimes /> : <FaBars />}
-            variant={'ghost'}
-            aria-label={'Toggle Navigation'}
+            icon={
+              isOpen ? (
+                <Icon as={FontAwesomeIcon} icon={faTimes} />
+              ) : (
+                <Icon as={FontAwesomeIcon} icon={faBars} />
+              )
+            }
+            variant="ghost"
+            aria-label="Toggle Navigation"
           />
         </Flex>
-        <Flex flex={{ base: 1 }} align="center" justify={{ base: 'center', md: 'space-between' }}>
+        <Flex flex={1} align="center" justify={{ base: 'center', md: 'space-between' }}>
           <NextLink href="/" passHref>
             <Image
-              src="/assets/media/D2C-fond-transparent.png"
+              src="/assets/media/D2C-fond-transparent.webp"
               alt="Logo dévoreur 2 code"
               align={useBreakpointValue({ base: 'center', md: 'left' })}
               width="100px"
@@ -61,7 +65,7 @@ const Navbar: FunctionComponent = () => {
             <Flex align="center" justify="center" ml={10}>
               <NextLink href={RSS_FEED_URL} passHref>
                 <a>
-                  <FaRss cursor="pointer" />
+                  <Icon as={FontAwesomeIcon} icon={faRss} cursor="pointer" />
                 </a>
               </NextLink>
             </Flex>

@@ -2,9 +2,12 @@ import { FunctionComponent, ReactElement, useCallback, useEffect, useState } fro
 
 import { VStack, useDisclosure, Slide, Box, Link, Flex } from '@chakra-ui/react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faTwitter, faFacebookF, faVk } from '@fortawesome/free-brands-svg-icons';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { isProduction } from 'core';
+
+import { gtagEvent } from 'features/Metrics';
 
 import { shareToFacebook, shareToLinkedIn, shareToTwitter, shareToVK } from 'features/Marketing';
 
@@ -15,8 +18,10 @@ interface SocialShareProps {
   title: string;
 }
 
+type SocialShareItemName = 'twitter' | 'linkedIn' | 'facebook' | 'vk';
+
 interface SocialShareItem {
-  name: 'twitter' | 'linkedIn' | 'facebook' | 'vk';
+  name: SocialShareItemName;
   ariaLabel: string;
   icon: ReactElement;
 }
@@ -61,8 +66,9 @@ const SocialShare: FunctionComponent<SocialShareProps> = ({ url, title }) => {
     vk: shareToVK(siteUrl),
   };
 
-  const handleShare = () => {
-    console.log(url);
+  const handleShare = (media: SocialShareItemName) => {
+    if (isProduction)
+      gtagEvent({ action: 'share', category: 'engagement', label: `${media} - ${url}`, value: 1 });
   };
 
   const onScroll = useCallback(() => {
@@ -103,7 +109,7 @@ const SocialShare: FunctionComponent<SocialShareProps> = ({ url, title }) => {
               rel="noreferrer"
               aria-label={item.ariaLabel}
               isExternal
-              onClick={handleShare}
+              onClick={() => handleShare(item.name)}
               width={12}
               height={12}
               px={4}

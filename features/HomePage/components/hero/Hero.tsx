@@ -1,8 +1,9 @@
 import { FunctionComponent } from 'react';
 
-import { Box, Flex, Heading, Image } from '@chakra-ui/react';
+import { Box, Flex, Heading, Icon, Image } from '@chakra-ui/react';
 
-import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import HeroSocialButton from './hero-social-button/HeroSocialButton';
 
@@ -23,7 +24,7 @@ const Hero: FunctionComponent = () => {
         <Image
           filter="drop-shadow(10px 10px 4px rgba(0,0,0,0.3));"
           boxSize={{ base: '250px', md: '400px', lg: '400px' }}
-          src="/assets/media/macbook.png"
+          src="/assets/media/macbook.webp"
           alt="Computer with coffee mug"
         />
       </Box>
@@ -47,13 +48,13 @@ const Hero: FunctionComponent = () => {
           padding="3em 0 0 0"
         >
           <HeroSocialButton href={TWITTER_URL}>
-            <FaTwitter size={35} />
+            <Icon as={FontAwesomeIcon} icon={faTwitter} w={10} h={10} />
           </HeroSocialButton>
           <HeroSocialButton href={LINKEDIN_URL}>
-            <FaLinkedin size={35} />
+            <Icon as={FontAwesomeIcon} icon={faLinkedin} w={10} h={10} />
           </HeroSocialButton>
           <HeroSocialButton href={GITHUB_PROFILE_URL}>
-            <FaGithub size={35} />
+            <Icon as={FontAwesomeIcon} icon={faGithub} w={10} h={10} />
           </HeroSocialButton>
         </Flex>
       </Flex>

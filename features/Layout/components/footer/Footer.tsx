@@ -2,9 +2,10 @@ import { FunctionComponent } from 'react';
 
 import NextLink from 'next/link';
 
-import { Box, Container, Stack, Text, useColorModeValue, Image } from '@chakra-ui/react';
+import { Box, Container, Stack, Text, useColorModeValue, Image, Icon } from '@chakra-ui/react';
 
-import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedinIn, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { SocialButton } from '..';
 
@@ -27,7 +28,7 @@ const Footer: FunctionComponent = () => {
       >
         <NextLink href="/" passHref>
           <Image
-            src="/assets/media/D2C-fond-transparent.png"
+            src="/assets/media/D2C-fond-transparent.webp"
             alt="Logo dévoreur 2 code"
             width="100px"
             cursor="pointer"
@@ -36,13 +37,13 @@ const Footer: FunctionComponent = () => {
         <Text>© 2022 Fabien Schlegel</Text>
         <Stack direction={'row'} spacing={6}>
           <SocialButton label="Twitter" href={TWITTER_URL}>
-            <FaTwitter />
+            <Icon as={FontAwesomeIcon} icon={faTwitter} />
           </SocialButton>
           <SocialButton label="LinkedIn" href={LINKEDIN_URL}>
-            <FaLinkedin />
+            <Icon as={FontAwesomeIcon} icon={faLinkedinIn} />
           </SocialButton>
           <SocialButton label="Github" href={GITHUB_PROFILE_URL}>
-            <FaGithub />
+            <Icon as={FontAwesomeIcon} icon={faGithub} />
           </SocialButton>
         </Stack>
       </Container>

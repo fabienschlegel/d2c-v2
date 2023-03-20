@@ -1,11 +1,13 @@
 import { FunctionComponent } from 'react';
 
-import { Image, Flex, Heading, Text, HStack, Tag, Box } from '@chakra-ui/react';
+import { Image, Flex, Heading, Text, HStack, Tag, Icon } from '@chakra-ui/react';
 
 import { uppercaseFirst } from 'core';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
+
 import { CoverImage, PostTag } from '../..';
-import { FaClock } from 'react-icons/fa';
 
 interface PostHeaderProps {
   title: string;
@@ -51,9 +53,7 @@ const PostHeader: PostHeaderType = ({
         <Flex alignItems="center" justifyContent="space-between">
           <Text marginRight="2rem">{date}</Text>
           <Tag backgroundColor="brand.greener" color="white">
-            <Box marginRight="0.5rem">
-              <FaClock />
-            </Box>
+            <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
             {readingTime}
           </Tag>
         </Flex>

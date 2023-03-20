@@ -2,9 +2,10 @@ import { FunctionComponent } from 'react';
 
 import NextLink from 'next/link';
 
-import { FaChevronRight, FaClock } from 'react-icons/fa';
+import { Box, Flex, Heading, HStack, Image, Tag, Text, Icon } from '@chakra-ui/react';
 
-import { Box, Flex, Heading, HStack, Image, Tag, Text } from '@chakra-ui/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight, faClock } from '@fortawesome/free-solid-svg-icons';
 
 import { ButtonLink } from '..';
 
@@ -40,7 +41,7 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
       <Box borderRadius="lg" overflow="hidden">
         <Image
           transform="scale(1.0)"
-          src={coverImageSrc || '/assets/media/D2C-fond-transparent.png'}
+          src={coverImageSrc || '/assets/media/D2C-fond-transparent.webp'}
           alt="Cover image of the post"
           objectFit="contain"
           transition="0.3s ease-in-out"
@@ -72,11 +73,13 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
         </HStack>
       )}
       <Flex marginTop="1rem" align="center" justify="space-between">
-        <ButtonLink href={`/blog/${slug}`} label="Read the post" rightIcon={<FaChevronRight />} />
+        <ButtonLink
+          href={`/blog/${slug}`}
+          label="Read the post"
+          rightIcon={<Icon as={FontAwesomeIcon} icon={faChevronRight} />}
+        />
         <Tag backgroundColor="brand.greener" color="white">
-          <Box marginRight="0.5rem">
-            <FaClock />
-          </Box>
+          <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
           {readingTime}
         </Tag>
       </Flex>

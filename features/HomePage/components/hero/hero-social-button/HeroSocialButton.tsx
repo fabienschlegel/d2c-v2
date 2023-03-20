@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactNode } from 'react';
 
-import { Box } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 
 interface HeroSocialButtonProps {
   children: ReactNode;
@@ -9,7 +9,7 @@ interface HeroSocialButtonProps {
 
 const HeroSocialButton: FunctionComponent<HeroSocialButtonProps> = ({ children, href }) => {
   return (
-    <Box
+    <Flex
       as="a"
       href={href}
       target="_blank"
@@ -19,12 +19,11 @@ const HeroSocialButton: FunctionComponent<HeroSocialButtonProps> = ({ children, 
       w={16}
       h={16}
       cursor="pointer"
-      display="inline-flex"
       alignItems="center"
       justifyContent="center"
     >
       {children}
-    </Box>
+    </Flex>
   );
 };
 

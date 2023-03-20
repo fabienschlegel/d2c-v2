@@ -9,6 +9,7 @@ import { PrimaryLayout } from 'features/Layout';
 import { SITE_NAME, SITE_IMAGE } from 'core/constants';
 
 import type { PostSummary } from 'features/Posts/types';
+import { Heading } from '@chakra-ui/react';
 
 interface BlogPageProps {
   posts: Array<PostSummary>;
@@ -18,10 +19,11 @@ const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
   const { paginatedPosts, previous, next, previousPage, nextPage } = usePostsListNavigation(posts);
   return (
     <PrimaryLayout
-      pageTitle="List of blog posts"
-      pageMetaDescription={`List of posts from the blog ${SITE_NAME}`}
+      pageTitle="The list of the latest articles from my blog"
+      pageMetaDescription={`Discover all the articles from the blog ${SITE_NAME} - About my journey in development, React, Typescript, Django and Python`}
       pageImagePath={SITE_IMAGE}
     >
+      <Heading mt={3}>Most recent articles</Heading>
       <PostsList>
         {paginatedPosts.map((post) => (
           <PostsList.Item
