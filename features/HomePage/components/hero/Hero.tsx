@@ -9,13 +9,31 @@ import HeroSocialButton from './hero-social-button/HeroSocialButton';
 
 import { GITHUB_PROFILE_URL, LINKEDIN_URL, TWITTER_URL } from 'core/constants';
 
+const heroSocialButtons = [
+  {
+    id: 'twitter',
+    href: TWITTER_URL,
+    icon: faTwitter,
+  },
+  {
+    id: 'linkedin',
+    href: LINKEDIN_URL,
+    icon: faLinkedin,
+  },
+  {
+    id: 'github',
+    href: GITHUB_PROFILE_URL,
+    icon: faGithub,
+  },
+];
+
 const Hero: FunctionComponent = () => {
   return (
     <Flex
       width="100%"
-      padding={{ base: '0.5em', lg: '6em' }}
+      padding={{ base: 2, lg: 24 }}
       align="center"
-      justify={'space-evenly'}
+      justify="space-evenly"
       backgroundColor="brand.darkBlue"
       minHeight={{ base: '80vh', lg: '70vh' }}
       direction={{ base: 'column-reverse', lg: 'row' }}
@@ -40,22 +58,19 @@ const Hero: FunctionComponent = () => {
             Web Developer
           </Heading>
         </Flex>
-        <Flex
-          align="center"
-          direction="row"
-          justify="space-evenly"
-          width="100%"
-          padding="3em 0 0 0"
-        >
-          <HeroSocialButton href={TWITTER_URL}>
-            <Icon as={FontAwesomeIcon} icon={faTwitter} w={10} h={10} />
-          </HeroSocialButton>
-          <HeroSocialButton href={LINKEDIN_URL}>
-            <Icon as={FontAwesomeIcon} icon={faLinkedin} w={10} h={10} />
-          </HeroSocialButton>
-          <HeroSocialButton href={GITHUB_PROFILE_URL}>
-            <Icon as={FontAwesomeIcon} icon={faGithub} w={10} h={10} />
-          </HeroSocialButton>
+        <Flex align="center" direction="row" justify="space-evenly" width="100%" paddingTop={12}>
+          {heroSocialButtons.map((button) => (
+            <HeroSocialButton href={button.href} key={button.id}>
+              <Icon
+                as={FontAwesomeIcon}
+                icon={button.icon}
+                w={10}
+                h={10}
+                transition="transform 0.6s ease"
+                _hover={{ transform: 'scale(1.5) translatey(-0.5rem)' }}
+              />
+            </HeroSocialButton>
+          ))}
         </Flex>
       </Flex>
     </Flex>

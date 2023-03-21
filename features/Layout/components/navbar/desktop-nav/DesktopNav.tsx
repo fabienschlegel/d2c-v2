@@ -20,15 +20,15 @@ const DesktopNav: FunctionComponent = () => {
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
   return (
-    <Stack direction={'row'} spacing={4}>
+    <Stack direction="row" spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
-          <Popover trigger={'hover'} placement={'bottom-start'}>
+          <Popover trigger="hover" placement="bottom-start">
             <PopoverTrigger>
               <Link
                 p={2}
                 href={navItem.href ?? '#'}
-                fontSize={'sm'}
+                fontSize="sm"
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
@@ -43,11 +43,11 @@ const DesktopNav: FunctionComponent = () => {
             {navItem.children && (
               <PopoverContent
                 border={0}
-                boxShadow={'xl'}
+                boxShadow="xl"
                 bg={popoverContentBgColor}
                 p={4}
-                rounded={'xl'}
-                minW={'sm'}
+                rounded="xl"
+                minW="sm"
               >
                 <Stack>
                   {navItem.children.map((child) => (

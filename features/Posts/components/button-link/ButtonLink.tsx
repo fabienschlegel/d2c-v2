@@ -4,22 +4,23 @@ import NextLink from 'next/link';
 
 import { uppercaseFirst } from 'core';
 
-import { Button, Text } from '@chakra-ui/react';
+import { Button, ButtonProps, Text } from '@chakra-ui/react';
 
 interface ButtonLinkProps {
   href: string;
   label: string;
-  className?: string;
   leftIcon?: ReactElement;
   rightIcon?: ReactElement;
 }
 
-const ButtonLink: FunctionComponent<ButtonLinkProps> = ({
+type ButtonLinkType = ButtonLinkProps & ButtonProps;
+
+const ButtonLink: FunctionComponent<ButtonLinkType> = ({
   href,
   label,
-  className,
   leftIcon,
   rightIcon,
+  ...others
 }) => {
   return (
     <NextLink href={href} passHref>
@@ -30,8 +31,8 @@ const ButtonLink: FunctionComponent<ButtonLinkProps> = ({
         colorScheme="gray"
         variant="solid"
         size={['xs', 'md']}
-        className={className}
         maxWidth="270px"
+        {...others}
       >
         <Text fontSize={['xs', 'md']} overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap">
           {uppercaseFirst(label)}

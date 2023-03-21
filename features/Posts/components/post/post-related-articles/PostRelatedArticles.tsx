@@ -18,7 +18,7 @@ const PostRelatedArticles: PostRelatedArticlesType = ({ relatedArticles }) => {
       <Heading as="h2" size="lg">
         Related Articles
       </Heading>
-      <Divider borderBottomWidth="2px" marginTop="0.5rem" borderColor={'brand.darkBlue'} />
+      <Divider borderBottomWidth="2px" marginTop="0.5rem" borderColor="brand.darkBlue" />
       <Grid
         templateColumns={{
           base: 'repeat(1, 1fr)',

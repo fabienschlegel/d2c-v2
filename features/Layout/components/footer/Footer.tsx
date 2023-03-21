@@ -19,7 +19,7 @@ const Footer: FunctionComponent = () => {
     >
       <Container
         as={Stack}
-        maxW={'6xl'}
+        maxW="6xl"
         py={4}
         direction={{ base: 'column', md: 'row' }}
         spacing={4}
@@ -35,7 +35,7 @@ const Footer: FunctionComponent = () => {
           />
         </NextLink>
         <Text>© 2022 Fabien Schlegel</Text>
-        <Stack direction={'row'} spacing={6}>
+        <Stack direction="row" spacing={6}>
           <SocialButton label="Twitter" href={TWITTER_URL}>
             <Icon as={FontAwesomeIcon} icon={faTwitter} />
           </SocialButton>

@@ -32,7 +32,7 @@ const Navbar: FunctionComponent = () => {
         py={2}
         px={4}
         borderBottom={1}
-        borderStyle={'solid'}
+        borderStyle="solid"
         borderColor="gray.200"
         align="center"
       >
