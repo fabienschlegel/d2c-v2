@@ -2,10 +2,12 @@ import { FunctionComponent } from 'react';
 
 import NextLink from 'next/link';
 
-import { Box, Flex, Heading, HStack, Image, Tag, Text, Icon } from '@chakra-ui/react';
+import { Flex, Heading, HStack, Tag, Text, Icon } from '@chakra-ui/react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faClock } from '@fortawesome/free-solid-svg-icons';
+
+import { BlogImage } from 'common';
 
 import { ButtonLink } from '..';
 
@@ -38,9 +40,11 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
 }) => {
   return (
     <Flex direction="column" justifyContent="space-between" height="100%">
-      <Box borderRadius="lg" overflow="hidden">
-        <Image
+      <Flex borderRadius="lg" overflow="hidden">
+        <BlogImage
           transform="scale(1.0)"
+          width={800}
+          height={450}
           src={coverImageSrc || '/assets/media/D2C-fond-transparent.webp'}
           alt="Cover image of the post"
           objectFit="contain"
@@ -49,7 +53,7 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
             transform: 'scale(1.05)',
           }}
         />
-      </Box>
+      </Flex>
       {tags && <TagsList tags={tags} />}
       <NextLink href={`/blog/${slug}`} passHref>
         <Heading fontSize="xl" marginTop="1rem" cursor="pointer">
@@ -59,14 +63,15 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
       <Text marginTop="0.5rem">{excerpt}</Text>
       {authorAvatar && authorName && date && (
         <HStack marginTop="1rem" spacing="2" display="flex" alignItems="center">
-          <Image
-            borderRadius="full"
-            boxSize="50px"
-            border="1px solid"
-            borderColor="brand.darkBlue"
-            src={authorAvatar}
-            alt={authorName}
-          />
+          <Flex borderRadius="full" boxSize="50px" border="1px solid" borderColor="brand.darkBlue">
+            <BlogImage
+              borderRadius="full"
+              width={50}
+              height={50}
+              src={authorAvatar}
+              alt={authorName}
+            />
+          </Flex>
           <Text fontWeight="medium">{authorName}</Text>
           <Text>—</Text>
           <Text>{date}</Text>

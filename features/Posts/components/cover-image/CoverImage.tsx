@@ -1,6 +1,8 @@
 import { FunctionComponent } from 'react';
 
-import { Image } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
+
+import { BlogImage } from 'common';
 
 interface CoverImageProps {
   coverImageSrc: string;
@@ -9,13 +11,20 @@ interface CoverImageProps {
 
 const CoverImage: FunctionComponent<CoverImageProps> = ({ coverImageSrc, title }) => {
   return (
-    <Image
-      src={coverImageSrc}
-      alt={`Cover image for ${title}`}
-      marginBottom="2.5rem"
-      borderRadius="0.5rem"
+    <Flex
+      marginBottom={10}
+      borderRadius={8}
+      overflow="hidden"
       boxShadow="0 1rem 2rem rgba(0, 0, 0, 0.2)"
-    />
+    >
+      <BlogImage
+        borderRadius={2}
+        width={800}
+        height={450}
+        src={coverImageSrc}
+        alt={`Cover image for ${title}`}
+      />
+    </Flex>
   );
 };
 

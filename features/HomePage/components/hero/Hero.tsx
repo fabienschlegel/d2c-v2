@@ -1,6 +1,10 @@
 import { FunctionComponent } from 'react';
 
-import { Box, Flex, Heading, Icon, Image } from '@chakra-ui/react';
+import { Flex, Heading, Icon } from '@chakra-ui/react';
+
+import { BlogImage } from 'common';
+
+import macbook from 'public/assets/media/macbook.webp';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -38,14 +42,11 @@ const Hero: FunctionComponent = () => {
       minHeight={{ base: '80vh', lg: '70vh' }}
       direction={{ base: 'column-reverse', lg: 'row' }}
     >
-      <Box>
-        <Image
-          filter="drop-shadow(10px 10px 4px rgba(0,0,0,0.3));"
-          boxSize={{ base: '250px', md: '400px', lg: '400px' }}
-          src="/assets/media/macbook.webp"
-          alt="Computer with coffee mug"
-        />
-      </Box>
+      <BlogImage
+        filter="drop-shadow(10px 10px 4px rgba(0,0,0,0.3));"
+        src={macbook}
+        alt="Computer with coffee mug"
+      />
       <Flex direction="column">
         <Flex direction="column">
           <Heading as="h3" size="lg" color="white">

@@ -2,10 +2,12 @@ import { FunctionComponent } from 'react';
 
 import NextLink from 'next/link';
 
-import { Box, Container, Stack, Text, useColorModeValue, Image, Icon } from '@chakra-ui/react';
+import { Box, Container, Stack, Text, Icon } from '@chakra-ui/react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
+
+import { BlogImage } from 'common';
 
 import { SocialButton } from '..';
 
@@ -13,10 +15,7 @@ import { GITHUB_PROFILE_URL, LINKEDIN_URL, TWITTER_URL } from 'core/constants';
 
 const Footer: FunctionComponent = () => {
   return (
-    <Box
-      bg={useColorModeValue('gray.200', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}
-    >
+    <Box bg="gray.200" color="gray.700">
       <Container
         as={Stack}
         maxW="6xl"
@@ -27,10 +26,11 @@ const Footer: FunctionComponent = () => {
         align={{ base: 'center', md: 'center' }}
       >
         <NextLink href="/" passHref>
-          <Image
+          <BlogImage
             src="/assets/media/D2C-fond-transparent.webp"
             alt="Logo dévoreur 2 code"
-            width="100px"
+            width={100}
+            height={38}
             cursor="pointer"
           />
         </NextLink>

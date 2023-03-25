@@ -13,7 +13,14 @@ const PostTag: FunctionComponent<PostTagProps> = ({ tag }) => {
 
   return (
     <NextLink href={`/tag/${lowercasedTag}`} passHref>
-      <Tag size="md" variant="solid" backgroundColor="brand.blue" cursor="pointer">
+      <Tag
+        size="md"
+        variant="solid"
+        backgroundColor="brand.blue"
+        cursor="pointer"
+        _hover={{ backgroundColor: 'brand.greenBlue' }}
+        transition="0.5s ease-in-out"
+      >
         {`#${lowercasedTag}`}
       </Tag>
     </NextLink>

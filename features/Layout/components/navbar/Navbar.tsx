@@ -7,7 +7,6 @@ import {
   Flex,
   IconButton,
   Collapse,
-  Image,
   Icon,
   useBreakpointValue,
   useDisclosure,
@@ -20,6 +19,7 @@ import DesktopNav from './desktop-nav/DesktopNav';
 import MobileNav from './mobile-nav/MobileNav';
 
 import { RSS_FEED_URL } from 'core/constants';
+import { BlogImage } from 'common';
 
 const Navbar: FunctionComponent = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -52,13 +52,14 @@ const Navbar: FunctionComponent = () => {
         </Flex>
         <Flex flex={1} align="center" justify={{ base: 'center', md: 'space-between' }}>
           <NextLink href="/" passHref>
-            <Image
-              src="/assets/media/D2C-fond-transparent.webp"
-              alt="Logo dévoreur 2 code"
-              align={useBreakpointValue({ base: 'center', md: 'left' })}
-              width="100px"
-              cursor="pointer"
-            />
+            <Flex align={useBreakpointValue({ base: 'center', md: 'left' })} cursor="pointer">
+              <BlogImage
+                src="/assets/media/D2C-fond-transparent.webp"
+                alt="Logo dévoreur 2 code"
+                width={100}
+                height={38}
+              />
+            </Flex>
           </NextLink>
           <Flex display={{ base: 'none', md: 'flex' }} mr={10}>
             <DesktopNav />

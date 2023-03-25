@@ -1,11 +1,13 @@
 import { FunctionComponent } from 'react';
 
-import { Image, Flex, Heading, Text, HStack, Tag, Icon } from '@chakra-ui/react';
+import { Flex, Heading, Text, HStack, Tag, Icon } from '@chakra-ui/react';
 
 import { uppercaseFirst } from 'core';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
+
+import { BlogImage } from 'common';
 
 import { CoverImage, PostTag } from '../..';
 
@@ -38,15 +40,22 @@ const PostHeader: PostHeaderType = ({
       <Flex alignItems="center" justifyContent="space-between" marginBottom="20px">
         <Flex alignItems="center">
           {avatarSrc && (
-            <Image
+            <Flex
               borderRadius="full"
               boxSize="50px"
               border="1px solid"
               borderColor="brand.darkBlue"
               marginRight="1rem"
-              src={avatarSrc}
-              alt={authorName}
-            />
+            >
+              <BlogImage
+                borderRadius="full"
+                width={50}
+                height={50}
+                borderColor="brand.darkBlue"
+                src={avatarSrc}
+                alt={authorName}
+              />
+            </Flex>
           )}
           <Text size="md">{authorName}</Text>
         </Flex>
