@@ -83,7 +83,7 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
           label="Read the post"
           rightIcon={<Icon as={FontAwesomeIcon} icon={faChevronRight} />}
         />
-        <Tag backgroundColor="brand.greener" color="white">
+        <Tag backgroundColor="brand.green" color="gray.900">
           <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
           {readingTime}
         </Tag>

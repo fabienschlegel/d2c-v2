@@ -61,7 +61,7 @@ const PostHeader: PostHeaderType = ({
         </Flex>
         <Flex alignItems="center" justifyContent="space-between">
           <Text marginRight="2rem">{date}</Text>
-          <Tag backgroundColor="brand.greener" color="white">
+          <Tag backgroundColor="brand.green" color="gray.900">
             <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
             {readingTime}
           </Tag>

@@ -43,7 +43,7 @@ const PostsListItem: PostsListItemType = ({
       </NextLink>
       <Flex marginBottom="1rem" align="center" justify="space-between">
         <Text>{`${date} - Written by ${authorName}`}</Text>
-        <Tag backgroundColor="brand.greener" color="white">
+        <Tag backgroundColor="brand.green" color="gray.900">
           <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
           {readingTime}
         </Tag>
