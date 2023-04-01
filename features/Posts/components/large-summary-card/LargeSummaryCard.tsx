@@ -39,8 +39,8 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
   coverImageSrc,
 }) => {
   return (
-    <Flex direction="column" justifyContent="space-between" height="100%">
-      <Flex borderRadius="lg" overflow="hidden">
+    <Flex direction="column" height="100%">
+      <Flex borderTopRadius={5} overflow="hidden" borderBottom="1px solid #eee">
         <BlogImage
           transform="scale(1.0)"
           width={800}
@@ -54,39 +54,50 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
           }}
         />
       </Flex>
-      {tags && <TagsList tags={tags} />}
-      <NextLink href={`/blog/${slug}`} passHref>
-        <Heading fontSize="xl" marginTop="1rem" cursor="pointer">
-          {uppercaseFirst(title)}
-        </Heading>
-      </NextLink>
-      <Text marginTop="0.5rem">{excerpt}</Text>
-      {authorAvatar && authorName && date && (
-        <HStack marginTop="1rem" spacing="2" display="flex" alignItems="center">
-          <Flex borderRadius="full" boxSize="50px" border="1px solid" borderColor="brand.darkBlue">
-            <BlogImage
-              borderRadius="full"
-              width={50}
-              height={50}
-              src={authorAvatar}
-              alt={authorName}
+      <Flex justifyContent="space-between" flex={1} direction="column" padding={4}>
+        <Flex direction="column">
+          {tags && <TagsList tags={tags} />}
+          <NextLink href={`/blog/${slug}`} passHref>
+            <Heading fontSize="xl" marginTop="1rem" cursor="pointer">
+              {uppercaseFirst(title)}
+            </Heading>
+          </NextLink>
+          <Text marginTop="0.5rem">{excerpt}</Text>
+        </Flex>
+        <Flex direction="column">
+          {authorAvatar && authorName && date && (
+            <HStack marginTop="1rem" spacing="2" display="flex" alignItems="center">
+              <Flex
+                borderRadius="full"
+                boxSize="50px"
+                border="1px solid"
+                borderColor="brand.darkBlue"
+              >
+                <BlogImage
+                  borderRadius="full"
+                  width={50}
+                  height={50}
+                  src={authorAvatar}
+                  alt={authorName}
+                />
+              </Flex>
+              <Text fontWeight="medium">{authorName}</Text>
+              <Text>—</Text>
+              <Text>{date}</Text>
+            </HStack>
+          )}
+          <Flex marginTop="1rem" align="center" justify="space-between">
+            <ButtonLink
+              href={`/blog/${slug}`}
+              label="Read the post"
+              rightIcon={<Icon as={FontAwesomeIcon} icon={faChevronRight} />}
             />
+            <Tag backgroundColor="brand.green" color="gray.900">
+              <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
+              {readingTime}
+            </Tag>
           </Flex>
-          <Text fontWeight="medium">{authorName}</Text>
-          <Text>—</Text>
-          <Text>{date}</Text>
-        </HStack>
-      )}
-      <Flex marginTop="1rem" align="center" justify="space-between">
-        <ButtonLink
-          href={`/blog/${slug}`}
-          label="Read the post"
-          rightIcon={<Icon as={FontAwesomeIcon} icon={faChevronRight} />}
-        />
-        <Tag backgroundColor="brand.green" color="gray.900">
-          <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
-          {readingTime}
-        </Tag>
+        </Flex>
       </Flex>
     </Flex>
   );

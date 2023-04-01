@@ -10,7 +10,7 @@ interface TagsListProps {
 
 const TagsList: FunctionComponent<TagsListProps> = ({ tags }) => {
   return (
-    <HStack spacing={2} marginTop="1rem">
+    <HStack alignItems="center" spacing={2}>
       {tags.map((tag) => (
         <PostTag key={tag} tag={tag} />
       ))}

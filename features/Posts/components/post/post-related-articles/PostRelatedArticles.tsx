@@ -30,9 +30,8 @@ const PostRelatedArticles: PostRelatedArticlesType = ({ relatedArticles }) => {
         {relatedArticles.map((related) => (
           <GridItem
             key={related.slug}
-            padding="1rem"
             boxShadow="rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;"
-            borderRadius="6px;"
+            borderRadius={6}
             width="100%"
             backgroundColor="white"
           >

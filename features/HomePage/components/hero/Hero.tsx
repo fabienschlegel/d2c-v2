@@ -4,7 +4,7 @@ import { Flex, Heading, Icon } from '@chakra-ui/react';
 
 import { BlogImage } from 'common';
 
-import macbook from 'public/assets/media/macbook.webp';
+import macbook from 'public/assets/media/macbook.svg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -18,16 +18,19 @@ const heroSocialButtons = [
     id: 'twitter',
     href: TWITTER_URL,
     icon: faTwitter,
+    ariaLabel: 'My Twitter Profile',
   },
   {
     id: 'linkedin',
     href: LINKEDIN_URL,
     icon: faLinkedin,
+    ariaLabel: 'My LinkedIn Profile',
   },
   {
     id: 'github',
     href: GITHUB_PROFILE_URL,
     icon: faGithub,
+    ariaLabel: 'My Github Profile',
   },
 ];
 
@@ -61,7 +64,7 @@ const Hero: FunctionComponent = () => {
         </Flex>
         <Flex align="center" direction="row" justify="space-evenly" width="100%" paddingTop={12}>
           {heroSocialButtons.map((button) => (
-            <HeroSocialButton href={button.href} key={button.id}>
+            <HeroSocialButton key={button.id} href={button.href} ariaLabel={button.ariaLabel}>
               <Icon
                 as={FontAwesomeIcon}
                 icon={button.icon}

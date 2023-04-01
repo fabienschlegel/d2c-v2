@@ -5,13 +5,19 @@ import { Flex } from '@chakra-ui/react';
 interface HeroSocialButtonProps {
   children: ReactNode;
   href: string;
+  ariaLabel: string;
 }
 
-const HeroSocialButton: FunctionComponent<HeroSocialButtonProps> = ({ children, href }) => {
+const HeroSocialButton: FunctionComponent<HeroSocialButtonProps> = ({
+  children,
+  href,
+  ariaLabel,
+}) => {
   return (
     <Flex
       as="a"
       href={href}
+      aria-label={ariaLabel}
       target="_blank"
       backgroundColor="brand.greener"
       color="white"
