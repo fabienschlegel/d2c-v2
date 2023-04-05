@@ -45,11 +45,7 @@ const Hero: FunctionComponent = () => {
       minHeight={{ base: '80vh', lg: '70vh' }}
       direction={{ base: 'column-reverse', lg: 'row' }}
     >
-      <BlogImage
-        filter="drop-shadow(10px 10px 4px rgba(0,0,0,0.3));"
-        src={macbook}
-        alt="Computer with coffee mug"
-      />
+      <BlogImage src={macbook} alt="Computer with coffee mug" priority />
       <Flex direction="column">
         <Flex direction="column">
           <Heading as="h3" size="lg" color="white">

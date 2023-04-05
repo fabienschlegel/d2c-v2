@@ -40,6 +40,7 @@ export default function PostPage({ post, previous, next, related }: Props) {
           title={post.title}
           authorName={post.author.name}
           date={post.date}
+          updated={post.updated}
           readingTime={post.readingTime}
           coverImageSrc={post.coverImage}
           avatarSrc={post.author.avatar}

@@ -6,6 +6,10 @@ import { lowercaseArrayOfStrings } from 'core';
 import { IPost } from './types';
 import { readingTime } from 'core/helpers/textHelpers';
 
+type Items = {
+  [key: string]: string | Array<string>;
+};
+
 const postsDirectory = join(process.cwd(), 'posts');
 
 export function getPostSlugs() {
@@ -17,10 +21,6 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
-
-  type Items = {
-    [key: string]: string | Array<string>;
-  };
 
   const items: Items = {};
 
@@ -42,13 +42,19 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   return items;
 }
 
+export function useUpdatedDate(post: Items) {
+  return post.updated || post.date;
+}
+
 export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs();
   return slugs.map((slug) => getPostBySlug(slug, fields));
 }
 
 export function getAllPostsByDate(fields: string[] = []) {
-  return getAllPosts(fields).sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  return getAllPosts(fields).sort((post1, post2) =>
+    useUpdatedDate(post1) > useUpdatedDate(post2) ? -1 : 1
+  );
 }
 
 export function getPostsByTag(tag: string, fields: string[] = []) {

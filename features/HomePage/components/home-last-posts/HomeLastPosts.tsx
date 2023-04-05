@@ -39,6 +39,7 @@ const HomeLastPosts: FunctionComponent<HomeLastPostsProps> = ({ lastPosts }) => 
             authorName={post.author.name}
             authorAvatar={post.author.avatar}
             date={post.date}
+            updated={post.updated}
             tags={post.tags}
             coverImageSrc={post.coverImage}
             readingTime={post.readingTime}

@@ -18,6 +18,7 @@ interface PostsListItemProps {
   excerpt: string;
   slug: string;
   readingTime: string;
+  updated?: string;
   tags?: Array<string>;
   coverImage?: string;
 }
@@ -31,6 +32,7 @@ const PostsListItem: PostsListItemType = ({
   excerpt,
   slug,
   readingTime,
+  updated,
   tags,
   coverImage,
 }) => {
@@ -41,12 +43,16 @@ const PostsListItem: PostsListItemType = ({
           {uppercaseFirst(title)}
         </Heading>
       </NextLink>
-      <Flex marginBottom="1rem" align="center" justify="space-between">
-        <Text>{`${date} - Written by ${authorName}`}</Text>
+      <Flex marginBottom={4} align="center" justify="space-between">
+        <Text>{`Written by ${authorName}`}</Text>
         <Tag backgroundColor="brand.green" color="gray.900">
           <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
           {readingTime}
         </Tag>
+      </Flex>
+      <Flex marginBottom={4} align="center" gap={4}>
+        <Text>{date}</Text>
+        {updated && <Text>{`(updated: ${updated})`}</Text>}
       </Flex>
       {tags && (
         <HStack spacing={2} marginBottom="1rem">

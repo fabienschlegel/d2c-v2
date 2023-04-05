@@ -16,6 +16,7 @@ interface PostHeaderProps {
   authorName: string;
   date: string;
   readingTime: string;
+  updated?: string;
   coverImageSrc?: string;
   avatarSrc?: string;
   tags?: Array<string>;
@@ -28,6 +29,7 @@ const PostHeader: PostHeaderType = ({
   authorName,
   date,
   readingTime,
+  updated,
   coverImageSrc,
   avatarSrc,
   tags,
@@ -37,7 +39,7 @@ const PostHeader: PostHeaderType = ({
       <Heading as="h1" size="2xl" marginBottom={4}>
         {uppercaseFirst(title)}
       </Heading>
-      <Flex alignItems="center" justifyContent="space-between" marginBottom="20px">
+      <Flex alignItems="center" justifyContent="space-between" marginBottom={4}>
         <Flex alignItems="center">
           {avatarSrc && (
             <Flex
@@ -59,13 +61,14 @@ const PostHeader: PostHeaderType = ({
           )}
           <Text size="md">{authorName}</Text>
         </Flex>
-        <Flex alignItems="center" justifyContent="space-between">
-          <Text marginRight="2rem">{date}</Text>
-          <Tag backgroundColor="brand.green" color="gray.900">
-            <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
-            {readingTime}
-          </Tag>
-        </Flex>
+        <Tag backgroundColor="brand.green" color="gray.900">
+          <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
+          {readingTime}
+        </Tag>
+      </Flex>
+      <Flex alignItems="center" justifyContent="space-between" gap={4} marginBottom={8}>
+        <Text>{`published: ${date}`}</Text>
+        {updated && <Text>{`updated: ${updated}`}</Text>}
       </Flex>
       {tags && (
         <HStack spacing={2} marginBottom="1rem">

@@ -30,6 +30,7 @@ const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
             key={post.slug}
             title={post.title}
             date={post.date}
+            updated={post.updated}
             authorName={post.author.name}
             excerpt={post.excerpt}
             readingTime={post.readingTime}

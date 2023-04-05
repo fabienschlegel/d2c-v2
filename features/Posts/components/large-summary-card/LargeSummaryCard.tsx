@@ -20,6 +20,7 @@ interface LargeSummaryCardProps {
   excerpt: string;
   slug: string;
   readingTime: string;
+  updated?: string;
   authorName?: string;
   authorAvatar?: string;
   date?: string;
@@ -32,6 +33,7 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
   excerpt,
   slug,
   readingTime,
+  updated,
   authorName,
   authorAvatar,
   date,
@@ -83,7 +85,7 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
               </Flex>
               <Text fontWeight="medium">{authorName}</Text>
               <Text>—</Text>
-              <Text>{date}</Text>
+              <Text>{`${updated || date}${updated ? ' (updated)' : ''}`}</Text>
             </HStack>
           )}
           <Flex marginTop="1rem" align="center" justify="space-between">
