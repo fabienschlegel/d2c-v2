@@ -2,22 +2,13 @@ import type { NextPage } from 'next';
 
 import { Flex, Heading } from '@chakra-ui/react';
 
-import { getAllPostsByDate } from 'features/Posts/api';
-
 import { PrimaryLayout } from 'features/Layout';
 
-import { HomeLastPosts } from 'features/HomePage';
-
-import { PostSummary } from 'features/Posts/types';
+import { ButtonLink } from 'features/Posts/components';
 
 import { SITE_DESCRIPTION, SITE_IMAGE } from 'core/constants';
-import { POST_HEADER_FIELDS } from 'features/Posts';
 
-interface HomeProps {
-  lastPosts: Array<PostSummary>;
-}
-
-const FourZeroFour: NextPage<HomeProps> = ({ lastPosts }) => {
+const FourZeroFour: NextPage = () => {
   return (
     <PrimaryLayout
       pageTitle="404 - It seems you're lost on Devoreur 2 Code"
@@ -26,27 +17,22 @@ const FourZeroFour: NextPage<HomeProps> = ({ lastPosts }) => {
     >
       <Flex
         width="100%"
+        flex={1}
         align="center"
-        justify="space-evenly"
+        justify="center"
         backgroundColor="brand.darkBlue"
         direction="column"
       >
-        <Heading mt={8} size={{ base: '2xl', lg: '3xl' }} color="white">
+        <Heading mb={8} size={{ base: '2xl', lg: '3xl' }} color="white">
+          404
+        </Heading>
+        <Heading mb={8} size={{ base: '2xl', lg: '3xl' }} color="brand.green">
           {"It seems you're lost"}
         </Heading>
-        <Heading mt={2} as="h3" size="lg" color="brand.green" textAlign="right">
-          Take time to discover my last articles
-        </Heading>
-        <HomeLastPosts lastPosts={lastPosts} />
+        <ButtonLink href="/" label="Back to home" />
       </Flex>
     </PrimaryLayout>
   );
 };
 
 export default FourZeroFour;
-
-export async function getStaticProps() {
-  const lastPosts = getAllPostsByDate(POST_HEADER_FIELDS).slice(0, 3);
-
-  return { props: { lastPosts } };
-}
