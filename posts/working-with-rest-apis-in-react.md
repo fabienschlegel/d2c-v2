@@ -1,5 +1,6 @@
 ---
 title: 'Working with REST APIs in React'
+pageTitle: "Working with REST APIs in React: A Beginner's Guide"
 date: '2022-03-15'
 author:
   name: 'Fabien Schlegel'

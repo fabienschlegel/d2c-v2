@@ -1,5 +1,6 @@
 ---
 title: 'Begin React with Typescript'
+pageTitle: 'Begin React with Typescript: A Comprehensive Guide for Beginners'
 date: '2022-02-22'
 coverImage: '/assets/blog/cover-images/S02E01_banner.webp'
 author:

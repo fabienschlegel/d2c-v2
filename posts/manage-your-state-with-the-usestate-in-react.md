@@ -1,5 +1,6 @@
 ---
 title: 'Manage your state with the useState hook in React'
+pageTitle: 'Manage Your State with the useState Hook in React: Tips and Tricks'
 date: '2022-11-11'
 coverImage: '/assets/blog/cover-images/manage-your-state-with-the-usestate-in-react-illustration.webp'
 author:

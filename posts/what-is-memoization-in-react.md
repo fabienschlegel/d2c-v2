@@ -1,5 +1,6 @@
 ---
 title: 'What is memoization in React'
+pageTitle: 'What Is Memoization in React and How to Use It'
 date: '2023-03-08'
 author:
   name: 'Fabien Schlegel'

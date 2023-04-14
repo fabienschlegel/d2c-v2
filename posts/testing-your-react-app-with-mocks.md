@@ -1,5 +1,6 @@
 ---
 title: 'Testing your React app with mocks'
+pageTitle: 'Testing Your React App with Mocks: Best Practices and Examples'
 date: '2022-08-19'
 author:
   name: 'Fabien Schlegel'

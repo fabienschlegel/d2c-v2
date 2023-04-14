@@ -1,5 +1,6 @@
 ---
 title: 'How to useEffect hook in your React components'
+pageTitle: 'How to Use the useEffect Hook in Your React Components: A Comprehensive Tutorial'
 date: '2023-01-04'
 coverImage: '/assets/blog/cover-images/how-to-useeffect-hook-in-your-react-components-illustration.webp'
 author:

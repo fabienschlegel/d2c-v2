@@ -1,5 +1,6 @@
 ---
 title: 'How to easily create forms in React'
+pageTitle: "How to Easily Create Forms in React: A Beginner's Guide"
 date: '2021-07-24'
 author:
   name: 'Fabien Schlegel'

@@ -1,5 +1,6 @@
 ---
 title: 'How to test React Hooks'
+pageTitle: "How to Test React Hooks: A Developer's Guide"
 date: '2021-05-20'
 author:
   name: 'Fabien Schlegel'

@@ -4,15 +4,22 @@ import { Feed } from 'feed';
 import { getAllPostsByDate } from 'features/Posts/api';
 
 import { POST_ALL_FIELDS } from 'features/Posts';
-import { ATOM_FEED_URL, FAVICON_URL, JSON_FEED_URL, RSS_FEED_URL } from 'core/constants';
+import {
+  ATOM_FEED_URL,
+  FAVICON_URL,
+  JSON_FEED_URL,
+  RSS_FEED_URL,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+} from 'core/constants';
 
 export default async function generateRssFeed() {
   const allPosts = await getAllPostsByDate(POST_ALL_FIELDS);
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 
   const feedOptions = {
-    title: 'Dévoreur 2 code',
-    description: 'Another blog from a developer',
+    title: `${SITE_NAME} | RSS Feed`,
+    description: SITE_DESCRIPTION,
     id: siteUrl,
     link: siteUrl,
     image: `${siteUrl}/assets/media/Logo-D2C.png`,

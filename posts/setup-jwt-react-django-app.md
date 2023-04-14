@@ -1,5 +1,6 @@
 ---
 title: 'Setup JWT for a React Django app in minutes'
+pageTitle: 'Setup JWT for a React Django App in Minutes: A Step-by-Step Guide'
 date: '2021-06-25'
 author:
   name: 'Fabien Schlegel'

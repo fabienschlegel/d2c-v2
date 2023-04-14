@@ -1,5 +1,6 @@
 ---
 title: 'From Gatsby to NextJS - journey of a blog'
+pageTitle: "From Gatsby to NextJS - The Journey of a Blog: A Developer's Perspective"
 date: '2022-09-20'
 coverImage: '/assets/blog/cover-images/from-gatsby-to-nextjs-journey-of-a-blog-illustration.webp'
 author:

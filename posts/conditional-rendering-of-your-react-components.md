@@ -1,5 +1,6 @@
 ---
 title: 'Conditional Rendering of your React components'
+pageTitle: 'Conditional Rendering of Your React Components: Tips and Tricks'
 date: '2022-03-08'
 author:
   name: 'Fabien Schlegel'

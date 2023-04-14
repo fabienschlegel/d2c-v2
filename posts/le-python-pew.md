@@ -1,41 +1,47 @@
 ---
-title: 'Le Python Pew'
+title: 'Introduction to Pew - A Python Library for Creating Virtual Environments'
+pageTitle: 'Pew : Managing your vitual environments in Python'
 date: '2019-10-14'
+updated: '2023-04-14'
 author:
   name: 'Fabien Schlegel'
   avatar: '/assets/blog/authors/fabien-schlegel.webp'
-excerpt: 'Python - découverte de la librairie pew'
-tags: ['Python', 'module']
+excerpt: 'Learn how to use Pew, a Python library, to create and manage virtual environments, allowing you to work with different versions of Python and project dependencies without affecting your system configuration.'
+tags: ['python', 'library']
 ---
 
-Pour toi qui ne connait pas, avec Python on ne démarre pas un projet sans utiliser un environnement virtuel.
+If you're a Python developer, you know the importance of using a virtual environment for your projects. Pew is a Python library that allows you to create and manage virtual environments with ease. In this article, we'll take a look at how to use Pew to create and manage virtual environments.
 
-Un environnement virtuel te permet de choisir la version de python et les dépendances du projet sans impacter la configuration de ton poste.
+## What is Pew?
 
-Virtualenv peut être utilisé avec virtualenvwrappper, qui lui rajoute des fonctionnalités et autres joyeuses commandes.
+Pew is a Python library that provides a set of commands to create and manage virtual environments. It is similar to other virtual environment tools like virtualenv and conda. The difference is that Pew provides additional features and commands that make it easier to work with virtual environments.
 
-ça s'installe comme tous les packages python avec un :
+## Installing Pew
+
+To install Pew, use the following command:
 
 ```shell
 sudo pip3 install pew
 ```
 
-### Comment ça marche
+## Getting Started with Pew
 
-pour créer un environnement, on se place dans le bon dossier :
+Once you have Pew installed, you can create a new virtual environment by using the `mkproject` command. This command creates a new virtual environment and switches to it:
 
 ```shell
-pew mkproject monsuperprojet
+pew mkproject myproject
 ```
 
-et bim, on se retrouve dedans.
+Now, you are in your new virtual environment. If you want to exit the virtual environment, you can use the `exit` command. To see a list of your virtual environments, use the `ls` command. To switch to a different virtual environment, use the `workon` command followed by the name of the virtual environment:
 
-Une fois dans notre répertoire virtuelle, si on veut en sortir on passe par un **_exit_**.
+```shell
+pew workon myproject
+```
 
-On liste nos repertoires avec **_pew ls_** et les réactive avec _**pew workon monsuperprojet**_.
+That's it! You now know how to use Pew to create and manage virtual environments.
 
-Facile, non ?
+## Conclusion
 
-Tous les commandes sont expliqués sur [la page du projet](https://github.com/berdario/pew).
+Virtual environments are an essential tool for Python developers. They allow you to work with different versions of Python and project dependencies without affecting your system configuration.
 
-Bon développements avec Python !
+Pew makes it easy to create and manage virtual environments, and it provides additional features and commands that make it even more useful. Try it out for yourself and see how it can improve your Python development workflow.

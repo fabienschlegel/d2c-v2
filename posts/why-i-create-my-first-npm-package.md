@@ -1,5 +1,6 @@
 ---
 title: 'Why I create my first NPM package'
+pageTitle: 'Why I Created My First NPM Package: Lessons Learned and Benefits'
 date: '2021-07-04'
 author:
   name: 'Fabien Schlegel'

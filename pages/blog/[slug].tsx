@@ -31,7 +31,7 @@ export default function PostPage({ post, previous, next, related }: Props) {
 
   return (
     <PrimaryLayout
-      pageTitle={post.title}
+      pageTitle={post.pageTitle ? post.pageTitle : post.title}
       pageMetaDescription={post.excerpt}
       pageImagePath={post.coverImage || SITE_IMAGE}
     >

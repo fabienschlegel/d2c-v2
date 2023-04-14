@@ -7,6 +7,7 @@ export const POST_HEADER_FIELDS = [
   'slug',
   'author',
   'excerpt',
+  'pageTitle',
   'coverImage',
   'tags',
   'related',

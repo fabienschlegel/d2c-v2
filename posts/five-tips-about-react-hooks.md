@@ -1,5 +1,6 @@
 ---
 title: 'Five tips about React hooks'
+pageTitle: "Five Tips about React Hooks That You Don't Want to Miss"
 date: '2021-05-14'
 author:
   name: 'Fabien Schlegel'

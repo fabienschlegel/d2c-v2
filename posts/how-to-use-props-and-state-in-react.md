@@ -1,5 +1,6 @@
 ---
 title: 'How to use props and state in React'
+pageTitle: 'How to Use Props and State in React: Understanding the Fundamentals'
 date: '2022-03-03'
 author:
   name: 'Fabien Schlegel'

@@ -11,6 +11,7 @@ export interface IPost {
   excerpt: string;
   content: string;
   readingTime: string;
+  pageTitle?: string;
   coverImage?: string;
   tags?: Array<string>;
   related?: Array<PostSummary>;

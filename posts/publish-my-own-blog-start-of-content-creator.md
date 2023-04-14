@@ -1,5 +1,6 @@
 ---
 title: 'Publish my own blog, the start of a content creator'
+pageTitle: 'Publish My Own Blog, the Start of a Content Creator: Tips and Tricks'
 date: '2021-07-14'
 author:
   name: 'Fabien Schlegel'

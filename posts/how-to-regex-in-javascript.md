@@ -1,5 +1,6 @@
 ---
 title: 'How to Regex in Javascript'
+pageTitle: 'How to Regex in Javascript: A Complete Guide for Developers'
 date: '2023-03-29'
 author:
   name: 'Fabien Schlegel'

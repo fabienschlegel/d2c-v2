@@ -1,5 +1,6 @@
 ---
 title: 'Understand and use composition in React'
+pageTitle: 'Understand and Use Composition in React: Best Practices and Examples'
 date: '2021-07-09'
 author:
   name: 'Fabien Schlegel'

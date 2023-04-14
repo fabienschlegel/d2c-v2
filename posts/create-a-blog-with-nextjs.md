@@ -1,5 +1,6 @@
 ---
 title: 'Create a blog with NextJS'
+pageTitle: 'Create a Blog with NextJS: A Step-by-Step Tutorial'
 date: '2022-09-27'
 coverImage: '/assets/blog/cover-images/create-a-blog-with-nextjs.webp'
 author:

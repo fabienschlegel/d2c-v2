@@ -1,5 +1,6 @@
 ---
 title: 'Automate Prettier in a pre-commit hook'
+pageTitle: 'Automate Prettier in a Pre-Commit Hook: Streamline Your Code Formatting Process'
 date: '2021-06-04'
 author:
   name: 'Fabien Schlegel'
