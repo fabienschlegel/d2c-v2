@@ -165,8 +165,8 @@ Et voila, c'est tout pour aujourd'hui. On se retrouve la semaine prochaine pour 
 
 ---
 
-- [Partie 0 - A quoi ça sert ?](/tests-quality-ep0)
-- [Partie 1 - Les tests, comment ça marche ?](/tests-quality-ep1)
-- [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/tests-quality-ep2)
-- [Partie 3 - Allez hop, on pose les mains et on refactorise](/tests-quality-ep3)
-- [Partie 4 - Automatiser tout ça c'est dans nos cordes](/tests-quality-ep4)
+- [Partie 0 - A quoi ça sert ?](/blog/tests-quality-ep0)
+- [Partie 1 - Les tests, comment ça marche ?](/blog/tests-quality-ep1)
+- [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/blog/tests-quality-ep2)
+- [Partie 3 - Allez hop, on pose les mains et on refactorise](/blog/tests-quality-ep3)
+- [Partie 4 - Automatiser tout ça c'est dans nos cordes](/blog/tests-quality-ep4)

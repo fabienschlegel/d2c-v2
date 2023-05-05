@@ -62,8 +62,8 @@ Les articles suivants rentreront plus dans les détails avec des exemples Javasc
 
 Ce post sera le premier d'une série sur les tests et la qualité de code.
 
-- [Partie 0 - A quoi ça sert ? (Boum tu viens de le lire, bravo !)](/tests-quality-ep0)
-- [Partie 1 - Les tests, comment ça marche ?](/tests-quality-ep1)
-- [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/tests-quality-ep2)
-- [Partie 3 - Allez hop, on pose les mains et on refactorise](/tests-quality-ep3)
-- [Partie 4 - Automatiser tout ça c'est dans nos cordes](/tests-quality-ep4)
+- [Partie 0 - A quoi ça sert ? (Boum tu viens de le lire, bravo !)](/blog/tests-quality-ep0)
+- [Partie 1 - Les tests, comment ça marche ?](/blog/tests-quality-ep1)
+- [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/blog/tests-quality-ep2)
+- [Partie 3 - Allez hop, on pose les mains et on refactorise](/blog/tests-quality-ep3)
+- [Partie 4 - Automatiser tout ça c'est dans nos cordes](/blog/tests-quality-ep4)

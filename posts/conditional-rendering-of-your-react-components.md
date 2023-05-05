@@ -10,7 +10,7 @@ tags: ['React', 'Typescript']
 related: ['begin-react-with-typescript']
 ---
 
-This blog post relies on React and Typescript, a superset of JavaScript. If you’re a beginner, you can check [this post](/begin-react-with-typescript) to get the prerequisites.
+This blog post relies on React and Typescript, a superset of JavaScript. If you’re a beginner, you can check [this post](/blog/begin-react-with-typescript) to get the prerequisites.
 
 UI is made from events, like animation, data calls or changes.
 

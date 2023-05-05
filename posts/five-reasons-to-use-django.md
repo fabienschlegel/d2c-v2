@@ -1,6 +1,6 @@
 ---
 title: 'Five Reasons to use Django'
-pageTitle: 'Five Reasons to use Django: How it Can Improve Your Web Development Projects'
+pageTitle: 'Five Reasons to use Django and Improve Your Web Development Projects'
 date: '2021-06-11'
 updated: '2023-04-05'
 author:

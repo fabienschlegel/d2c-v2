@@ -1,6 +1,6 @@
 ---
 title: 'Introduction to JWT'
-pageTitle: 'Introduction to JWT: What It Is and How to Use It in Your Web Development Projects'
+pageTitle: 'Introduction to JWT: The Shape of a JSON Token'
 date: '2021-06-17'
 author:
   name: 'Fabien Schlegel'
