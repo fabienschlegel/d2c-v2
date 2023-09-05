@@ -1,0 +1,85 @@
+@import '../../../../core/styles/theme';
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+.img-container {
+  overflow: hidden;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.illustration {
+  object-fit: contain;
+  transition: 0.3s ease-in-out;
+  transform: scale(1);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.info-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 1rem;
+}
+
+.info-heading {
+  @include md {
+    line-height: 1.2;
+  }
+
+  margin-top: 1rem;
+
+  color: $grey-800;
+
+  font-weight: 700;
+  font-size: 1.25rem;
+  font-family: $font-heading;
+  line-height: 1.33;
+
+  cursor: pointer;
+}
+
+.excerpt {
+  margin-top: 0.5rem;
+
+  color: $grey-800;
+
+  font-family: $font-body;
+
+  line-height: 1.5;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.avatar-container {
+  width: 50px;
+  height: 50px;
+
+  border: 1px solid $dark-blue;
+  border-radius: 50%;
+}
+
+.author {
+  font-weight: 500;
+}
+
+.cta-container {
+  margin-top: 1rem;
+}
+
+.reading-time-icon {
+  margin-right: 0.5rem;
+}

@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactNode } from 'react';
 
-import { Flex } from '@chakra-ui/react';
+import Style from '../Hero.module.scss';
 
 interface HeroSocialButtonProps {
   children: ReactNode;
@@ -14,22 +14,15 @@ const HeroSocialButton: FunctionComponent<HeroSocialButtonProps> = ({
   ariaLabel,
 }) => {
   return (
-    <Flex
-      as="a"
+    <a
       href={href}
       aria-label={ariaLabel}
       target="_blank"
-      backgroundColor="brand.greener"
-      color="white"
-      rounded="full"
-      w={16}
-      h={16}
-      cursor="pointer"
-      alignItems="center"
-      justifyContent="center"
+      rel="noreferrer"
+      className={Style.socialbutton}
     >
       {children}
-    </Flex>
+    </a>
   );
 };
 

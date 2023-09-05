@@ -14,7 +14,8 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "lint:scss": "stylelint **/*.scss --max-warnings 0",
+    "scss:lint": "stylelint **/*.scss --max-warnings 0",
+    "scss:fix": "stylelint **/*.scss --fix",
     "prepare": "husky install",
     "prettify": "prettier --write */**"
   },

@@ -12,6 +12,8 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 import mainTheme from 'core/mainTheme';
 
+import 'core/styles/main.scss';
+
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": false}] */
 import 'prismjs/themes/prism-tomorrow.css';
 

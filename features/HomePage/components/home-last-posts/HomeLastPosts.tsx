@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
 
-import { Box, Grid } from '@chakra-ui/react';
-
 import LastPostItem from './last-posts-item/LastPostsItem';
 
 import type { PostSummary } from 'features/Posts/types';
+
+import Style from './HomeLastPosts.module.scss';
 
 interface HomeLastPostsProps {
   lastPosts: Array<PostSummary>;
@@ -12,24 +12,8 @@ interface HomeLastPostsProps {
 
 const HomeLastPosts: FunctionComponent<HomeLastPostsProps> = ({ lastPosts }) => {
   return (
-    <Box
-      width="100%"
-      minHeight="80vh"
-      padding={{ base: '3rem 0.5rem', md: '3rem 0.5rem', lg: '3rem' }}
-      backgroundColor={{ base: 'gray.50', lg: undefined }}
-      bgGradient={{
-        base: undefined,
-        lg: 'linear(to-b, brand.darkBlue 25%, white 25%)',
-      }}
-    >
-      <Grid
-        templateColumns={{
-          base: 'repeat(1, 1fr)',
-          md: 'repeat(2, 1fr)',
-          lg: 'repeat(3, 1fr)',
-        }}
-        gap={{ base: 3, md: 6 }}
-      >
+    <div className={Style.container}>
+      <div className={Style['posts-grid']}>
         {lastPosts.map((post) => (
           <LastPostItem
             key={post.slug}
@@ -45,8 +29,8 @@ const HomeLastPosts: FunctionComponent<HomeLastPostsProps> = ({ lastPosts }) => 
             readingTime={post.readingTime}
           />
         ))}
-      </Grid>
-    </Box>
+      </div>
+    </div>
   );
 };
 

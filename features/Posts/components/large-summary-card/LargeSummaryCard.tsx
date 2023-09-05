@@ -1,19 +1,22 @@
 import { FunctionComponent } from 'react';
 
-import NextLink from 'next/link';
+import clsx from 'clsx';
 
-import { Flex, Heading, HStack, Tag, Text, Icon } from '@chakra-ui/react';
+import NextLink from 'next/link';
+import NextImage from 'next/image';
+
+import { HStack, Tag, Icon } from '@chakra-ui/react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faClock } from '@fortawesome/free-solid-svg-icons';
-
-import { BlogImage } from 'common';
 
 import { ButtonLink } from '..';
 
 import TagsList from './tags-list/TagsList';
 
 import { uppercaseFirst } from 'core';
+
+import Style from './LargeSummaryCard.module.scss';
 
 interface LargeSummaryCardProps {
   title: string;
@@ -41,54 +44,42 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
   coverImageSrc,
 }) => {
   return (
-    <Flex direction="column" height="100%">
-      <Flex borderTopRadius={5} overflow="hidden" borderBottom="1px solid #eee">
-        <BlogImage
-          transform="scale(1.0)"
+    <div className={Style.container}>
+      <div className={Style['img-container']}>
+        <NextImage
           width={800}
           height={450}
           src={coverImageSrc || '/assets/media/D2C-fond-transparent.webp'}
           alt="Cover image of the post"
-          objectFit="contain"
-          transition="0.3s ease-in-out"
-          _hover={{
-            transform: 'scale(1.05)',
-          }}
+          className={Style.illustration}
         />
-      </Flex>
-      <Flex justifyContent="space-between" flex={1} direction="column" padding={4}>
-        <Flex direction="column">
+      </div>
+      <div className={Style['info-container']}>
+        <div className="flex flex-col">
           {tags && <TagsList tags={tags} />}
           <NextLink href={`/blog/${slug}`} passHref>
-            <Heading fontSize="xl" marginTop="1rem" cursor="pointer">
-              {uppercaseFirst(title)}
-            </Heading>
+            <h2 className={Style['info-heading']}>{uppercaseFirst(title)}</h2>
           </NextLink>
-          <Text marginTop="0.5rem">{excerpt}</Text>
-        </Flex>
-        <Flex direction="column">
+          <p className={Style.excerpt}>{excerpt}</p>
+        </div>
+        <div className="flex flex-col">
           {authorAvatar && authorName && date && (
             <HStack marginTop="1rem" spacing="2" display="flex" alignItems="center">
-              <Flex
-                borderRadius="full"
-                boxSize="50px"
-                border="1px solid"
-                borderColor="brand.darkBlue"
-              >
-                <BlogImage
-                  borderRadius="full"
-                  width={50}
-                  height={50}
+              <div className={Style['avatar-container']}>
+                <NextImage
+                  className={Style.avatar}
                   src={authorAvatar}
                   alt={authorName}
+                  width={50}
+                  height={50}
                 />
-              </Flex>
-              <Text fontWeight="medium">{authorName}</Text>
-              <Text>—</Text>
-              <Text>{`${updated || date}${updated ? ' (updated)' : ''}`}</Text>
+              </div>
+              <p className={Style.author}>{authorName}</p>
+              <p>—</p>
+              <p>{`${updated || date}${updated ? ' (updated)' : ''}`}</p>
             </HStack>
           )}
-          <Flex marginTop="1rem" align="center" justify="space-between">
+          <div className={clsx('flex align-center justify-between', Style['cta-container'])}>
             <ButtonLink
               href={`/blog/${slug}`}
               label="Read the post"
@@ -98,10 +89,10 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
               <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
               {readingTime}
             </Tag>
-          </Flex>
-        </Flex>
-      </Flex>
-    </Flex>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

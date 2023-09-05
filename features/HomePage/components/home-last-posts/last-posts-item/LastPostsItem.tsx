@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
 
-import { GridItem } from '@chakra-ui/react';
-
 import { LargeSummaryCard } from 'features/Posts';
+
+import Style from '../HomeLastPosts.module.scss';
 
 interface LastPostItemProps {
   title: string;
@@ -30,13 +30,7 @@ const LastPostItem: FunctionComponent<LastPostItemProps> = ({
   coverImageSrc,
 }) => {
   return (
-    <GridItem
-      boxShadow="rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;"
-      borderRadius={6}
-      width="100%"
-      marginBottom={{ base: '2rem', md: 0 }}
-      backgroundColor="white"
-    >
+    <div className={Style['posts-item']}>
       <LargeSummaryCard
         title={title}
         excerpt={excerpt}
@@ -49,7 +43,7 @@ const LastPostItem: FunctionComponent<LastPostItemProps> = ({
         coverImageSrc={coverImageSrc}
         readingTime={readingTime}
       />
-    </GridItem>
+    </div>
   );
 };
 

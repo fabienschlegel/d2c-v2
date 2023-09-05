@@ -1,0 +1,88 @@
+@import '../../../../core/styles/theme';
+
+.container {
+  @include lg {
+    flex-direction: row;
+
+    min-height: 70vh;
+
+    padding: 6rem;
+  }
+
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 100%;
+  min-height: 80vh;
+
+  padding: 0.5rem;
+
+  background-color: $dark-blue;
+}
+
+.nameis {
+  color: $white;
+
+  font-size: 1.875rem;
+  font-family: $font-heading;
+}
+
+.myjob {
+  color: $white;
+
+  font-size: 1.875rem;
+  font-family: $font-heading;
+  text-align: right;
+}
+
+.myname {
+  @include lg {
+    font-size: 3.75rem;
+  }
+
+  color: $green;
+  font-size: 2.25rem;
+  font-family: $font-heading;
+
+  line-height: 1;
+}
+
+.socialbuttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 100%;
+
+  padding-top: 3rem;
+}
+
+.socialicon {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  transition: transform 0.6s ease;
+
+  &:hover {
+    transform: scale(1.5) translatey(-0.5rem);
+  }
+}
+
+.socialbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 4rem;
+  height: 4rem;
+
+  border-radius: 9999px;
+
+  background-color: $greener;
+
+  color: $white;
+
+  cursor: pointer;
+}
