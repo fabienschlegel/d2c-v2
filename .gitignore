@@ -43,3 +43,5 @@ next-env.d.ts
 
 # RSS feeds
 public/rss/*
+public/robots.txt
+public/sitemap*

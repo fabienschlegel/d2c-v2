@@ -9,7 +9,7 @@ import { faLinkedinIn, faTwitter, faGithub } from '@fortawesome/free-brands-svg-
 
 import { BlogImage } from 'common';
 
-import { SocialButton } from '..';
+import { LanguageSwitcher, SocialButton } from '..';
 
 import { GITHUB_PROFILE_URL, LINKEDIN_URL, TWITTER_URL } from 'core/constants';
 
@@ -46,6 +46,7 @@ const Footer: FunctionComponent = () => {
             <Icon as={FontAwesomeIcon} icon={faGithub} />
           </SocialButton>
         </Stack>
+        <LanguageSwitcher />
       </Container>
     </Box>
   );

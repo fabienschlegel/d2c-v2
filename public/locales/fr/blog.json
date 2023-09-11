@@ -1,0 +1,5 @@
+{
+  "pageTitle": "La liste des derniers articles de mon blog",
+  "pageMetaDescription": "Découvrez tous les articles du blog {{siteName}} - Mon parcours dans le développement, React, Typescript, Django et Python.",
+  "mostRecent": "Articles les plus récents"
+}

@@ -1,5 +1,9 @@
 import { FunctionComponent } from 'react';
 
+import { useTranslation } from 'next-i18next';
+
+import NextLink from 'next/link';
+
 import { Flex, Text, Stack, Collapse, Icon, Link, useDisclosure } from '@chakra-ui/react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +12,17 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { INavItem } from '../../../types';
 
 const MobileNavItem: FunctionComponent<INavItem> = ({ label, children, href }) => {
+  const { t } = useTranslation();
   const { isOpen, onToggle } = useDisclosure();
+
+  if (href)
+    return (
+      <Flex py={2}>
+        <Link as={NextLink} py={2} href={href}>
+          {t(label)}
+        </Link>
+      </Flex>
+    );
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
@@ -23,7 +37,7 @@ const MobileNavItem: FunctionComponent<INavItem> = ({ label, children, href }) =
         }}
       >
         <Text fontWeight={600} color="gray.600">
-          {label}
+          {t(label)}
         </Text>
         {children && (
           <Icon
@@ -47,8 +61,8 @@ const MobileNavItem: FunctionComponent<INavItem> = ({ label, children, href }) =
         >
           {children &&
             children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
-                {child.label}
+              <Link as={NextLink} key={child.label} py={2} href={child.href}>
+                {t(child.label)}
               </Link>
             ))}
         </Stack>

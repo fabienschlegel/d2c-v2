@@ -67,9 +67,7 @@ enum Direction {
 
 ### Code Clarity and Readability
 
-Enums enhance code clarity by providing descriptive names to represent values. Instead of using magic numbers or string literals throughout the code, enums offer self-explanatory symbols that make the code easier to understand and
-
-maintain.
+Enums enhance code clarity by providing descriptive names to represent values. Instead of using magic numbers or string literals throughout the code, enums offer self-explanatory symbols that make the code easier to understand and maintain.
 
 Example:
 

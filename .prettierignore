@@ -30,8 +30,9 @@ pnpm-lock.yaml
 yarn.lock
 .gitignore
 sentry.properties
-public/**
 .vscode/**
 .husky/**
 .prettierignore
 .sentryclirc
+public/assets/**
+public/rss/**

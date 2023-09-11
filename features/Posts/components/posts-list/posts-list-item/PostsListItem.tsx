@@ -1,5 +1,7 @@
 import { FunctionComponent } from 'react';
 
+import { useTranslation } from 'next-i18next';
+
 import NextLink from 'next/link';
 
 import { Box, Flex, Heading, HStack, Tag, Text, Icon } from '@chakra-ui/react';
@@ -18,6 +20,7 @@ interface PostsListItemProps {
   excerpt: string;
   slug: string;
   readingTime: string;
+  locale: string;
   updated?: string;
   tags?: Array<string>;
   coverImage?: string;
@@ -32,10 +35,12 @@ const PostsListItem: PostsListItemType = ({
   excerpt,
   slug,
   readingTime,
+  locale,
   updated,
   tags,
   coverImage,
 }) => {
+  const { t } = useTranslation('posts');
   return (
     <Flex flexDirection="column" borderBottom="1px solid #dcdcdc" marginBottom="1em">
       <NextLink href={slug} passHref>
@@ -44,15 +49,19 @@ const PostsListItem: PostsListItemType = ({
         </Heading>
       </NextLink>
       <Flex marginBottom={4} align="center" justify="space-between">
-        <Text>{`Written by ${authorName}`}</Text>
+        <Text>{`${t('writtenBy')} ${authorName}`}</Text>
         <Tag backgroundColor="brand.green" color="gray.900">
           <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
           {readingTime}
         </Tag>
       </Flex>
       <Flex marginBottom={4} align="center" gap={4}>
-        <Text>{date}</Text>
-        {updated && <Text>{`(updated: ${updated})`}</Text>}
+        <Text>{new Intl.DateTimeFormat(locale).format(new Date(date))}</Text>
+        {updated && (
+          <Text>{`(${t('updated')}: ${new Intl.DateTimeFormat(locale).format(
+            new Date(updated)
+          )})`}</Text>
+        )}
       </Flex>
       {tags && (
         <HStack spacing={2} marginBottom="1rem">
@@ -66,7 +75,7 @@ const PostsListItem: PostsListItemType = ({
       <Box marginBottom="1.5em">
         <ButtonLink
           href={slug}
-          label="Read More"
+          label={t('readMore')}
           rightIcon={<Icon as={FontAwesomeIcon} icon={faChevronRight} />}
         />
       </Box>

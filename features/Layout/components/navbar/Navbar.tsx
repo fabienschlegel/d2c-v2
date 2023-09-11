@@ -1,5 +1,7 @@
 import { FunctionComponent } from 'react';
 
+import { useRouter } from 'next/router';
+
 import NextLink from 'next/link';
 
 import {
@@ -18,10 +20,14 @@ import { faBars, faRss, faTimes } from '@fortawesome/free-solid-svg-icons';
 import DesktopNav from './desktop-nav/DesktopNav';
 import MobileNav from './mobile-nav/MobileNav';
 
-import { RSS_FEED_URL } from 'core/constants';
+import { LanguageSwitcher } from '..';
+
 import { BlogImage } from 'common';
 
+import { RSS_FEED_EXT, RSS_FEED_URL } from 'core/constants';
+
 const Navbar: FunctionComponent = () => {
+  const { locale } = useRouter();
   const { isOpen, onToggle } = useDisclosure();
   return (
     <Box>
@@ -61,14 +67,17 @@ const Navbar: FunctionComponent = () => {
               />
             </Flex>
           </NextLink>
-          <Flex display={{ base: 'none', md: 'flex' }} mr={10}>
+          <Flex display={{ base: 'none', md: 'flex' }} align="center" mr={5}>
             <DesktopNav />
             <Flex align="center" justify="center" ml={10}>
-              <NextLink href={RSS_FEED_URL} passHref>
+              <NextLink href={`${RSS_FEED_URL}.${locale}${RSS_FEED_EXT}`} passHref locale={false}>
                 <a>
                   <Icon as={FontAwesomeIcon} icon={faRss} cursor="pointer" />
                 </a>
               </NextLink>
+            </Flex>
+            <Flex align="center" justify="center" ml={5}>
+              <LanguageSwitcher />
             </Flex>
           </Flex>
         </Flex>

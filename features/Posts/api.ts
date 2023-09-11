@@ -3,7 +3,7 @@ import { join } from 'path';
 import matter from 'gray-matter';
 
 import { lowercaseArrayOfStrings } from 'core';
-import { IPost } from './types';
+import { Alternates, IPost } from './types';
 import { readingTime } from 'core/helpers/textHelpers';
 
 type Items = {
@@ -16,56 +16,93 @@ export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.md$/, '');
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
+export function getPostsSlugsWithLocale(locale: string) {
+  return getPostSlugs()
+    .map((s) => {
+      const splitted = s.split('.');
+      return {
+        slug: splitted[0],
+        locale: splitted[1],
+      };
+    })
+    .filter((s) => s.locale === locale)
+    .map((s) => s.slug);
+}
 
-  const items: Items = {};
+export function getPostBySlug(slug: string, locale: string, fields: string[] = []) {
+  const realSlugWithLocale = slug.replace(/\.md$/, '').split('.');
+  const realSlug = realSlugWithLocale[0];
 
-  fields.forEach((field) => {
-    if (field === 'slug') {
-      items[field] = realSlug;
-    }
-    if (field === 'content') {
-      items[field] = content;
-    }
+  const fullPath = join(postsDirectory, `${realSlug}.${locale}.md`);
 
-    if (field === 'readingTime') items[field] = `${readingTime(content)} min`;
+  try {
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-    if (typeof data[field] !== 'undefined') {
-      items[field] = data[field];
-    }
-  });
+    const { data, content } = matter(fileContents);
 
-  return items;
+    const items: Items = {};
+
+    items.locale = locale;
+
+    fields.forEach((field) => {
+      if (field === 'slug') {
+        items[field] = realSlug;
+      }
+      if (field === 'content') {
+        items[field] = content;
+      }
+
+      if (field === 'readingTime') items[field] = `${readingTime(content)} min`;
+
+      if (typeof data[field] !== 'undefined') {
+        items[field] = data[field];
+      }
+    });
+
+    return items;
+  } catch (err) {
+    return {};
+  }
 }
 
 export function useUpdatedDate(post: Items) {
   return post.updated || post.date;
 }
 
-export function getAllPosts(fields: string[] = []) {
-  const slugs = getPostSlugs();
-  return slugs.map((slug) => getPostBySlug(slug, fields));
+export function getAllPosts(locales: string[], fields: string[] = []) {
+  return locales
+    .map((locale) =>
+      getPostsSlugsWithLocale(locale).map((slug) => getPostBySlug(slug, locale, fields))
+    )
+    .flat();
 }
 
-export function getAllPostsByDate(fields: string[] = []) {
-  return getAllPosts(fields).sort((post1, post2) =>
+export function getAllPostsWithLocale(locale: string, fields: string[] = []) {
+  const slugs = getPostsSlugsWithLocale(locale);
+  return slugs.map((slug) => getPostBySlug(slug, locale, fields));
+}
+
+export function getAllPostsByDate(locales: string[], fields: string[] = []) {
+  return getAllPosts(locales, fields).sort((post1, post2) =>
     useUpdatedDate(post1) > useUpdatedDate(post2) ? -1 : 1
   );
 }
 
-export function getPostsByTag(tag: string, fields: string[] = []) {
-  return getAllPostsByDate(fields).filter((post) => {
+export function getAllPostsByDateWithLocale(locale: string, fields: string[] = []) {
+  return getAllPostsWithLocale(locale, fields).sort((post1, post2) =>
+    useUpdatedDate(post1) > useUpdatedDate(post2) ? -1 : 1
+  );
+}
+
+export function getPostsByTagWithLocale(tag: string, locale: string, fields: string[] = []) {
+  return getAllPostsByDateWithLocale(locale, fields).filter((post) => {
     const { tags } = post as unknown as IPost;
     return tags && lowercaseArrayOfStrings(tags).includes(tag);
   });
 }
 
-export function getAllTags(): Array<string> {
-  const allPosts = getAllPosts(['slug', 'tags']);
+export function getAllTagsWithLocales(locales: string[]): Array<string> {
+  const allPosts = getAllPosts(locales, ['slug', 'tags']);
 
   const flattenTags = lowercaseArrayOfStrings(allPosts.map((post) => post?.tags).flat());
 
@@ -73,8 +110,8 @@ export function getAllTags(): Array<string> {
   return allTags;
 }
 
-export function getNextPost(slug: string) {
-  const allPosts = getAllPostsByDate(['title', 'slug', 'date']);
+export function getNextPostWithLocale(slug: string, locale: string) {
+  const allPosts = getAllPostsByDateWithLocale(locale, ['title', 'slug', 'date']);
 
   const index = allPosts.map((post) => post.slug).indexOf(slug);
 
@@ -83,12 +120,23 @@ export function getNextPost(slug: string) {
   return allPosts[index + 1];
 }
 
-export function getPreviousPost(slug: string) {
-  const allPosts = getAllPostsByDate(['title', 'slug', 'date']);
+export function getPreviousPostWithLocale(slug: string, locale: string) {
+  const allPosts = getAllPostsByDateWithLocale(locale, ['title', 'slug', 'date']);
 
   const index = allPosts.map((post) => post.slug).indexOf(slug);
 
   if (index === 0 || index === -1) return null;
 
   return allPosts[index - 1];
+}
+
+export function getAlternateLanguageFromSlug(slug: string, currentLocale: string): Alternates {
+  const allPostsSlugs = getPostSlugs();
+
+  return allPostsSlugs
+    .map((ps) => {
+      const realSlugWithLocale = ps.replace(/\.md$/, '').split('.');
+      return { slug: realSlugWithLocale[0], locale: realSlugWithLocale[1] };
+    })
+    .filter((ps) => ps.slug === slug && ps.locale !== currentLocale);
 }

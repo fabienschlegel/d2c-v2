@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+import { appWithTranslation } from 'next-i18next';
+
 import type { AppProps } from 'next/app';
 
 import { useRouter } from 'next/router';
@@ -40,4 +42,4 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   );
 };
 
-export default App;
+export default appWithTranslation(App);

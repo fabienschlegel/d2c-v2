@@ -12,6 +12,7 @@ interface LastPostItemProps {
   authorAvatar: string;
   date: string;
   readingTime: string;
+  locale: string;
   updated?: string;
   tags?: Array<string>;
   coverImageSrc?: string;
@@ -25,6 +26,7 @@ const LastPostItem: FunctionComponent<LastPostItemProps> = ({
   authorAvatar,
   date,
   readingTime,
+  locale,
   updated,
   tags,
   coverImageSrc,
@@ -42,6 +44,7 @@ const LastPostItem: FunctionComponent<LastPostItemProps> = ({
         tags={tags}
         coverImageSrc={coverImageSrc}
         readingTime={readingTime}
+        locale={locale}
       />
     </div>
   );

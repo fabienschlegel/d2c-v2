@@ -1,0 +1,14 @@
+{
+  "altCoverImage": "Image d'illustration pour {{title}}",
+  "altCoverImageLargeSummaryCard": "Image d'illustration pour l'article",
+  "updated": "mis à jour ",
+  "published": "publié le ",
+  "readPost": "Lire l'article",
+  "relatedArticles": "Articles associés",
+  "writtenBy": "Écrit par",
+  "readMore": "En savoir plus",
+  "newerPosts": "Articles plus récents",
+  "olderPosts": "Articles plus anciens",
+  "shareTo": "partager sur {{social}}",
+  "iJustRead": "Je viens de lire {{title}}"
+}

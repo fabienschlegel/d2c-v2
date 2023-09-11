@@ -1,6 +1,10 @@
 import type { NextPage } from 'next';
 
-import { getAllPostsByDate } from 'features/Posts/api';
+import { useTranslation } from 'next-i18next';
+
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+import { getAllPostsByDateWithLocale } from 'features/Posts/api';
 
 import generateRssFeed from 'core/utilities/generateRSSFeed';
 
@@ -10,7 +14,7 @@ import { Hero, HomeLastPosts } from 'features/HomePage';
 
 import { PostSummary } from 'features/Posts/types';
 
-import { SITE_DESCRIPTION, SITE_IMAGE, SITE_NAME } from 'core/constants';
+import { SITE_IMAGE, SITE_NAME } from 'core/constants';
 import { POST_HEADER_FIELDS } from 'features/Posts';
 
 interface HomeProps {
@@ -18,10 +22,12 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = ({ lastPosts }) => {
+  const { t } = useTranslation('common');
+  const { t: homeT } = useTranslation('home');
   return (
     <PrimaryLayout
-      pageTitle={`${SITE_NAME} - A blog about web development`}
-      pageMetaDescription={`${SITE_DESCRIPTION} - Improve your development skills. Discover tips and advice from an experienced developer`}
+      pageTitle={`${SITE_NAME} - ${homeT('pageTitle')}`}
+      pageMetaDescription={`${t('siteDescription')} - ${homeT('pageMetaDescription')}`}
       pageImagePath={SITE_IMAGE}
     >
       <Hero />
@@ -32,12 +38,17 @@ const Home: NextPage<HomeProps> = ({ lastPosts }) => {
 
 export default Home;
 
-export async function getStaticProps() {
-  await generateRssFeed();
-  const lastPosts = getAllPostsByDate(POST_HEADER_FIELDS).slice(0, 3);
+type Params = {
+  locale: string;
+};
+
+export async function getStaticProps({ locale }: Params) {
+  await generateRssFeed(locale);
+  const lastPosts = getAllPostsByDateWithLocale(locale, POST_HEADER_FIELDS).slice(0, 3);
 
   return {
     props: {
+      ...(await serverSideTranslations(locale, ['common', 'home', 'posts'])),
       lastPosts,
     },
   };

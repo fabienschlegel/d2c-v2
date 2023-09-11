@@ -1,5 +1,7 @@
 import { FunctionComponent } from 'react';
 
+import { useTranslation } from 'next-i18next';
+
 import clsx from 'clsx';
 
 import NextLink from 'next/link';
@@ -23,6 +25,7 @@ interface LargeSummaryCardProps {
   excerpt: string;
   slug: string;
   readingTime: string;
+  locale: string;
   updated?: string;
   authorName?: string;
   authorAvatar?: string;
@@ -36,6 +39,7 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
   excerpt,
   slug,
   readingTime,
+  locale,
   updated,
   authorName,
   authorAvatar,
@@ -43,6 +47,7 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
   tags,
   coverImageSrc,
 }) => {
+  const { t } = useTranslation('posts');
   return (
     <div className={Style.container}>
       <div className={Style['img-container']}>
@@ -50,7 +55,7 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
           width={800}
           height={450}
           src={coverImageSrc || '/assets/media/D2C-fond-transparent.webp'}
-          alt="Cover image of the post"
+          alt={t('altCoverImageLargeSummaryCard')}
           className={Style.illustration}
         />
       </div>
@@ -58,7 +63,7 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
         <div className="flex flex-col">
           {tags && <TagsList tags={tags} />}
           <NextLink href={`/blog/${slug}`} passHref>
-            <h2 className={Style['info-heading']}>{uppercaseFirst(title)}</h2>
+            <h2 className={Style['info-heading']}>{title && uppercaseFirst(title)}</h2>
           </NextLink>
           <p className={Style.excerpt}>{excerpt}</p>
         </div>
@@ -76,13 +81,15 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
               </div>
               <p className={Style.author}>{authorName}</p>
               <p>—</p>
-              <p>{`${updated || date}${updated ? ' (updated)' : ''}`}</p>
+              <p>{`${new Intl.DateTimeFormat(locale).format(new Date(updated || date))}${
+                updated ? ` (${t('updated')})` : ''
+              }`}</p>
             </HStack>
           )}
           <div className={clsx('flex align-center justify-between', Style['cta-container'])}>
             <ButtonLink
               href={`/blog/${slug}`}
-              label="Read the post"
+              label={t('readPost')}
               rightIcon={<Icon as={FontAwesomeIcon} icon={faChevronRight} />}
             />
             <Tag backgroundColor="brand.green" color="gray.900">

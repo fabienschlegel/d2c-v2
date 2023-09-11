@@ -1,5 +1,7 @@
 import { FunctionComponent } from 'react';
 
+import { useTranslation } from 'next-i18next';
+
 import { Button, Flex, Text, Icon } from '@chakra-ui/react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,6 +22,7 @@ const PostsListNavigation: PostListNavigationType = ({
   previousPage,
   nextPage,
 }) => {
+  const { t } = useTranslation('posts');
   return (
     <Flex justifyContent={previous && next ? 'space-between' : 'center'}>
       {previous && (
@@ -37,7 +40,7 @@ const PostsListNavigation: PostListNavigationType = ({
             textOverflow="ellipsis"
             whiteSpace="nowrap"
           >
-            Newer Posts
+            {t('newerPosts')}
           </Text>
         </Button>
       )}
@@ -56,7 +59,7 @@ const PostsListNavigation: PostListNavigationType = ({
             textOverflow="ellipsis"
             whiteSpace="nowrap"
           >
-            Older posts
+            {t('olderPosts')}
           </Text>
         </Button>
       )}

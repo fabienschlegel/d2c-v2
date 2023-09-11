@@ -8,7 +8,7 @@ excerpt: 'Utiliser les linter comme ESLint pour surveiller notre code'
 tags: ['tests', 'qualité de code']
 ---
 
-Maintenant que vous êtes chaud sur les tests avec [la partie 2 de la série](/tests-quality-ep1), on va voir en amont comment on peut améliorer notre code.
+Maintenant que vous êtes chaud sur les tests avec [la partie 2 de la série](/fr/blog/tests-quality-ep1), on va voir en amont comment on peut améliorer notre code.
 
 Lors de notre processus d'écriture, on va utiliser un linter.
 
@@ -80,8 +80,8 @@ Un article court mais avec des liens pour approfondir. De quoi s'occuper d'ici �
 
 ---
 
-- [Partie 0 - A quoi ça sert ?](/blog/tests-quality-ep0)
-- [Partie 1 - Les tests, comment ça marche ?](/blog/tests-quality-ep1)
-- [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/blog/tests-quality-ep2)
-- [Partie 3 - Allez hop, on pose les mains et on refactorise](/blog/tests-quality-ep3)
-- [Partie 4 - Automatiser tout ça c'est dans nos cordes](/blog/tests-quality-ep4)
+- [Partie 0 - A quoi ça sert ?](/fr/blog/tests-quality-ep0)
+- [Partie 1 - Les tests, comment ça marche ?](/fr/blog/tests-quality-ep1)
+- [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/fr/blog/tests-quality-ep2)
+- [Partie 3 - Allez hop, on pose les mains et on refactorise](/fr/blog/tests-quality-ep3)
+- [Partie 4 - Automatiser tout ça c'est dans nos cordes](/fr/blog/tests-quality-ep4)

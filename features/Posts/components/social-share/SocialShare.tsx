@@ -1,5 +1,7 @@
 import { FunctionComponent, ReactElement, useCallback, useEffect, useState } from 'react';
 
+import { useTranslation } from 'next-i18next';
+
 import { VStack, useDisclosure, Slide, Box, Link, Flex } from '@chakra-ui/react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,39 +28,40 @@ interface SocialShareItem {
   icon: ReactElement;
 }
 
-const socialShareItems: SocialShareItem[] = [
-  {
-    name: 'twitter',
-    ariaLabel: 'share to Twitter',
-    icon: <FontAwesomeIcon icon={faTwitter} />,
-  },
-  {
-    name: 'linkedIn',
-    ariaLabel: 'share to LinkedIn',
-    icon: <FontAwesomeIcon icon={faLinkedin} />,
-  },
-  {
-    name: 'facebook',
-    ariaLabel: 'share to Facebook',
-    icon: <FontAwesomeIcon icon={faFacebookF} />,
-  },
-  {
-    name: 'vk',
-    ariaLabel: 'share to VKontakte',
-    icon: <FontAwesomeIcon icon={faVk} />,
-  },
-];
-
 const SocialShare: FunctionComponent<SocialShareProps> = ({ url, title }) => {
+  const { t } = useTranslation('posts');
   const [scrollY, setScrollY] = useState(0);
   const { isOpen, onToggle } = useDisclosure();
+
+  const socialShareItems: SocialShareItem[] = [
+    {
+      name: 'twitter',
+      ariaLabel: `${t('shareTo', { social: 'Twitter' })}`,
+      icon: <FontAwesomeIcon icon={faTwitter} />,
+    },
+    {
+      name: 'linkedIn',
+      ariaLabel: `${t('shareTo', { social: 'LinkedIn' })}`,
+      icon: <FontAwesomeIcon icon={faLinkedin} />,
+    },
+    {
+      name: 'facebook',
+      ariaLabel: `${t('shareTo', { social: 'Facebook' })}`,
+      icon: <FontAwesomeIcon icon={faFacebookF} />,
+    },
+    {
+      name: 'vk',
+      ariaLabel: `${t('shareTo', { social: 'VKontakte' })}`,
+      icon: <FontAwesomeIcon icon={faVk} />,
+    },
+  ];
 
   const siteUrl = `${SITE_URL}/blog/${url}`;
 
   const socialShareUrls = {
     twitter: shareToTwitter({
       url: siteUrl,
-      text: `I just read ${title}`,
+      text: t('iJustRead', { title }),
       via: SITE_TWITTER_HANDLE,
     }),
     linkedIn: shareToLinkedIn(siteUrl),

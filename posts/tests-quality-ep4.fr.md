@@ -134,7 +134,7 @@ production_deploy:
     - master
 ```
 
-On attaque la partie lourde du truc. Pour faire nos tests avec Django, on va utiliser Docker. Certains tests nécessitent en effet de lancer un vrai serveur web Django, d'utiliser Chrome et Sélénium cf [la partie 1 de la série](/tests-quality-ep1).
+On attaque la partie lourde du truc. Pour faire nos tests avec Django, on va utiliser Docker. Certains tests nécessitent en effet de lancer un vrai serveur web Django, d'utiliser Chrome et Sélénium cf [la partie 1 de la série](/fr/blog/tests-quality-ep1).
 
 C'est tout l’intérêt du Docker Hub, quelqu'un a développé le container dont on a pile poil besoin. On met le nom du container principal dans _image_.
 
@@ -185,8 +185,8 @@ N'hésites pas à laisser un commentaire ou un message privé sur mon LinkedIn o
 
 ---
 
-- [Partie 0 - A quoi ça sert ?](/blog/tests-quality-ep0)
-- [Partie 1 - Les tests, comment ça marche ?](/blog/tests-quality-ep1)
-- [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/blog/tests-quality-ep2)
-- [Partie 3 - Allez hop, on pose les mains et on refactorise](/blog/tests-quality-ep3)
-- [Partie 4 - Automatiser tout ça c'est dans nos cordes](/blog/tests-quality-ep4)
+- [Partie 0 - A quoi ça sert ?](/fr/blog/tests-quality-ep0)
+- [Partie 1 - Les tests, comment ça marche ?](/fr/blog/tests-quality-ep1)
+- [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/fr/blog/tests-quality-ep2)
+- [Partie 3 - Allez hop, on pose les mains et on refactorise](/fr/blog/tests-quality-ep3)
+- [Partie 4 - Automatiser tout ça c'est dans nos cordes](/fr/blog/tests-quality-ep4)

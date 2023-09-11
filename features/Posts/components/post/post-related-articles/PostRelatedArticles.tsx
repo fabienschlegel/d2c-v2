@@ -1,5 +1,7 @@
 import { FunctionComponent } from 'react';
 
+import { useTranslation } from 'next-i18next';
+
 import { Divider, Flex, Grid, GridItem, Heading } from '@chakra-ui/react';
 
 import { LargeSummaryCard } from 'features/Posts/components';
@@ -13,10 +15,11 @@ interface PostRelatedArticlesProps {
 export type PostRelatedArticlesType = FunctionComponent<PostRelatedArticlesProps>;
 
 const PostRelatedArticles: PostRelatedArticlesType = ({ relatedArticles }) => {
+  const { t } = useTranslation('posts');
   return (
     <Flex direction="column" marginTop="2.5rem">
       <Heading as="h2" size="lg">
-        Related Articles
+        {t('relatedArticles')}
       </Heading>
       <Divider borderBottomWidth="2px" marginTop="0.5rem" borderColor="brand.darkBlue" />
       <Grid
@@ -41,6 +44,7 @@ const PostRelatedArticles: PostRelatedArticlesType = ({ relatedArticles }) => {
               slug={related.slug}
               coverImageSrc={related.coverImage}
               readingTime={related.readingTime}
+              locale={related.locale}
             />
           </GridItem>
         ))}

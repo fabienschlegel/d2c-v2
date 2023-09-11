@@ -1,5 +1,9 @@
 import { FunctionComponent } from 'react';
 
+import { useTranslation } from 'next-i18next';
+
+import NextLink from 'next/link';
+
 import {
   Box,
   Stack,
@@ -15,6 +19,7 @@ import { NAV_ITEMS } from 'features/Layout/constants';
 import DesktopSubNav from '../desktop-sub-nav/DesktopSubNav';
 
 const DesktopNav: FunctionComponent = () => {
+  const { t } = useTranslation();
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
@@ -26,6 +31,7 @@ const DesktopNav: FunctionComponent = () => {
           <Popover trigger="hover" placement="bottom-start">
             <PopoverTrigger>
               <Link
+                as={NextLink}
                 p={2}
                 href={navItem.href ?? '#'}
                 fontSize="sm"
@@ -36,7 +42,7 @@ const DesktopNav: FunctionComponent = () => {
                   color: linkHoverColor,
                 }}
               >
-                {navItem.label}
+                {t(navItem.label)}
               </Link>
             </PopoverTrigger>
 

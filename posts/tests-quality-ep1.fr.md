@@ -10,7 +10,7 @@ tags: ['tests', 'qualité de code']
 
 ### Les tests, comment ça marche ?
 
-La suite de notre [premier article](/tests-quality-ep0). Aujourd'hui, on part à la découverte du merveilleux monde des tests...
+La suite de notre [premier article](/fr/blog/tests-quality-ep0). Aujourd'hui, on part à la découverte du merveilleux monde des tests...
 
 ### La méthode TDD
 
@@ -226,8 +226,8 @@ Par contre si les tests sont automatisés à chaque merge request ou mieux à ch
 
 ---
 
-- [Partie 0 - A quoi ça sert ?](/blog/tests-quality-ep0)
-- [Partie 1 - Les tests, comment ça marche ?](/blog/tests-quality-ep1)
-- [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/blog/tests-quality-ep2)
-- [Partie 3 - Allez hop, on pose les mains et on refactorise](/blog/tests-quality-ep3)
-- [Partie 4 - Automatiser tout ça c'est dans nos cordes](/blog/tests-quality-ep4)
+- [Partie 0 - A quoi ça sert ?](/fr/blog/tests-quality-ep0)
+- [Partie 1 - Les tests, comment ça marche ?](/fr/blog/tests-quality-ep1)
+- [Partie 2 - Les linter, c'est statique et c'est déjà pas mal](/fr/blog/tests-quality-ep2)
+- [Partie 3 - Allez hop, on pose les mains et on refactorise](/fr/blog/tests-quality-ep3)
+- [Partie 4 - Automatiser tout ça c'est dans nos cordes](/fr/blog/tests-quality-ep4)

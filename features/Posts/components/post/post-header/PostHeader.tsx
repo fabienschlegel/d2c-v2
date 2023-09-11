@@ -1,5 +1,7 @@
 import { FunctionComponent } from 'react';
 
+import { useTranslation } from 'next-i18next';
+
 import { Flex, Heading, Text, HStack, Tag, Icon } from '@chakra-ui/react';
 
 import { uppercaseFirst } from 'core';
@@ -16,6 +18,7 @@ interface PostHeaderProps {
   authorName: string;
   date: string;
   readingTime: string;
+  locale: string;
   updated?: string;
   coverImageSrc?: string;
   avatarSrc?: string;
@@ -29,11 +32,13 @@ const PostHeader: PostHeaderType = ({
   authorName,
   date,
   readingTime,
+  locale,
   updated,
   coverImageSrc,
   avatarSrc,
   tags,
 }) => {
+  const { t } = useTranslation('posts');
   return (
     <Flex direction="column">
       <Heading as="h1" size="2xl" marginBottom={4}>
@@ -67,8 +72,14 @@ const PostHeader: PostHeaderType = ({
         </Tag>
       </Flex>
       <Flex alignItems="center" justifyContent="space-between" gap={4} marginBottom={8}>
-        <Text>{`published: ${date}`}</Text>
-        {updated && <Text>{`updated: ${updated}`}</Text>}
+        <Text>{`${t('published')}: ${new Intl.DateTimeFormat(locale).format(
+          new Date(date)
+        )}`}</Text>
+        {updated && (
+          <Text>{`${t('updated')}: ${new Intl.DateTimeFormat(locale).format(
+            new Date(updated)
+          )}`}</Text>
+        )}
       </Flex>
       {tags && (
         <HStack spacing={2} marginBottom="1rem">

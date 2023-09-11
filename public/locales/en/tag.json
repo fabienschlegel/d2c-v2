@@ -1,0 +1,4 @@
+{
+  "pageTitle": "{{tag}} blog posts",
+  "pageMetaDescription": "Posts with the tag {{tag}} from the blog {{siteName}}"
+}

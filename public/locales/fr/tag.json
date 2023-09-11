@@ -1,0 +1,4 @@
+{
+  "pageTitle": "{{tag}} des articles du blog",
+  "pageMetaDescription": "Articles avec le tag {{tag}} du blog {{siteName}}"
+}

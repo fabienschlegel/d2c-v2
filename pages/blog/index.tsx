@@ -1,8 +1,12 @@
 import type { NextPage } from 'next';
 
+import { useTranslation } from 'next-i18next';
+
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import { POST_HEADER_FIELDS, PostsList, usePostsListNavigation } from 'features/Posts';
 
-import { getAllPostsByDate } from 'features/Posts/api';
+import { getAllPostsByDateWithLocale } from 'features/Posts/api';
 
 import { PrimaryLayout } from 'features/Layout';
 
@@ -16,14 +20,17 @@ interface BlogPageProps {
 }
 
 const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
+  const { t } = useTranslation('blog');
   const { paginatedPosts, previous, next, previousPage, nextPage } = usePostsListNavigation(posts);
   return (
     <PrimaryLayout
-      pageTitle="The list of the latest articles from my blog"
-      pageMetaDescription={`Discover all the articles from the blog ${SITE_NAME} - About my journey in development, React, Typescript, Django and Python`}
+      pageTitle={t('pageTitle')}
+      pageMetaDescription={t('pageMetaDescription', {
+        siteName: SITE_NAME,
+      })}
       pageImagePath={SITE_IMAGE}
     >
-      <Heading mt={3}>Most recent articles</Heading>
+      <Heading mt={3}>{t('mostRecent')}</Heading>
       <PostsList>
         {paginatedPosts.map((post) => (
           <PostsList.Item
@@ -34,6 +41,7 @@ const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
             authorName={post.author.name}
             excerpt={post.excerpt}
             readingTime={post.readingTime}
+            locale={post.locale}
             slug={`/blog/${post.slug}`}
             coverImage={post.coverImage}
             tags={post.tags}
@@ -52,11 +60,16 @@ const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
 
 export default BlogPage;
 
-export async function getStaticProps() {
-  const posts = getAllPostsByDate(POST_HEADER_FIELDS);
+type Params = {
+  locale: string;
+};
+
+export async function getStaticProps({ locale }: Params) {
+  const posts = getAllPostsByDateWithLocale(locale, POST_HEADER_FIELDS);
 
   return {
     props: {
+      ...(await serverSideTranslations(locale, ['common', 'posts', 'blog'])),
       posts,
     },
   };

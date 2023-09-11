@@ -5,8 +5,8 @@ export function textEllipsis(text: string, size = 28) {
   return text;
 }
 
-export const uppercaseFirst = (string: string): string => {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+export const uppercaseFirst = (str: string): string => {
+  return str.slice(0, 1).toUpperCase() + str.slice(1);
 };
 
 export function readingTime(content: string) {

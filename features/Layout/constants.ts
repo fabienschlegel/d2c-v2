@@ -2,11 +2,11 @@ import { INavItem } from './types';
 
 export const NAV_ITEMS: Array<INavItem> = [
   {
-    label: 'Blog',
+    label: 'blog',
     href: '/blog',
   },
   {
-    label: 'About',
+    label: 'about',
     href: '/about',
   },
 ];

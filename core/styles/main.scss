@@ -12,6 +12,12 @@
   align-items: center;
 }
 
-.justify-between {
-  justify-content: space-between;
+.justify {
+  &-between {
+    justify-content: space-between;
+  }
+
+  &-evenly {
+    justify-content: space-evenly;
+  }
 }

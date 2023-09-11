@@ -1,0 +1,14 @@
+{
+  "altCoverImage": "Cover image for {{title}}",
+  "altCoverImageLargeSummaryCard": "Cover image of the post",
+  "updated": "mis à jour",
+  "published": "published",
+  "readPost": "Read the post",
+  "relatedArticles": "Related Articles",
+  "writtenBy": "Written by",
+  "readMore": "Read More",
+  "newerPosts": "Newer Posts",
+  "olderPosts": "Older posts",
+  "shareTo": "share to {{social}}",
+  "iJustRead": "I just read {{title}}"
+}

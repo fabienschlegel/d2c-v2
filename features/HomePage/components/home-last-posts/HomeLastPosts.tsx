@@ -27,6 +27,7 @@ const HomeLastPosts: FunctionComponent<HomeLastPostsProps> = ({ lastPosts }) => 
             tags={post.tags}
             coverImageSrc={post.coverImage}
             readingTime={post.readingTime}
+            locale={post.locale}
           />
         ))}
       </div>
