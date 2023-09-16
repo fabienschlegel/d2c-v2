@@ -32,11 +32,11 @@ const LanguageSwitcher: FunctionComponent = () => {
   };
 
   return (
-    <Select onChange={languageChanged} width="120px">
+    <Select onChange={languageChanged} value={currentLanguage} width="120px">
       {locales.map((locale) => {
         const label = uppercaseFirst(languageNames.of(locale) ?? locale);
         return (
-          <option selected={locale === currentLanguage} key={locale} value={locale}>
+          <option key={locale} value={locale}>
             {label}
           </option>
         );
