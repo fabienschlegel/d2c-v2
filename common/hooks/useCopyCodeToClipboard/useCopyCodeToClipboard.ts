@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 
 const COPY_BUTTON_LABEL = 'Copy';
@@ -35,23 +36,27 @@ const useCopyCodeToClipboard = () => {
 
     const allPres = rootRef.current?.querySelectorAll('pre');
 
-    const cleanup: (() => void)[] = [];
-
     allPres?.forEach((pre) => {
       const code = pre.firstElementChild;
       if (!code || !/code/i.test(code.tagName)) {
         return;
       }
 
-      pre.appendChild(createCopyButton(code));
+      const copyButton = createCopyButton(code);
+      const buttonContainer = document.createElement('div');
+      buttonContainer.classList.add('button-container');
+      buttonContainer.appendChild(copyButton);
+      
+      // Placer le bouton au-dessus à droite du pre
+      pre.parentElement?.insertBefore(buttonContainer, pre);
+      buttonContainer.appendChild(pre);
     });
 
     calledOnce.current = true;
-
-    return () => cleanup.forEach((f) => f());
   }, []);
 
   return rootRef;
 };
 
 export default useCopyCodeToClipboard;
+
