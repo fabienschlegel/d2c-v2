@@ -1,3 +1,4 @@
+
 .container {
   all: revert;
 
@@ -25,7 +26,30 @@
     font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
     font-feature-settings: normal;
   }
+ 
 
+  button {
+    position: relative;
+    left: 91%;
+    padding: 0.35rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-width: 0;
+    border-radius: 0.375rem;
+    background-color: var(--chakra-colors-brand-greener);
+    color: var(--chakra-colors-white);
+    font-weight: var(--chakra-fontWeights-medium);
+    font-family: var(--chakra-fonts-body);
+    line-height: 1.2;
+    
+    cursor: pointer;
+
+    &:disabled {
+      filter: brightness(0.9);
+      left: 89%;
+      cursor: default;
+    }
+  }
   pre {
     position: relative;
 
@@ -48,32 +72,5 @@
       font-size: 0.9rem;
     }
 
-    button {
-      position: absolute;
-
-      top: 0.5rem;
-      right: 0.5rem;
-
-      padding: 0.35rem;
-
-      border-width: 0;
-      border-radius: 0.375rem;
-
-      background-color: var(--chakra-colors-brand-greener);
-
-      color: var(--chakra-colors-white);
-
-      font-weight: var(--chakra-fontWeights-medium);
-      font-family: var(--chakra-fonts-body);
-      line-height: 1.2;
-
-      cursor: pointer;
-
-      &:disabled {
-        filter: brightness(0.9);
-
-        cursor: default;
-      }
-    }
   }
 }
