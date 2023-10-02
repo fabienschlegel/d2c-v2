@@ -33,18 +33,21 @@ const useCopyCodeToClipboard = () => {
       return;
     }
 
-    const allPres = rootRef.current?.querySelectorAll('pre');
+    const allPres = rootRef.current?.getElementsByClassName('remark-highlight');
 
     const cleanup: (() => void)[] = [];
 
-    allPres?.forEach((pre) => {
-      const code = pre.firstElementChild;
-      if (!code || !/code/i.test(code.tagName)) {
+    if (allPres === undefined) return;
+
+    for (let i = 0; i < allPres.length; i++) {
+      const code = allPres[i].firstElementChild;
+
+      if (!code || !/pre/i.test(code.tagName)) {
         return;
       }
 
-      pre.appendChild(createCopyButton(code));
-    });
+      allPres[i].appendChild(createCopyButton(code));
+    }
 
     calledOnce.current = true;
 

@@ -27,8 +27,6 @@
   }
 
   pre {
-    position: relative;
-
     overflow: auto;
 
     padding: 20px;
@@ -47,6 +45,10 @@
       color: #ccc;
       font-size: 0.9rem;
     }
+  }
+
+  div {
+    position: relative;
 
     button {
       position: absolute;

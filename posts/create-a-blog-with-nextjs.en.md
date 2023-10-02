@@ -2,7 +2,7 @@
 title: 'Create a blog with NextJS'
 pageTitle: 'Create a Blog with NextJS: A Step-by-Step Tutorial'
 date: '2022-09-27'
-coverImage: '/assets/blog/cover-images/create-a-blog-with-nextjs.webp'
+coverImage: '/assets/blog/cover-images/create-a-blog-with-nextjs-illustration.webp'
 author:
   name: 'Fabien Schlegel'
   avatar: '/assets/blog/authors/fabien-schlegel.webp'
@@ -318,7 +318,7 @@ This API needs some improvements, like lowercase tags.
 
 ## Add Metrics
 
-I like to have metrics on sites. I can know which content is most popular, the best size of the post, etc.
+I like to have metrics on sites. I can know which content is most popular, the best size for a post, etc.
 
 I use Google Analytics on the first version of the site with a Gatsby plugin. With NextJS, I’m unable to keep the same tool. After some Google research, I find what I’m looking for.
 
