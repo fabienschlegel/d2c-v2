@@ -58,6 +58,8 @@ const PrimaryLayout: FunctionComponent<PrimaryLayoutProps> = ({
           );
         })}
 
+        <link rel="canonical" href={`${siteUrl}${currentLocaleForPath}${router.asPath}`} />
+
         {/* Google MetaProperties */}
         <meta itemProp="name" content={title} />
         <meta itemProp="description" content={metaDescription} />

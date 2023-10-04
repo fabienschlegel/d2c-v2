@@ -43,8 +43,8 @@ export default async function generateRssFeed(locale: string) {
   allPosts.forEach((post) => {
     feed.addItem({
       title: post.title as string,
-      id: `${siteUrl}/${locale}/blog/${post.slug}`,
-      link: `${siteUrl}/${locale}/blog/${post.slug}`,
+      id: `${siteUrl}${locale === DEFAULT_LOCALE ? '' : '/' + locale}/blog/${post.slug}`,
+      link: `${siteUrl}${locale === DEFAULT_LOCALE ? '' : '/' + locale}/blog/${post.slug}`,
       description: post.excerpt as string,
       date: new Date(post.date as string),
     });
