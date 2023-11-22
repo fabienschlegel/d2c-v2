@@ -130,7 +130,7 @@ export function getPreviousPostWithLocale(slug: string, locale: string) {
   return allPosts[index - 1];
 }
 
-export function getAlternateLanguageFromSlug(slug: string, currentLocale: string): Alternates {
+export function getAlternateLanguageFromSlug(slug: string): Alternates {
   const allPostsSlugs = getPostSlugs();
 
   return allPostsSlugs
@@ -138,5 +138,5 @@ export function getAlternateLanguageFromSlug(slug: string, currentLocale: string
       const realSlugWithLocale = ps.replace(/\.md$/, '').split('.');
       return { slug: realSlugWithLocale[0], locale: realSlugWithLocale[1] };
     })
-    .filter((ps) => ps.slug === slug && ps.locale !== currentLocale);
+    .filter((ps) => ps.slug === slug);
 }

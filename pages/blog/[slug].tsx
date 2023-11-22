@@ -100,7 +100,7 @@ export async function getStaticProps({ params, locale }: Params) {
     .map((rs) => getPostBySlug(rs, locale, POST_HEADER_FIELDS))
     .filter((r) => Object.keys(r).length > 0);
 
-  const alternates = getAlternateLanguageFromSlug(params.slug, locale);
+  const alternates = getAlternateLanguageFromSlug(params.slug);
 
   return {
     props: {

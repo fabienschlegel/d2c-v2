@@ -53,7 +53,7 @@ Ma première règle pour un projet secondaire est : s'il ne rapporte pas d'argen
 
 Après une nouvelle recherche, j'ai trouvé Netlify. Le plan de démarrage me suffit. J'ai 100GB de bande passante et 300 minutes de build par mois.
 
-Pour configurer votre site, c'est très simple, vous choisissez *New site from Git* dans le panneau d'aperçu, vous donnez à Netlify l'accès à votre Gitlab ou Github et vous choisissez le bon dépôt.
+Pour configurer votre site, c'est très simple, vous choisissez _New site from Git_ dans le panneau d'aperçu, vous donnez à Netlify l'accès à votre Gitlab ou Github et vous choisissez le bon dépôt.
 
 La dernière étape est la partie paramétrage.
 
@@ -63,7 +63,7 @@ Pour un site Gatsby, j'utilise ceci :
 - Commande de construction : gatsby build
 - Dépôt de publication : public/
 
-C'est tout pour une configuration de base. Vous pouvez utiliser un sous-domaine du domaine *netlify.app* ou configurer votre propre domaine.
+C'est tout pour une configuration de base. Vous pouvez utiliser un sous-domaine du domaine _netlify.app_ ou configurer votre propre domaine.
 
 J'ai choisi de configurer mon propre domaine. Dans les paramètres du site, je vais dans la gestion des domaines, j'ajoute mon domaine dans le champ du domaine primaire et je configure HTTPS avec Let's Encrypt.
 
@@ -85,7 +85,7 @@ Mais j'ai découvert récemment une autre solution : les plateformes de publicat
 
 Ces plateformes sont gratuites et vous pouvez y publier votre contenu. Pas de problème de duplicate content, vous pouvez définir une URL canonique. Il s'agit d'une balise méta dans la page HTML pour avertir le robot d'indexation.
 
-J'utilise *DEV Community* et *Hashnode* pour republier mon contenu.
+J'utilise _DEV Community_ et _Hashnode_ pour republier mon contenu.
 
 C'est très simple, vous créez un compte, vous créez un message. Les deux ont un éditeur markdown qui inclut une visionneuse de code snippet. La seule chose que vous devez faire est de copier et coller votre article depuis votre dépôt.
 

@@ -29,7 +29,7 @@ The term Props is the shortcut for properties.
 
 They are immutable, this means that they can’t change. The functional component receives them as parameters. The change of props triggers a render update of the component.
 
-You can see here, our component *ItemsList* get props, a list of strings.
+You can see here, our component _ItemsList_ get props, a list of strings.
 
 ```tsx
 import { FunctionComponent, useState } from 'react';
