@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactNode } from 'react';
 
-import { Flex } from '@chakra-ui/react';
+import Styles from '../Layout.module.scss';
 
 interface LayoutMainProps {
   children: ReactNode;
@@ -8,12 +8,8 @@ interface LayoutMainProps {
 
 export type LayoutMainType = FunctionComponent<LayoutMainProps>;
 
-const LayoutMain: LayoutMainType = ({ children }) => {
-  return (
-    <Flex as="main" display="flex" flex={1} flexDirection="column" alignItems="center">
-      {children}
-    </Flex>
-  );
-};
+const LayoutMain: LayoutMainType = ({ children }) => (
+  <main className={Styles.main}>{children}</main>
+);
 
 export default LayoutMain;

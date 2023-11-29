@@ -1,0 +1,38 @@
+@import '../../../../core/styles/theme';
+
+.container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 2rem;
+  height: 2rem;
+
+  border-radius: 9999px;
+
+  background-color: $black-alpha-200;
+
+  cursor: pointer;
+  transition: background 0.4s ease;
+
+  &:hover {
+    background-color: $black-alpha-800;
+    color: $white;
+  }
+}
+
+.hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+
+  width: 1px;
+  height: 1px;
+
+  margin: -1px;
+  padding: 0;
+
+  border: 0;
+
+  white-space: nowrap;
+}

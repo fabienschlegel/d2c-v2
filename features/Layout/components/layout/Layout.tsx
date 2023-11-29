@@ -2,10 +2,9 @@ import { FunctionComponent, ReactNode } from 'react';
 
 import Head from 'next/head';
 
-import { Flex } from '@chakra-ui/react';
-
 import LayoutMain, { LayoutMainType } from './layout-main/LayoutMain';
 
+import Styles from './Layout.module.scss';
 interface LayoutComposition {
   Head: ({ children }: { children: ReactNode }) => JSX.Element;
   Main: LayoutMainType;
@@ -17,13 +16,7 @@ interface LayoutProps {
 
 type LayoutType = FunctionComponent<LayoutProps> & LayoutComposition;
 
-const Layout: LayoutType = ({ children }) => {
-  return (
-    <Flex display="flex" flexDirection="column" minHeight="100vh" padding={0}>
-      {children}
-    </Flex>
-  );
-};
+const Layout: LayoutType = ({ children }) => <div className={Styles.container}>{children}</div>;
 
 Layout.Head = Head;
 Layout.Main = LayoutMain;

@@ -1,0 +1,42 @@
+@import '../../../../core/styles/theme';
+
+.container {
+  background-color: $grey-200;
+
+  color: $grey-700;
+
+  &__stack {
+    @include md {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 1152px;
+
+    margin: auto;
+    padding: 16px;
+  }
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.social-media {
+  &__stack {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  &__icon {
+    width: 1em;
+    height: 1em;
+  }
+}
