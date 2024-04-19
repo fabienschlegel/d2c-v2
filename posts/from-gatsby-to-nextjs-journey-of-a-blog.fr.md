@@ -1,6 +1,6 @@
 ---
 title: "De Gatsby à NextJS - l'itinéraire d'un blog"
-pageTitle: "De Gatsby à NextJS - L'itinéraire d'un blog : Le point de vue d'un développeur"
+pageTitle: "De Gatsby à NextJS - L'itinéraire d'un blog : vision d'un développeur"
 date: '2022-09-20'
 coverImage: '/assets/blog/cover-images/from-gatsby-to-nextjs-journey-of-a-blog-illustration-fr.webp'
 author:

@@ -1,6 +1,6 @@
 ---
 title: 'Comment structurer votre application React'
-pageTitle: 'Comment structurer votre application React : Meilleures pratiques et conseils'
+pageTitle: 'Structurer votre application React : Meilleures pratiques et conseils'
 date: '2023-01-25'
 coverImage: '/assets/blog/cover-images/how-to-structure-react-app-illustration-fr.webp'
 author:

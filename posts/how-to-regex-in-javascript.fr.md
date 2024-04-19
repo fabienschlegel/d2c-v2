@@ -1,6 +1,6 @@
 ---
 title: 'Comment utiliser les regex en Javascript'
-pageTitle: 'Comment utiliser les Regex en Javascript : Un guide complet pour les développeurs'
+pageTitle: 'Les Regex en Javascript : Un guide complet pour les développeurs'
 date: '2023-03-29'
 author:
   name: 'Fabien Schlegel'

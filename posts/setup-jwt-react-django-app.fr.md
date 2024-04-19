@@ -1,6 +1,6 @@
 ---
 title: 'Configurer JWT pour une application React Django en quelques minutes'
-pageTitle: 'Configurer JWT pour une application React Django en quelques minutes : Un guide pas à pas'
+pageTitle: 'Configurer JWT pour React Django : Un guide pas à pas'
 date: '2021-06-25'
 author:
   name: 'Fabien Schlegel'

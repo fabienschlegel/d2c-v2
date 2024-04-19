@@ -1,6 +1,6 @@
 ---
 title: "Publier mon propre blog, le début d'un créateur de contenu"
-pageTitle: "Publier mon propre blog, les débuts d'un créateur de contenu : Conseils et astuces"
+pageTitle: 'Publier mon propre blog, les débuts : Conseils et astuces'
 date: '2021-07-14'
 author:
   name: 'Fabien Schlegel'

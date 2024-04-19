@@ -1,6 +1,6 @@
 ---
 title: 'Comment je suis devenu développeur web à 37 ans'
-pageTitle: "Mon parcours vers le développement web : Comment j'ai fait et ce que j'ai appris."
+pageTitle: "Vers le développement web : Comment j'ai fait et ce que j'ai appris."
 date: '2021-05-26'
 author:
   name: 'Fabien Schlegel'

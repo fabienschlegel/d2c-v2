@@ -1,6 +1,6 @@
 ---
 title: 'Gérer des données côté client avec localStorage et sessionStorage'
-pageTitle: "Utiliser le localStorage et le sessionStorage pour améliorer l'expérience utilisateur"
+pageTitle: "LocalStorage et sessionStorage : améliorer l'expérience utilisateur"
 date: '2024-03-28'
 author:
   name: 'Fabien Schlegel'

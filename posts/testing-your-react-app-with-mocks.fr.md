@@ -1,6 +1,6 @@
 ---
 title: 'Tester votre application React avec des mocks'
-pageTitle: 'Tester votre application React avec Mocks : Meilleures pratiques et exemples'
+pageTitle: 'Tester votre app React avec des mocks : cas pratiques et exemples'
 date: '2022-08-19'
 author:
   name: 'Fabien Schlegel'
