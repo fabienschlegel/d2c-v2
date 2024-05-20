@@ -4,13 +4,17 @@ $grey-50: #f7fafc;
 $grey-200: #e2e8f0;
 $grey-700: #2d3748;
 $grey-800: #1a202c;
+$grey-900: #171923;
 
 $black-alpha-200: #00000014;
 $black-alpha-800: #000c;
 
 $dark-blue: #1f4f6f;
-$blue: #22577a;
+$brand-blue: #22577a;
 $green-blue: #38a3a5;
 $greener: #57cc99;
-$green: #80ed99;
+$brand-green: #80ed99;
 $light-green: #c7f9cc;
+
+// Overrride Bulma colors
+$green: $brand-green;

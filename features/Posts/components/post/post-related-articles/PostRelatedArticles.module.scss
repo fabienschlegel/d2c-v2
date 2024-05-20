@@ -1,0 +1,40 @@
+@import '../../../../../core/styles/theme';
+
+.header {
+  @include md {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.33;
+}
+
+.divider {
+  width: 100%;
+  margin-top: 0.5rem;
+  border: 0;
+  border-style: solid;
+  border-color: $dark-blue;
+  border-bottom-width: 2px;
+  opacity: 0.6;
+}
+
+.articles-grid {
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1.5rem;
+  margin-top: 0.75rem;
+}
+
+.grid-item {
+  width: 100%;
+  border-radius: 6px;
+  background-color: $white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
+}

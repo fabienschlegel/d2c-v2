@@ -60,26 +60,32 @@
   line-height: 1.5;
 }
 
+.author-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+
+  margin-top: 1rem;
+}
+
 .avatar {
   border-radius: 50%;
 }
 
-.avatar-container {
-  width: 50px;
-  height: 50px;
+.read-btn {
+  &__icon {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
 
-  border: 1px solid $dark-blue;
-  border-radius: 50%;
-}
+    margin-right: 0.5rem;
 
-.author {
-  font-weight: 500;
+    color: currentColor;
+  }
 }
 
 .cta-container {
   margin-top: 1rem;
-}
-
-.reading-time-icon {
-  margin-right: 0.5rem;
 }

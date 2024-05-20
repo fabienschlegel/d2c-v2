@@ -45,9 +45,7 @@ Tant le localStorage que le sessionStorage sont des outils puissants pour stocke
 
 ```javascript
 // Définition des données à stocker
-const data = {
-  key: 'value',
-};
+const data = { key: 'value' };
 
 // Stockage des données dans le localStorage
 localStorage.setItem('key', JSON.stringify(data));

@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  overflow: hidden;
+
+  margin-bottom: 2.5rem;
+  border-radius: 8px;
+
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.image {
+  border-radius: 2px;
+}

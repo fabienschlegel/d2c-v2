@@ -1,0 +1,15 @@
+@import '../../../../core/styles/theme';
+
+.post {
+  @include md {
+    max-width: 660px;
+  }
+
+  @include lg {
+    max-width: 800px;
+  }
+
+  width: 100%;
+  margin: 0 auto 20px;
+  padding: 1.25rem;
+}

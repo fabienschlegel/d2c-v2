@@ -1,17 +1,21 @@
 import { FunctionComponent } from 'react';
 
+import clsx from 'clsx';
+import { uppercaseFirst } from 'core';
+
 import { useTranslation } from 'next-i18next';
 
 import NextLink from 'next/link';
 
-import { Box, Flex, Heading, HStack, Tag, Text, Icon } from '@chakra-ui/react';
+import { Heading } from '@the-sleeping-dog/react-components';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faClock } from '@fortawesome/free-solid-svg-icons';
+import { Icon } from 'common';
 
-import { uppercaseFirst } from 'core';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-import { ButtonLink, CoverImage, PostTag } from '../..';
+import { ButtonLink, CoverImage, PostTag, ReadingTimeTag } from '../..';
+
+import styles from './PostsListItem.module.scss';
 
 interface PostsListItemProps {
   title: string;
@@ -42,44 +46,35 @@ const PostsListItem: PostsListItemType = ({
 }) => {
   const { t } = useTranslation('posts');
   return (
-    <Flex flexDirection="column" borderBottom="1px solid #dcdcdc" marginBottom="1em">
+    <div className={styles.container}>
       <NextLink href={slug} passHref>
-        <Heading marginBottom=".5em" cursor="pointer">
+        <Heading headingLevel="h2" className={clsx(styles.title)}>
           {uppercaseFirst(title)}
         </Heading>
       </NextLink>
-      <Flex marginBottom={4} align="center" justify="space-between">
-        <Text>{`${t('writtenBy')} ${authorName}`}</Text>
-        <Tag backgroundColor="brand.green" color="gray.900">
-          <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
-          {readingTime}
-        </Tag>
-      </Flex>
-      <Flex marginBottom={4} align="center" gap={4}>
-        <Text>{new Intl.DateTimeFormat(locale).format(new Date(date))}</Text>
+      <div className="flex align-center justify-between mb-4">
+        <p>{`${t('writtenBy')} ${authorName}`}</p>
+        <ReadingTimeTag>{readingTime}</ReadingTimeTag>
+      </div>
+      <div className="flex align-center gap-4 mb-4">
+        <p>{new Intl.DateTimeFormat(locale).format(new Date(date))}</p>
         {updated && (
-          <Text>{`(${t('updated')}: ${new Intl.DateTimeFormat(locale).format(
-            new Date(updated)
-          )})`}</Text>
+          <p>{`(${t('updated')}: ${new Intl.DateTimeFormat(locale).format(new Date(updated))})`}</p>
         )}
-      </Flex>
+      </div>
       {tags && (
-        <HStack spacing={2} marginBottom="1rem">
+        <div className="flex align-center gap-2 mb-4">
           {tags.map((tag) => (
             <PostTag key={tag} tag={tag} />
           ))}
-        </HStack>
+        </div>
       )}
       {coverImage && <CoverImage coverImageSrc={coverImage} title={title} />}
-      <Text marginBottom="1.25em">{excerpt}</Text>
-      <Box marginBottom="1.5em">
-        <ButtonLink
-          href={slug}
-          label={t('readMore')}
-          rightIcon={<Icon as={FontAwesomeIcon} icon={faChevronRight} />}
-        />
-      </Box>
-    </Flex>
+      <p className="mb-4">{excerpt}</p>
+      <div className="mb-5">
+        <ButtonLink href={slug} label={t('readMore')} rightIcon={<Icon icon={faChevronRight} />} />
+      </div>
+    </div>
   );
 };
 

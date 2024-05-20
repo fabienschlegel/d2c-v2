@@ -5,5 +5,17 @@ import Post from './post/Post';
 import PostTag from './post-tag/PostTag';
 import PostsList from './posts-list/PostsList';
 import SocialShare from './social-share/SocialShare';
+import ReadingTimeTag from './reading-time-tag/ReadingTimeTag';
+import AuthorAvatar from './author-avatar/AuthorAvatar';
 
-export { ButtonLink, CoverImage, LargeSummaryCard, Post, PostTag, PostsList, SocialShare };
+export {
+  ReadingTimeTag,
+  ButtonLink,
+  CoverImage,
+  LargeSummaryCard,
+  Post,
+  PostTag,
+  PostsList,
+  SocialShare,
+  AuthorAvatar,
+};

@@ -1,4 +1,3 @@
-import { Box } from '@chakra-ui/react';
 import { FunctionComponent, ReactNode } from 'react';
 
 import PostContent, { PostContentType } from './post-content/PostContent';
@@ -7,6 +6,8 @@ import PostNavigation, { PostNavigationType } from './post-navigation/PostNaviga
 import PostRelatedArticles, {
   PostRelatedArticlesType,
 } from './post-related-articles/PostRelatedArticles';
+
+import styles from './Post.module.scss';
 
 interface IPostProps {
   children: ReactNode;
@@ -22,11 +23,7 @@ interface IPostComposition {
 type PostProps = FunctionComponent<IPostProps> & IPostComposition;
 
 const Post: PostProps = ({ children }) => {
-  return (
-    <Box width="100%" maxWidth={{ md: '660px', lg: '800px' }} padding={5} margin="0 auto 20px">
-      {children}
-    </Box>
-  );
+  return <div className={styles.post}>{children}</div>;
 };
 
 Post.Header = PostHeader;

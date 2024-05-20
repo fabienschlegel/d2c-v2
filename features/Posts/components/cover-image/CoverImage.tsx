@@ -2,9 +2,9 @@ import { FunctionComponent } from 'react';
 
 import { useTranslation } from 'next-i18next';
 
-import { Flex } from '@chakra-ui/react';
+import NextImage from 'next/image';
 
-import { BlogImage } from 'common';
+import Styles from './CoverImage.module.scss';
 
 interface CoverImageProps {
   coverImageSrc: string;
@@ -15,20 +15,15 @@ const CoverImage: FunctionComponent<CoverImageProps> = ({ coverImageSrc, title }
   const { t } = useTranslation('posts');
 
   return (
-    <Flex
-      marginBottom={10}
-      borderRadius={8}
-      overflow="hidden"
-      boxShadow="0 1rem 2rem rgba(0, 0, 0, 0.2)"
-    >
-      <BlogImage
-        borderRadius={2}
+    <div className={Styles.container}>
+      <NextImage
+        className={Styles.image}
         width={800}
         height={450}
         src={coverImageSrc}
         alt={t('altCoverImage', { title })}
       />
-    </Flex>
+    </div>
   );
 };
 

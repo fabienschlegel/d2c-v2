@@ -1,3 +1,3 @@
-import { BlogImage } from './components';
+import { BlogImage, Icon } from './components';
 
-export { BlogImage };
+export { BlogImage, Icon };

@@ -2,16 +2,13 @@ import { FunctionComponent } from 'react';
 
 import { useTranslation } from 'next-i18next';
 
-import { Flex, Heading, Text, HStack, Tag, Icon } from '@chakra-ui/react';
+import { Heading } from '@the-sleeping-dog/react-components';
 
 import { uppercaseFirst } from 'core';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock } from '@fortawesome/free-solid-svg-icons';
+import { AuthorAvatar, CoverImage, PostTag, ReadingTimeTag } from '../..';
 
-import { BlogImage } from 'common';
-
-import { CoverImage, PostTag } from '../..';
+import styles from './PostHeader.module.scss';
 
 interface PostHeaderProps {
   title: string;
@@ -40,56 +37,30 @@ const PostHeader: PostHeaderType = ({
 }) => {
   const { t } = useTranslation('posts');
   return (
-    <Flex direction="column">
-      <Heading as="h1" size="2xl" marginBottom={4}>
-        {uppercaseFirst(title)}
-      </Heading>
-      <Flex alignItems="center" justifyContent="space-between" marginBottom={4}>
-        <Flex alignItems="center">
-          {avatarSrc && (
-            <Flex
-              borderRadius="full"
-              boxSize="50px"
-              border="1px solid"
-              borderColor="brand.darkBlue"
-              marginRight="1rem"
-            >
-              <BlogImage
-                borderRadius="full"
-                width={50}
-                height={50}
-                borderColor="brand.darkBlue"
-                src={avatarSrc}
-                alt={authorName}
-              />
-            </Flex>
-          )}
-          <Text size="md">{authorName}</Text>
-        </Flex>
-        <Tag backgroundColor="brand.green" color="gray.900">
-          <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
-          {readingTime}
-        </Tag>
-      </Flex>
-      <Flex alignItems="center" justifyContent="space-between" gap={4} marginBottom={8}>
-        <Text>{`${t('published')}: ${new Intl.DateTimeFormat(locale).format(
-          new Date(date)
-        )}`}</Text>
+    <div className="flex flex-col">
+      <Heading className="is-size-1 mb-4">{uppercaseFirst(title)}</Heading>
+      <div className="flex align-center justify-between mb-4">
+        <div className="flex align-center gap-2">
+          {avatarSrc && <AuthorAvatar avatarUrl={avatarSrc} name={authorName} />}
+          <p>{authorName}</p>
+        </div>
+        <ReadingTimeTag>{readingTime}</ReadingTimeTag>
+      </div>
+      <div className={styles['release-time-container']}>
+        <p>{`${t('published')}: ${new Intl.DateTimeFormat(locale).format(new Date(date))}`}</p>
         {updated && (
-          <Text>{`${t('updated')}: ${new Intl.DateTimeFormat(locale).format(
-            new Date(updated)
-          )}`}</Text>
+          <p>{`${t('updated')}: ${new Intl.DateTimeFormat(locale).format(new Date(updated))}`}</p>
         )}
-      </Flex>
+      </div>
       {tags && (
-        <HStack spacing={2} marginBottom="1rem">
+        <div className={styles['tag-stack']}>
           {tags.map((tag) => (
             <PostTag key={tag} tag={tag} />
           ))}
-        </HStack>
+        </div>
       )}
       {coverImageSrc && <CoverImage coverImageSrc={coverImageSrc} title={title} />}
-    </Flex>
+    </div>
   );
 };
 

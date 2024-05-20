@@ -1,11 +1,13 @@
 import { FunctionComponent, ReactNode } from 'react';
 
-import { Box, Flex } from '@chakra-ui/react';
+import clsx from 'clsx';
 
 import PostsListItem, { PostsListItemType } from './posts-list-item/PostsListItem';
 import PostsListNavigation, {
   PostListNavigationType,
 } from './posts-list-navigation/PostsListNavigation';
+
+import styles from './PostsList.module.scss';
 
 interface IPostsListComposition {
   Item: PostsListItemType;
@@ -19,11 +21,7 @@ interface PostsListProps {
 type PostsListType = FunctionComponent<PostsListProps> & IPostsListComposition;
 
 const PostsList: PostsListType = ({ children }) => {
-  return (
-    <Box width="100%" maxWidth={{ md: '660px', lg: '800px' }} padding={5} margin="0 auto 20px">
-      <Flex flexDirection="column">{children}</Flex>
-    </Box>
-  );
+  return <div className={clsx('flex flex-col', styles['posts-list'])}>{children}</div>;
 };
 
 PostsList.Item = PostsListItem;

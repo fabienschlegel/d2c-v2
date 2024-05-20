@@ -45,16 +45,13 @@ Both localStorage and sessionStorage are powerful tools for storing client-side 
 
 ```javascript
 // Definition of data to be stored
-const data = {
-key: 'value',
-};
+const data = { key: 'value' };
 
 // Store data in localStorage
 localStorage.setItem('key', JSON.stringify(data));
 
 // Store data in sessionStorage
 sessionStorage.setItem('key', JSON.stringify(data));
-
 ```
 
 ### Data recovery
@@ -81,7 +78,7 @@ if (storedDataSession) {
 } else {
   console.log('No data found in sessionStorage.');
 }
-````
+```
 
 ### Deleting data
 

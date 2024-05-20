@@ -1,0 +1,12 @@
+@import '../../../../core/styles/theme';
+
+.post-tag {
+  background-color: $brand-blue !important;
+  color: $white !important;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    background-color: $green-blue !important;
+  }
+}

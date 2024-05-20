@@ -1,8 +1,9 @@
 import { FunctionComponent } from 'react';
 
-import { Flex, Icon } from '@chakra-ui/react';
+import clsx from 'clsx';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Icon } from 'common';
+
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 import { ButtonLink } from '../..';
@@ -22,12 +23,12 @@ export type PostNavigationType = FunctionComponent<PostNavigationProps>;
 
 const PostNavigation: PostNavigationType = ({ previous, next }) => {
   return (
-    <Flex justifyContent={previous && next ? 'space-between' : 'center'} marginTop={10}>
+    <div className={clsx('flex', previous && next ? 'justify-between' : 'justify-center', 'mt-55')}>
       {previous && (
         <ButtonLink
           href={previous.href}
           label={previous.title}
-          leftIcon={<Icon as={FontAwesomeIcon} icon={faChevronLeft} />}
+          leftIcon={<Icon icon={faChevronLeft} />}
           marginRight={next ? 2 : undefined}
         />
       )}
@@ -35,11 +36,11 @@ const PostNavigation: PostNavigationType = ({ previous, next }) => {
         <ButtonLink
           href={next.href}
           label={next.title}
-          rightIcon={<Icon as={FontAwesomeIcon} icon={faChevronRight} />}
+          rightIcon={<Icon icon={faChevronRight} />}
           marginLeft={previous ? 2 : undefined}
         />
       )}
-    </Flex>
+    </div>
   );
 };
 

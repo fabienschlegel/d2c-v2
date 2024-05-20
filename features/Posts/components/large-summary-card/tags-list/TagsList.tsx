@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
 
-import { HStack } from '@chakra-ui/react';
-
 import { PostTag } from '../..';
+
+import Styles from './TagsList.module.scss';
 
 interface TagsListProps {
   tags: string[];
@@ -10,11 +10,11 @@ interface TagsListProps {
 
 const TagsList: FunctionComponent<TagsListProps> = ({ tags }) => {
   return (
-    <HStack alignItems="center" spacing={2}>
+    <div className={Styles.container}>
       {tags.map((tag) => (
         <PostTag key={tag} tag={tag} />
       ))}
-    </HStack>
+    </div>
   );
 };
 

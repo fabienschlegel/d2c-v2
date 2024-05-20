@@ -30,7 +30,9 @@ const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
       })}
       pageImagePath={SITE_IMAGE}
     >
-      <Heading mt={3}>{t('mostRecent')}</Heading>
+      <Heading as="h1" mt={3}>
+        {t('mostRecent')}
+      </Heading>
       <PostsList>
         {paginatedPosts.map((post) => (
           <PostsList.Item

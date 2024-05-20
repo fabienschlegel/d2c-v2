@@ -1,11 +1,17 @@
+@charset "utf-8";
+
 @import 'theme';
+
+$green: $brand-green;
+
+@import '../../node_modules/bulma/bulma.sass';
 
 .flex {
   display: flex;
-}
 
-.flex-col {
-  flex-direction: column;
+  &-col {
+    flex-direction: column;
+  }
 }
 
 .align-center {
@@ -20,4 +26,45 @@
   &-evenly {
     justify-content: space-evenly;
   }
+
+  &-center {
+    justify-content: center;
+  }
+}
+
+.gap {
+  &-2 {
+    gap: 0.5rem;
+  }
+
+  &-4 {
+    gap: 1rem;
+  }
+}
+
+.m {
+  &t {
+    &-55 {
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+.has-text {
+  &-grey-900 {
+    color: $grey-900 !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-heading;
+  line-height: 1;
+}
+
+body {
+  font-family: $font-body;
 }

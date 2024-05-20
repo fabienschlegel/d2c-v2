@@ -7,12 +7,10 @@ import clsx from 'clsx';
 import NextLink from 'next/link';
 import NextImage from 'next/image';
 
-import { HStack, Tag, Icon } from '@chakra-ui/react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faClock } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-import { ButtonLink } from '..';
+import { AuthorAvatar, ButtonLink, ReadingTimeTag } from '..';
 
 import TagsList from './tags-list/TagsList';
 
@@ -69,33 +67,24 @@ const LargeSummaryCard: FunctionComponent<LargeSummaryCardProps> = ({
         </div>
         <div className="flex flex-col">
           {authorAvatar && authorName && date && (
-            <HStack marginTop="1rem" spacing="2" display="flex" alignItems="center">
-              <div className={Style['avatar-container']}>
-                <NextImage
-                  className={Style.avatar}
-                  src={authorAvatar}
-                  alt={authorName}
-                  width={50}
-                  height={50}
-                />
-              </div>
+            <div className={Style['author-container']}>
+              <AuthorAvatar avatarUrl={authorAvatar} name={authorName} />
               <p className={Style.author}>{authorName}</p>
               <p>—</p>
               <p>{`${new Intl.DateTimeFormat(locale).format(new Date(updated || date))}${
                 updated ? ` (${t('updated')})` : ''
               }`}</p>
-            </HStack>
+            </div>
           )}
           <div className={clsx('flex align-center justify-between', Style['cta-container'])}>
             <ButtonLink
               href={`/blog/${slug}`}
               label={t('readPost')}
-              rightIcon={<Icon as={FontAwesomeIcon} icon={faChevronRight} />}
+              rightIcon={
+                <FontAwesomeIcon icon={faChevronRight} className={Style['read-btn__icon']} />
+              }
             />
-            <Tag backgroundColor="brand.green" color="gray.900">
-              <Icon as={FontAwesomeIcon} icon={faClock} mr={2} />
-              {readingTime}
-            </Tag>
+            <ReadingTimeTag>{readingTime}</ReadingTimeTag>
           </div>
         </div>
       </div>
