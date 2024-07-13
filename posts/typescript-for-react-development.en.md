@@ -1,6 +1,6 @@
 ---
 title: 'TypeScript for React Development'
-pageTitle: 'Maximizing React Development with TypeScript: Benefits, Best Practices, and Integration'
+pageTitle: 'React development with TypeScript: Benefits and best practices'
 date: '2023-06-21'
 author:
   name: 'Fabien Schlegel'

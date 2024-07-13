@@ -1,6 +1,6 @@
 ---
 title: 'TypeScript pour le développement React'
-pageTitle: 'Maximiser le développement React avec TypeScript : Avantages, meilleures pratiques et intégration'
+pageTitle: 'Développement React avec TypeScript : Avantages et bonnes pratiques'
 date: '2023-06-21'
 author:
   name: 'Fabien Schlegel'

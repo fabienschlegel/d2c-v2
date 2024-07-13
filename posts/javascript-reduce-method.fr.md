@@ -1,6 +1,6 @@
 ---
 title: 'JavaScript - la méthode Reduce'
-pageTitle: 'Maîtrisez la Méthode Reduce en JavaScript : Guide Avancé pour les Développeurs'
+pageTitle: 'Maîtrisez reduce en JavaScript : Guide avancé pour les développeurs'
 date: '2023-09-20'
 author:
   name: 'Fabien Schlegel'
