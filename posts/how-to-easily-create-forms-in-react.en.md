@@ -11,7 +11,7 @@ tags: ['React', 'Typescript']
 
 As a developer, forms are a great part of our work. It's a way for users to interact with software.
 
-To help us to create form inputs without pain we can use composition. If you don't know what is composition, you can read [this post](/understand-and-use-composition-in-react) before.
+To help us to create form inputs without pain we can use composition. If you don't know what is composition, you can read [this post](/blog/understand-and-use-composition-in-react) before.
 
 We'll create controlled components. We'll use a _useState_ hook to store the value of the input and manage the changes of this value.
 

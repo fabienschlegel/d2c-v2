@@ -11,7 +11,7 @@ tags: ['React', 'Typescript']
 
 En tant que développeur, les formulaires constituent une part importante de notre travail. C'est un moyen pour les utilisateurs d'interagir avec le logiciel.
 
-Pour nous aider à créer des entrées de formulaire sans douleur, nous pouvons utiliser la composition. Si vous ne savez pas ce qu'est la composition, vous pouvez lire [cet article](/blog/understand-and-use-composition-in-react) avant.
+Pour nous aider à créer des entrées de formulaire sans douleur, nous pouvons utiliser la composition. Si vous ne savez pas ce qu'est la composition, vous pouvez lire [cet article](/fr/blog/understand-and-use-composition-in-react) avant.
 
 Nous allons créer des composants contrôlés. Nous utiliserons un hook _useState_ pour stocker la valeur de l'entrée et gérer les changements de cette valeur.
 
